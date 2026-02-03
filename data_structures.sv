@@ -1,8 +1,12 @@
 package data_structures;
   typedef logic [31:0] register_t;
-  typedef logic [31:0] data_t;
   typedef logic [31:0] instruction_t;
   typedef logic [31:0] address_t;
+  typedef logic [31:0] data_t;
+
+  typedef logic [4:0] reg_addr_t;
+  typedef logic [6:0] funct7_t;
+  typedef logic [2:0] funct3_t;
 
   typedef enum logic [6:0] {
     // [1:0] == 2'b11
@@ -38,7 +42,4 @@ package data_structures;
   } opcode_t;
 
 
-  // typedef enum logic [6:0] {
-  //
-  //   } func7;
 endpackage
