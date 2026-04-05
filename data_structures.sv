@@ -13,33 +13,52 @@ package data_structures;
     // https://five-embeddev.com/riscv-user-isa-manual/Priv-v1.12/opcode-map.html
     // Por questão de preguiça, copiei todos e vou implementar o que for usado
     // no RV32I
-    LOAD      = 0000011,
-    LOAD_FP   = 0000111,
-    CUSTOM_0  = 0001011,
-    MISC_MEM  = 0001111,
-    OP_IMM    = 0010011,
-    AUIPC     = 0010111,
-    OP_IMM_32 = 0011011,
+    LOAD      = 7'b0000011,
+    LOAD_FP   = 7'b0000111,
+    CUSTOM_0  = 7'b0001011,
+    MISC_MEM  = 7'b0001111,
+    OP_IMM    = 7'b0010011,
+    AUIPC     = 7'b0010111,
+    OP_IMM_32 = 7'b0011011,
 
-    STORE     = 0100011,
-    STORE_FP  = 0100111,
-    CUSTOM_1  = 0101011,
-    AMO       = 0101111,
-    OP        = 0110011,
-    LUI       = 0110111,
-    OP_32     = 0111011,
+    STORE     = 7'b0100011,
+    STORE_FP  = 7'b0100111,
+    CUSTOM_1  = 7'b0101011,
+    AMO       = 7'b0101111,
+    OP        = 7'b0110011,
+    LUI       = 7'b0110111,
+    OP_32     = 7'b0111011,
 
-    MADD      = 1000011,
-    MSUB      = 1000111,
-    NMSUB     = 1001011,
-    NMADD     = 1001111,
-    OP_FP     = 1010011,
+    MADD      = 7'b1000011,
+    MSUB      = 7'b1000111,
+    NMSUB     = 7'b1001011,
+    NMADD     = 7'b1001111,
+    OP_FP     = 7'b1010011,
 
-    BRANCH    = 1100011,
-    JALR      = 1100111,
-    JAL       = 1101111,
-    SYSTEM    = 1110011
+    BRANCH    = 7'b1100011,
+    JALR      = 7'b1100111,
+    JAL       = 7'b1101111,
+    SYSTEM    = 7'b1110011
   } opcode_t;
 
+
+  typedef enum logic [3:0] {
+    ADD     = 4'b0000,
+    SUB     = 4'b0001,
+    LT      = 4'b0010,
+    LTU     = 4'b0011,
+    GT      = 4'b0100,
+    GTU     = 4'b0101,
+    XOR     = 4'b0110,
+    OR      = 4'b0111,
+    AND     = 4'b1000,
+    SLL     = 4'b1001,
+    SRL     = 4'b1010,
+    SRA     = 4'b1011,
+    EQUAL   = 4'b1100,
+    NEQUAL  = 4'b1101,
+    INC_PC  = 4'b1110
+
+    } aluop_t;
 
 endpackage
