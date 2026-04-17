@@ -1,0 +1,98 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim
+T_opt
+!i145 1
+!i144 0
+!s110 1776457439
+VR_JMEWj7bGfnNVikPS25a0
+04 15 4 work alu_vlg_vec_tst fast 0
+=1-b068e6f50765-69e296de-32491-1b5a
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+valu
+Z3 2alu.vo
+Z4 !s110 1776457437
+!i10b 1
+!s100 J:LDP6DzkUJWC0JHjIlHg2
+I5:>5klfJ@SRXYM2oBh1703
+R1
+Z5 w1776457435
+Z6 8alu.vo
+Z7 Falu.vo
+!i122 0
+L0 32 102032
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z9 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z10 !s108 1776457437.000000
+Z11 !s107 alu.vo|
+Z12 !s90 -work|work|alu.vo|
+!i113 0
+Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2
+valu_vlg_vec_tst
+2Waveform.vwf.vt
+R4
+!i10b 1
+!s100 99TVb46[8cH]VJlV;2<_B0
+Ij8EO7j<PE?cR_h44AC@F02
+R1
+w1776457433
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 1
+L0 30 751
+R8
+R9
+r1
+!s85 0
+31
+R10
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 0
+R13
+R2
+vhard_block
+R3
+R4
+!i10b 1
+!s100 ;WkzSWj7`U3]4A6N>NXUg1
+IoWg6A[9_8bjmX5EIFS;P:3
+R1
+R5
+R6
+R7
+!i122 0
+L0 102065 34
+R8
+R9
+r1
+!s85 0
+31
+R10
+R11
+R12
+!i113 0
+R13
+R2

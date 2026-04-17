@@ -1,0 +1,26 @@
+$comment
+	File created using the following command:
+		vcd file alu.msim.vcd -direction
+$end
+$date
+	Fri Apr 17 17:24:05 2026
+$end
+$version
+	Questa Altera Starter FPGA Edition Version 2025.2
+$end
+$timescale
+	1ps
+$end
+
+$scope module alu_vlg_vec_tst $end
+
+$scope module i1 $end
+$var tri1 1 ! vcc $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+1!
+$end
+#1000000

@@ -1,0 +1,423 @@
+Determining the location of the ModelSim executable...
+
+Using: /opt/intelFPGA/25.1/questa_fse/linux_x86_64/
+
+To specify a ModelSim executable directory, select: Tools -> Options -> EDA Tool Options
+Note: if both Questa Intel FPGA Edition and ModelSim executables are available, Questa Intel FPGA Edition will be used.
+
+**** Generating the ModelSim Testbench ****
+
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off alu -c alu --vector_source="/home/lucasbontempi/Documentos/RV32I/alu_quartus/Waveform.vwf" --testbench_file="/home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim/Waveform.vwf.vt"
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.    Info: Your use of Altera Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Altera Program License     Info: Subscription Agreement, the Altera Quartus Prime License Agreement,    Info: the Altera IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Altera and sold by Altera or its authorized distributors.  Please    Info: refer to the Altera Software License Subscription Agreements     Info: on the Quartus Prime software download page.    Info: Processing started: Fri Apr 17 17:23:52 2026Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off alu -c alu --vector_source=/home/lucasbontempi/Documentos/RV32I/alu_quartus/Waveform.vwf --testbench_file=/home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim/Waveform.vwf.vtWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+0]" in vector source file when writing test bench files
+Completed successfully. 
+
+Completed successfully. 
+
+**** Generating the functional simulation netlist ****
+
+quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="/home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim/" alu -c alu
+
+Info: *******************************************************************Info: Running Quartus Prime EDA Netlist Writer    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition    Info: Copyright (C) 2025  Altera Corporation. All rights reserved.    Info: Your use of Altera Corporation's design tools, logic functions     Info: and other software and tools, and any partner logic     Info: functions, and any output files from any of the foregoing     Info: (including device programming or simulation files), and any     Info: associated documentation or information are expressly subject     Info: to the terms and conditions of the Altera Program License     Info: Subscription Agreement, the Altera Quartus Prime License Agreement,    Info: the Altera IP License Agreement, or other applicable license    Info: agreement, including, without limitation, that your use is for    Info: the sole purpose of programming logic devices manufactured by    Info: Altera and sold by Altera or its authorized distributors.  Please    Info: refer to the Altera Software License Subscription Agreements     Info: on the Quartus Prime software download page.    Info: Processing started: Fri Apr 17 17:23:53 2026Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=/home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim/ alu -c aluWarning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.Info (204019): Generated file alu.vo in folder "/home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim//" for EDA simulation toolInfo: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning    Info: Peak virtual memory: 614 megabytes    Info: Processing ended: Fri Apr 17 17:23:55 2026    Info: Elapsed time: 00:00:02    Info: Total CPU time (on all processors): 00:00:02
+Completed successfully. 
+
+**** Generating the ModelSim .do script ****
+
+/home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim/alu.do generated.
+
+Completed successfully. 
+
+**** Running the ModelSim simulation ****
+
+/opt/intelFPGA/25.1/questa_fse/linux_x86_64//vsim -c -do alu.do
+
+Reading pref.tcl
+# 2025.2
+# do alu.do
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 17:23:57 on Apr 17,2026
+# vlog -work work alu.vo 
+# ** Note: (vlog-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module alu
+# -- Compiling module hard_block
+# # Top level modules:# 	alu# End time: 17:23:57 on Apr 17,2026, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 17:23:57 on Apr 17,2026
+# vlog -work work Waveform.vwf.vt 
+# ** Note: (vlog-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling module alu_vlg_vec_tst
+# 
+# Top level modules:# 	alu_vlg_vec_tst# End time: 17:23:57 on Apr 17,2026, Elapsed time: 0:00:00# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.# vsim -c -t 1ps -L cycloneive_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.alu_vlg_vec_tst # Start time: 17:23:57 on Apr 17,2026# ** Note: (vsim-3812) Design is being optimized...# ** Note: (vopt-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.# //  Questa Altera Starter FPGA Edition-64# //  Version 2025.2 linux_x86_64 May 31 2025# //# // Unpublished work. Copyright 2025 Siemens# //# // This material contains trade secrets or otherwise confidential information# // owned by Siemens Industry Software Inc. or its affiliates (collectively,# // "SISW"), or its licensors. Access to and use of this information is strictly# // limited as set forth in the Customer's applicable agreements with SISW.# //# // This material may not be copied, distributed, or otherwise disclosed outside# // of the Customer's facilities without the express written permission of SISW,# // and may not be used in any way not expressly authorized by SISW.# //
+# Loading work.alu_vlg_vec_tst(fast)
+# ** UI-Msg (Error) (suppressible): (vsim-3561) No objects found matching '*'.# after#29
+# ** Note: $finish    : Waveform.vwf.vt(61)#    Time: 1 us  Iteration: 0  Instance: /alu_vlg_vec_tst
+# End time: 17:24:05 on Apr 17,2026, Elapsed time: 0:00:08# Errors: 0, Warnings: 0
+Completed successfully. 
+
+**** Converting ModelSim VCD to vector waveform ****
+
+Reading /home/lucasbontempi/Documentos/RV32I/alu_quartus/Waveform.vwf...
+
+Reading /home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim/alu.msim.vcd...
+
+Processing channel transitions... 
+
+Warning: aluout_o[31] - signal not found in VCD.
+
+Warning: aluout_o[30] - signal not found in VCD.
+
+Warning: aluout_o[29] - signal not found in VCD.
+
+Warning: aluout_o[28] - signal not found in VCD.
+
+Warning: aluout_o[27] - signal not found in VCD.
+
+Warning: aluout_o[26] - signal not found in VCD.
+
+Warning: aluout_o[25] - signal not found in VCD.
+
+Warning: aluout_o[24] - signal not found in VCD.
+
+Warning: aluout_o[23] - signal not found in VCD.
+
+Warning: aluout_o[22] - signal not found in VCD.
+
+Warning: aluout_o[21] - signal not found in VCD.
+
+Warning: aluout_o[20] - signal not found in VCD.
+
+Warning: aluout_o[19] - signal not found in VCD.
+
+Warning: aluout_o[18] - signal not found in VCD.
+
+Warning: aluout_o[17] - signal not found in VCD.
+
+Warning: aluout_o[16] - signal not found in VCD.
+
+Warning: aluout_o[15] - signal not found in VCD.
+
+Warning: aluout_o[14] - signal not found in VCD.
+
+Warning: aluout_o[13] - signal not found in VCD.
+
+Warning: aluout_o[12] - signal not found in VCD.
+
+Warning: aluout_o[11] - signal not found in VCD.
+
+Warning: aluout_o[10] - signal not found in VCD.
+
+Warning: aluout_o[9] - signal not found in VCD.
+
+Warning: aluout_o[8] - signal not found in VCD.
+
+Warning: aluout_o[7] - signal not found in VCD.
+
+Warning: aluout_o[6] - signal not found in VCD.
+
+Warning: aluout_o[5] - signal not found in VCD.
+
+Warning: aluout_o[4] - signal not found in VCD.
+
+Warning: aluout_o[3] - signal not found in VCD.
+
+Warning: aluout_o[2] - signal not found in VCD.
+
+Warning: aluout_o[1] - signal not found in VCD.
+
+Warning: aluout_o[0] - signal not found in VCD.
+
+Warning: alusel1_c - signal not found in VCD.
+
+Warning: alusel2_c - signal not found in VCD.
+
+Warning: funct3_i[2] - signal not found in VCD.
+
+Warning: funct3_i[1] - signal not found in VCD.
+
+Warning: funct3_i[0] - signal not found in VCD.
+
+Warning: funct7_i[6] - signal not found in VCD.
+
+Warning: funct7_i[5] - signal not found in VCD.
+
+Warning: funct7_i[4] - signal not found in VCD.
+
+Warning: funct7_i[3] - signal not found in VCD.
+
+Warning: funct7_i[2] - signal not found in VCD.
+
+Warning: funct7_i[1] - signal not found in VCD.
+
+Warning: funct7_i[0] - signal not found in VCD.
+
+Warning: imm_i[31] - signal not found in VCD.
+
+Warning: imm_i[30] - signal not found in VCD.
+
+Warning: imm_i[29] - signal not found in VCD.
+
+Warning: imm_i[28] - signal not found in VCD.
+
+Warning: imm_i[27] - signal not found in VCD.
+
+Warning: imm_i[26] - signal not found in VCD.
+
+Warning: imm_i[25] - signal not found in VCD.
+
+Warning: imm_i[24] - signal not found in VCD.
+
+Warning: imm_i[23] - signal not found in VCD.
+
+Warning: imm_i[22] - signal not found in VCD.
+
+Warning: imm_i[21] - signal not found in VCD.
+
+Warning: imm_i[20] - signal not found in VCD.
+
+Warning: imm_i[19] - signal not found in VCD.
+
+Warning: imm_i[18] - signal not found in VCD.
+
+Warning: imm_i[17] - signal not found in VCD.
+
+Warning: imm_i[16] - signal not found in VCD.
+
+Warning: imm_i[15] - signal not found in VCD.
+
+Warning: imm_i[14] - signal not found in VCD.
+
+Warning: imm_i[13] - signal not found in VCD.
+
+Warning: imm_i[12] - signal not found in VCD.
+
+Warning: imm_i[11] - signal not found in VCD.
+
+Warning: imm_i[10] - signal not found in VCD.
+
+Warning: imm_i[9] - signal not found in VCD.
+
+Warning: imm_i[8] - signal not found in VCD.
+
+Warning: imm_i[7] - signal not found in VCD.
+
+Warning: imm_i[6] - signal not found in VCD.
+
+Warning: imm_i[5] - signal not found in VCD.
+
+Warning: imm_i[4] - signal not found in VCD.
+
+Warning: imm_i[3] - signal not found in VCD.
+
+Warning: imm_i[2] - signal not found in VCD.
+
+Warning: imm_i[1] - signal not found in VCD.
+
+Warning: imm_i[0] - signal not found in VCD.
+
+Warning: inst_type_c[2] - signal not found in VCD.
+
+Warning: inst_type_c[1] - signal not found in VCD.
+
+Warning: inst_type_c[0] - signal not found in VCD.
+
+Warning: pc_i[31] - signal not found in VCD.
+
+Warning: pc_i[30] - signal not found in VCD.
+
+Warning: pc_i[29] - signal not found in VCD.
+
+Warning: pc_i[28] - signal not found in VCD.
+
+Warning: pc_i[27] - signal not found in VCD.
+
+Warning: pc_i[26] - signal not found in VCD.
+
+Warning: pc_i[25] - signal not found in VCD.
+
+Warning: pc_i[24] - signal not found in VCD.
+
+Warning: pc_i[23] - signal not found in VCD.
+
+Warning: pc_i[22] - signal not found in VCD.
+
+Warning: pc_i[21] - signal not found in VCD.
+
+Warning: pc_i[20] - signal not found in VCD.
+
+Warning: pc_i[19] - signal not found in VCD.
+
+Warning: pc_i[18] - signal not found in VCD.
+
+Warning: pc_i[17] - signal not found in VCD.
+
+Warning: pc_i[16] - signal not found in VCD.
+
+Warning: pc_i[15] - signal not found in VCD.
+
+Warning: pc_i[14] - signal not found in VCD.
+
+Warning: pc_i[13] - signal not found in VCD.
+
+Warning: pc_i[12] - signal not found in VCD.
+
+Warning: pc_i[11] - signal not found in VCD.
+
+Warning: pc_i[10] - signal not found in VCD.
+
+Warning: pc_i[9] - signal not found in VCD.
+
+Warning: pc_i[8] - signal not found in VCD.
+
+Warning: pc_i[7] - signal not found in VCD.
+
+Warning: pc_i[6] - signal not found in VCD.
+
+Warning: pc_i[5] - signal not found in VCD.
+
+Warning: pc_i[4] - signal not found in VCD.
+
+Warning: pc_i[3] - signal not found in VCD.
+
+Warning: pc_i[2] - signal not found in VCD.
+
+Warning: pc_i[1] - signal not found in VCD.
+
+Warning: pc_i[0] - signal not found in VCD.
+
+Warning: rs1_i[31] - signal not found in VCD.
+
+Warning: rs1_i[30] - signal not found in VCD.
+
+Warning: rs1_i[29] - signal not found in VCD.
+
+Warning: rs1_i[28] - signal not found in VCD.
+
+Warning: rs1_i[27] - signal not found in VCD.
+
+Warning: rs1_i[26] - signal not found in VCD.
+
+Warning: rs1_i[25] - signal not found in VCD.
+
+Warning: rs1_i[24] - signal not found in VCD.
+
+Warning: rs1_i[23] - signal not found in VCD.
+
+Warning: rs1_i[22] - signal not found in VCD.
+
+Warning: rs1_i[21] - signal not found in VCD.
+
+Warning: rs1_i[20] - signal not found in VCD.
+
+Warning: rs1_i[19] - signal not found in VCD.
+
+Warning: rs1_i[18] - signal not found in VCD.
+
+Warning: rs1_i[17] - signal not found in VCD.
+
+Warning: rs1_i[16] - signal not found in VCD.
+
+Warning: rs1_i[15] - signal not found in VCD.
+
+Warning: rs1_i[14] - signal not found in VCD.
+
+Warning: rs1_i[13] - signal not found in VCD.
+
+Warning: rs1_i[12] - signal not found in VCD.
+
+Warning: rs1_i[11] - signal not found in VCD.
+
+Warning: rs1_i[10] - signal not found in VCD.
+
+Warning: rs1_i[9] - signal not found in VCD.
+
+Warning: rs1_i[8] - signal not found in VCD.
+
+Warning: rs1_i[7] - signal not found in VCD.
+
+Warning: rs1_i[6] - signal not found in VCD.
+
+Warning: rs1_i[5] - signal not found in VCD.
+
+Warning: rs1_i[4] - signal not found in VCD.
+
+Warning: rs1_i[3] - signal not found in VCD.
+
+Warning: rs1_i[2] - signal not found in VCD.
+
+Warning: rs1_i[1] - signal not found in VCD.
+
+Warning: rs1_i[0] - signal not found in VCD.
+
+Warning: rs2_i[31] - signal not found in VCD.
+
+Warning: rs2_i[30] - signal not found in VCD.
+
+Warning: rs2_i[29] - signal not found in VCD.
+
+Warning: rs2_i[28] - signal not found in VCD.
+
+Warning: rs2_i[27] - signal not found in VCD.
+
+Warning: rs2_i[26] - signal not found in VCD.
+
+Warning: rs2_i[25] - signal not found in VCD.
+
+Warning: rs2_i[24] - signal not found in VCD.
+
+Warning: rs2_i[23] - signal not found in VCD.
+
+Warning: rs2_i[22] - signal not found in VCD.
+
+Warning: rs2_i[21] - signal not found in VCD.
+
+Warning: rs2_i[20] - signal not found in VCD.
+
+Warning: rs2_i[19] - signal not found in VCD.
+
+Warning: rs2_i[18] - signal not found in VCD.
+
+Warning: rs2_i[17] - signal not found in VCD.
+
+Warning: rs2_i[16] - signal not found in VCD.
+
+Warning: rs2_i[15] - signal not found in VCD.
+
+Warning: rs2_i[14] - signal not found in VCD.
+
+Warning: rs2_i[13] - signal not found in VCD.
+
+Warning: rs2_i[12] - signal not found in VCD.
+
+Warning: rs2_i[11] - signal not found in VCD.
+
+Warning: rs2_i[10] - signal not found in VCD.
+
+Warning: rs2_i[9] - signal not found in VCD.
+
+Warning: rs2_i[8] - signal not found in VCD.
+
+Warning: rs2_i[7] - signal not found in VCD.
+
+Warning: rs2_i[6] - signal not found in VCD.
+
+Warning: rs2_i[5] - signal not found in VCD.
+
+Warning: rs2_i[4] - signal not found in VCD.
+
+Warning: rs2_i[3] - signal not found in VCD.
+
+Warning: rs2_i[2] - signal not found in VCD.
+
+Warning: rs2_i[1] - signal not found in VCD.
+
+Warning: rs2_i[0] - signal not found in VCD.
+
+Writing the resulting VWF to /home/lucasbontempi/Documentos/RV32I/alu_quartus/simulation/qsim/alu_20260417172405.sim.vwf
+
+Finished VCD to VWF conversion.
+
+Completed successfully. 
+
+All completed.
