@@ -1,0 +1,88 @@
+# do alu_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /opt/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/ALU_TB {/home/leotl/Documentos/RV32-Blueprint/ALU_TB/data_structures.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:59:26 on Apr 25,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/ALU_TB" /home/leotl/Documentos/RV32-Blueprint/ALU_TB/data_structures.sv 
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 21:59:26 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/ALU_TB {/home/leotl/Documentos/RV32-Blueprint/ALU_TB/alu.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:59:26 on Apr 25,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/ALU_TB" /home/leotl/Documentos/RV32-Blueprint/ALU_TB/alu.sv 
+# -- Compiling package alu_sv_unit
+# -- Importing package data_structures
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 21:59:26 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+cd /home/leotl/Documentos/RV32-Blueprint/ALU_TB
+# reading /opt/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+do /home/leotl/Documentos/RV32-Blueprint/ALU_TB/sim_alu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:59:53 on Apr 25,2026
+# vlog -reportprogress 300 data_structures.sv 
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 21:59:53 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:59:53 on Apr 25,2026
+# vlog -reportprogress 300 alu.sv 
+# -- Compiling package alu_sv_unit
+# -- Importing package data_structures
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 21:59:53 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 21:59:53 on Apr 25,2026
+# vlog -reportprogress 300 tb_alu.sv 
+# -- Compiling package tb_alu_sv_unit
+# -- Importing package data_structures
+# -- Compiling module tb_alu
+# 
+# Top level modules:
+# 	tb_alu
+# End time: 21:59:53 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" work.tb_alu 
+# Start time: 21:59:53 on Apr 25,2026
+# Loading sv_std.std
+# Loading work.data_structures
+# Loading work.tb_alu_sv_unit
+# Loading work.tb_alu
+# Loading work.alu_sv_unit
+# Loading work.alu
+# Starting ALU Simulation...
+# Simulation complete.
+# ** Note: $stop    : tb_alu.sv(93)
+#    Time: 90 ps  Iteration: 0  Instance: /tb_alu
+# Break in Module tb_alu at tb_alu.sv line 93
+# 0 ps
+# 95 ps
+# End time: 22:36:49 on Apr 25,2026, Elapsed time: 0:36:56
+# Errors: 0, Warnings: 0

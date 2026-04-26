@@ -1,0 +1,137 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/leotl/Documentos/RV32-Blueprint/ALU_TB
+valu
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 DXx4 work 15 data_structures 0 22 iK157hZ;ii1<5d^F^D?ez1
+DXx4 work 11 alu_sv_unit 0 22 =J5^CP5DUNnYjJX4D]6g<0
+Z3 !s110 1777165193
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 8GQc^ncXN[9[mmUgYjQB63
+IM>GU_4``BnbAYRD8K@<?e1
+!s105 alu_sv_unit
+S1
+R0
+Z5 w1777159403
+Z6 8alu.sv
+Z7 Falu.sv
+!i122 16
+L0 3 140
+Z8 OV;L;2020.1;71
+31
+Z9 !s108 1777165193.000000
+Z10 !s107 alu.sv|
+Z11 !s90 -reportprogress|300|alu.sv|
+!i113 1
+Z12 tCvgOpt 0
+Xalu_sv_unit
+R1
+R2
+R3
+V=J5^CP5DUNnYjJX4D]6g<0
+r1
+!s85 0
+!i10b 1
+!s100 U?o<0F<[RYAiaL@Hl@25P2
+I=J5^CP5DUNnYjJX4D]6g<0
+!i103 1
+S1
+R0
+R5
+R6
+R7
+!i122 16
+Z13 L0 1 0
+R8
+31
+R9
+R10
+R11
+!i113 1
+R12
+Xdata_structures
+R1
+R3
+!i10b 1
+!s100 _RDQ6cS;m8O_gL0MJhDTf0
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IiK157hZ;ii1<5d^F^D?ez1
+ViK157hZ;ii1<5d^F^D?ez1
+S1
+R0
+w1777157894
+8data_structures.sv
+Fdata_structures.sv
+!i122 15
+R13
+R8
+r1
+!s85 0
+31
+R9
+!s107 data_structures.sv|
+!s90 -reportprogress|300|data_structures.sv|
+!i113 1
+R12
+vtb_alu
+R1
+R2
+DXx4 work 14 tb_alu_sv_unit 0 22 d^2Dbo4@l6eeFd[>TM9Ni1
+R3
+R4
+r1
+!s85 0
+!i10b 1
+!s100 Y0PmOnN3?o5efh8]zjL@:1
+IzXQRRl=d4^4L27OeG`AI_0
+!s105 tb_alu_sv_unit
+S1
+R0
+Z14 w1777160741
+Z15 8tb_alu.sv
+Z16 Ftb_alu.sv
+!i122 17
+L0 3 94
+R8
+31
+R9
+!s107 tb_alu.sv|
+Z17 !s90 -reportprogress|300|tb_alu.sv|
+!i113 1
+R12
+Xtb_alu_sv_unit
+R1
+R2
+R3
+Vd^2Dbo4@l6eeFd[>TM9Ni1
+r1
+!s85 0
+!i10b 1
+!s100 iWZ72d?5KYiCLO1MTkWmH2
+Id^2Dbo4@l6eeFd[>TM9Ni1
+!i103 1
+S1
+R0
+R14
+R15
+R16
+!i122 17
+R13
+R8
+31
+R9
+Z18 !s107 tb_alu.sv|
+R17
+!i113 1
+R12

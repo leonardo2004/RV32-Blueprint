@@ -1,0 +1,147 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/simulation/questa
+Xdata_structures
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1777169885
+!i10b 1
+!s100 _RDQ6cS;m8O_gL0MJhDTf0
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I4GKkd_C0;OCQlQ4Q:Wbf]3
+V4GKkd_C0;OCQlQ4Q:Wbf]3
+S1
+R0
+w1777157894
+8/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/data_structures.sv
+F/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/data_structures.sv
+!i122 0
+Z3 L0 1 0
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1777169885.000000
+!s107 /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/data_structures.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB|/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/data_structures.sv|
+!i113 1
+Z6 o-sv -work work
+Z7 !s92 -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB
+Z8 tCvgOpt 0
+vregfile
+R1
+Z9 DXx4 work 15 data_structures 0 22 4GKkd_C0;OCQlQ4Q:Wbf]3
+DXx4 work 15 regfile_sv_unit 0 22 lXZARQ9`N]PfC^1]Q2W_F2
+R2
+Z10 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 z[aNkCeBOSPKdkCAEI^Fl3
+Ih<CJFS9?E?Z;cR=a^_HO80
+!s105 regfile_sv_unit
+S1
+R0
+Z11 w1777167986
+Z12 8/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/regfile.sv
+Z13 F/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/regfile.sv
+!i122 1
+L0 3 28
+R4
+31
+R5
+Z14 !s107 /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/regfile.sv|
+Z15 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB|/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/regfile.sv|
+!i113 1
+R6
+R7
+R8
+Xregfile_sv_unit
+R1
+R9
+R2
+VlXZARQ9`N]PfC^1]Q2W_F2
+r1
+!s85 0
+!i10b 1
+!s100 8LUjY^ShZ[RJNC=n`o`5Z1
+IlXZARQ9`N]PfC^1]Q2W_F2
+!i103 1
+S1
+R0
+R11
+R12
+R13
+!i122 1
+R3
+R4
+31
+R5
+R14
+R15
+!i113 1
+R6
+R7
+R8
+vtb_regfile
+R1
+R9
+DXx4 work 18 tb_regfile_sv_unit 0 22 zIIHngTDFiP@`Q7d1UXUT3
+R2
+R10
+r1
+!s85 0
+!i10b 1
+!s100 :Mg?KzC?z3>WJcZ?5KR]?2
+IHD;i0`<^`NQ;]NUmL@K;n1
+!s105 tb_regfile_sv_unit
+S1
+R0
+Z16 w1777169827
+Z17 8/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv
+Z18 F/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv
+!i122 2
+L0 3 47
+R4
+31
+R5
+!s107 /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv|
+Z19 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB|/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv|
+!i113 1
+R6
+R7
+R8
+Xtb_regfile_sv_unit
+R1
+R9
+R2
+VzIIHngTDFiP@`Q7d1UXUT3
+r1
+!s85 0
+!i10b 1
+!s100 RiU<V1L[GnZk<R0Hl[lf[0
+IzIIHngTDFiP@`Q7d1UXUT3
+!i103 1
+S1
+R0
+R16
+R17
+R18
+!i122 2
+R3
+R4
+31
+R5
+Z20 !s107 /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv|
+R19
+!i113 1
+R6
+R7
+R8

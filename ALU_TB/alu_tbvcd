@@ -1,0 +1,29 @@
+$date
+	Sat Apr 25 21:39:58 2026
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+$scope module tb_alu $end
+$scope module dut $end
+$var integer 32 ! aluop $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+bx !
+#20
+bx !
+#30
+bx !
+#40
+bx !
+#50
+bx0 !
+#70
+bx !
+#80
+bx0 !

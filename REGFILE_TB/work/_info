@@ -1,0 +1,163 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB
+Xdata_structures
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1777170204
+!i10b 1
+!s100 _RDQ6cS;m8O_gL0MJhDTf0
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+IiK157hZ;ii1<5d^F^D?ez1
+ViK157hZ;ii1<5d^F^D?ez1
+S1
+R0
+w1777157894
+8data_structures.sv
+Fdata_structures.sv
+!i122 48
+Z3 L0 1 0
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1777170204.000000
+!s107 data_structures.sv|
+!s90 -reportprogress|300|data_structures.sv|
+!i113 1
+Z6 tCvgOpt 0
+vregfile
+R1
+Z7 DXx4 work 15 data_structures 0 22 iK157hZ;ii1<5d^F^D?ez1
+Z8 DXx4 work 15 regfile_sv_unit 0 22 0LW`OK7WNNEMf2IMlbX]b3
+R2
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 z[aNkCeBOSPKdkCAEI^Fl3
+I0>>echmf?^QXD8>2Li;`H1
+Z10 !s105 regfile_sv_unit
+S1
+R0
+Z11 w1777167986
+Z12 8regfile.sv
+Z13 Fregfile.sv
+!i122 49
+Z14 L0 3 28
+R4
+31
+R5
+Z15 !s107 regfile.sv|
+Z16 !s90 -reportprogress|300|regfile.sv|
+!i113 1
+R6
+Xregfile_sv_unit
+R1
+R7
+R2
+V0LW`OK7WNNEMf2IMlbX]b3
+r1
+!s85 0
+!i10b 1
+!s100 8LUjY^ShZ[RJNC=n`o`5Z1
+I0LW`OK7WNNEMf2IMlbX]b3
+!i103 1
+S1
+R0
+R11
+R12
+R13
+!i122 49
+R3
+R4
+31
+R5
+R15
+R16
+!i113 1
+R6
+vregistradores
+R1
+R7
+R8
+!s110 1777167849
+R9
+r1
+!s85 0
+!i10b 1
+!s100 JN259?cA;9X<[nSY?GcED0
+I;O7^2S0FIIkQ:lm<e=F0]0
+R10
+S1
+R0
+w1777167179
+R12
+R13
+!i122 4
+R14
+R4
+31
+!s108 1777167849.000000
+R15
+R16
+!i113 1
+R6
+vtb_regfile
+R1
+R7
+DXx4 work 18 tb_regfile_sv_unit 0 22 [eD8Vf^4lL=;_P@mC=SB13
+R2
+R9
+r1
+!s85 0
+!i10b 1
+!s100 :Mg?KzC?z3>WJcZ?5KR]?2
+I[L5K[ZF]Dj??^M0>R8:6R3
+!s105 tb_regfile_sv_unit
+S1
+R0
+Z17 w1777169827
+Z18 8tb_regfile.sv
+Z19 Ftb_regfile.sv
+!i122 50
+L0 3 47
+R4
+31
+R5
+!s107 tb_regfile.sv|
+Z20 !s90 -reportprogress|300|tb_regfile.sv|
+!i113 1
+R6
+Xtb_regfile_sv_unit
+R1
+R7
+R2
+V[eD8Vf^4lL=;_P@mC=SB13
+r1
+!s85 0
+!i10b 1
+!s100 RiU<V1L[GnZk<R0Hl[lf[0
+I[eD8Vf^4lL=;_P@mC=SB13
+!i103 1
+S1
+R0
+R17
+R18
+R19
+!i122 50
+R3
+R4
+31
+R5
+Z21 !s107 tb_regfile.sv|
+R20
+!i113 1
+R6

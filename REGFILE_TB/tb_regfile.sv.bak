@@ -1,0 +1,30 @@
+import data_structures::*;
+
+module tb_regfile();
+wire CLK;
+wire RESET;
+wire WE_c;
+data_t rd_i;
+wire [4:0] rdAddr_i, rs1Addr_i, rs2_Addr_i;
+register_t rs1_o, rs2_o;
+
+regfile dut (
+.CLK(CLK),
+.RESET(RESET),
+.WE_c(WE_c),
+.rd_i(rd_i),
+.rdAddr_i(rdAddr_i),
+.rs1Addr_i(rs1Addr_i),
+.rs2Addr_i(rs2Addr_i),
+.rs1_o(rs1_o),
+.rs2_o(rs2_o)
+);
+
+initial begin
+$display("teste01");
+$display("tudo funcionando?");
+$stop;
+end
+
+
+endmodule

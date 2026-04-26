@@ -1,0 +1,92 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/leotl/Documentos/RV32-Blueprint/ALU_TB/simulation/questa
+valu
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 DXx4 work 15 data_structures 0 22 @oVL5>hdB]eLL5mn^jg>Q0
+DXx4 work 11 alu_sv_unit 0 22 TVV15[JN>nLa@<I;cc0C62
+Z3 !s110 1777165166
+VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 8GQc^ncXN[9[mmUgYjQB63
+Il`D93S14fR@A[:R5``3=b0
+!s105 alu_sv_unit
+S1
+R0
+Z4 w1777159403
+Z5 8/home/leotl/Documentos/RV32-Blueprint/ALU_TB/alu.sv
+Z6 F/home/leotl/Documentos/RV32-Blueprint/ALU_TB/alu.sv
+!i122 1
+L0 3 140
+Z7 OV;L;2020.1;71
+31
+Z8 !s108 1777165166.000000
+!s107 /home/leotl/Documentos/RV32-Blueprint/ALU_TB/alu.sv|
+Z9 !s90 -reportprogress|300|-sv|-work|work|+incdir+/home/leotl/Documentos/RV32-Blueprint/ALU_TB|/home/leotl/Documentos/RV32-Blueprint/ALU_TB/alu.sv|
+!i113 1
+Z10 o-sv -work work
+Z11 !s92 -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/ALU_TB
+Z12 tCvgOpt 0
+Xalu_sv_unit
+R1
+R2
+R3
+VTVV15[JN>nLa@<I;cc0C62
+r1
+!s85 0
+!i10b 1
+!s100 U?o<0F<[RYAiaL@Hl@25P2
+ITVV15[JN>nLa@<I;cc0C62
+!i103 1
+S1
+R0
+R4
+R5
+R6
+!i122 1
+Z13 L0 1 0
+R7
+31
+R8
+Z14 !s107 /home/leotl/Documentos/RV32-Blueprint/ALU_TB/alu.sv|
+R9
+!i113 1
+R10
+R11
+R12
+Xdata_structures
+R1
+R3
+!i10b 1
+!s100 _RDQ6cS;m8O_gL0MJhDTf0
+!s11b Dg1SIo80bB@j0V0VzS_@n1
+I@oVL5>hdB]eLL5mn^jg>Q0
+V@oVL5>hdB]eLL5mn^jg>Q0
+S1
+R0
+w1777157894
+8/home/leotl/Documentos/RV32-Blueprint/ALU_TB/data_structures.sv
+F/home/leotl/Documentos/RV32-Blueprint/ALU_TB/data_structures.sv
+!i122 0
+R13
+R7
+r1
+!s85 0
+31
+R8
+!s107 /home/leotl/Documentos/RV32-Blueprint/ALU_TB/data_structures.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+/home/leotl/Documentos/RV32-Blueprint/ALU_TB|/home/leotl/Documentos/RV32-Blueprint/ALU_TB/data_structures.sv|
+!i113 1
+R10
+R11
+R12

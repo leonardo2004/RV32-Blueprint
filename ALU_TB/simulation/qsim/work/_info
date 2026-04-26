@@ -1,0 +1,80 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/leotl/Documentos/RV32-Blueprint/ALU_TB/simulation/qsim
+valu
+Z1 !s110 1777159791
+!i10b 1
+!s100 PHhN2H]o^PP[<^6io8TLY2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I4KO?U3UPL?bnZ`R_7^N8<0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1777159790
+Z5 8alu.vo
+Z6 Falu.vo
+!i122 6
+L0 32 102032
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1777159790.000000
+Z9 !s107 alu.vo|
+Z10 !s90 -work|work|alu.vo|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+valu_vlg_vec_tst
+R1
+!i10b 1
+!s100 cHMP62j6MW>n;MeB9RV0>1
+R2
+IbnnQaQH]3Y]A]zeFilaoi0
+R3
+R0
+w1777159788
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+!i122 7
+L0 30 751
+R7
+r1
+!s85 0
+31
+!s108 1777159791.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R11
+R12
+vhard_block
+R1
+!i10b 1
+!s100 eOkFX;NeYXAlQU6Y3;[OQ1
+R2
+IAYnU6aGLIT>cXR[a2[Qj`2
+R3
+R0
+R4
+R5
+R6
+!i122 6
+L0 102065 34
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12

@@ -1,0 +1,255 @@
+# do regfile_tb_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying /opt/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB {/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/data_structures.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:05 on Apr 25,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB" /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/data_structures.sv 
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 23:18:05 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB {/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/regfile.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:05 on Apr 25,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB" /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/regfile.sv 
+# -- Compiling package regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 23:18:05 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB {/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:05 on Apr 25,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/REGFILE_TB" /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv 
+# -- Compiling package tb_regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module tb_regfile
+# 
+# Top level modules:
+# 	tb_regfile
+# End time: 23:18:05 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+cd /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB
+# reading /opt/intelFPGA/20.1/modelsim_ase/linuxaloem/../modelsim.ini
+do /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/sim_alu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:18 on Apr 25,2026
+# vlog -reportprogress 300 data_structures.sv 
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 23:18:18 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:18 on Apr 25,2026
+# vlog -reportprogress 300 regfile.sv 
+# -- Compiling package regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 23:18:18 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:18:18 on Apr 25,2026
+# vlog -reportprogress 300 tb_regfile.sv 
+# -- Compiling package tb_regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module tb_regfile
+# 
+# Top level modules:
+# 	tb_regfile
+# End time: 23:18:18 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" work.tb_regfile 
+# Start time: 23:18:18 on Apr 25,2026
+# Loading sv_std.std
+# Loading work.data_structures
+# Loading work.tb_regfile_sv_unit
+# Loading work.tb_regfile
+# Loading work.regfile_sv_unit
+# Loading work.regfile
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_regfile/dut/CLOCK'.
+# Error in macro /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/sim_alu.do line 14
+# ** UI-Msg: (vish-4014) No objects found matching '/tb_regfile/dut/CLOCK'.
+#     while executing
+# "add wave -radix decimal /tb_regfile/dut/CLOCK"
+do /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/sim_alu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:20:02 on Apr 25,2026
+# vlog -reportprogress 300 data_structures.sv 
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 23:20:02 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:20:02 on Apr 25,2026
+# vlog -reportprogress 300 regfile.sv 
+# -- Compiling package regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 23:20:02 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:20:02 on Apr 25,2026
+# vlog -reportprogress 300 tb_regfile.sv 
+# -- Compiling package tb_regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module tb_regfile
+# 
+# Top level modules:
+# 	tb_regfile
+# End time: 23:20:02 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 23:20:03 on Apr 25,2026, Elapsed time: 0:01:45
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" work.tb_regfile 
+# Start time: 23:20:03 on Apr 25,2026
+# Loading sv_std.std
+# Loading work.data_structures
+# Loading work.tb_regfile_sv_unit
+# Loading work.tb_regfile
+# Loading work.regfile_sv_unit
+# Loading work.regfile
+# .main_pane.wave.interior.cs.body.pw.wf
+# LIMPANDO REGISTRADORES PARA COMEÇAR OS TESTES
+# x1 = 1 e rs1Addr = 1
+# tudo funcionando?
+# ** Note: $stop    : tb_regfile.sv(45)
+#    Time: 20 ps  Iteration: 0  Instance: /tb_regfile
+# Break in Module tb_regfile at tb_regfile.sv line 45
+# 0 ps
+# 21 ps
+do /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/sim_alu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:22:06 on Apr 25,2026
+# vlog -reportprogress 300 data_structures.sv 
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 23:22:06 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:22:06 on Apr 25,2026
+# vlog -reportprogress 300 regfile.sv 
+# -- Compiling package regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 23:22:06 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:22:06 on Apr 25,2026
+# vlog -reportprogress 300 tb_regfile.sv 
+# -- Compiling package tb_regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module tb_regfile
+# 
+# Top level modules:
+# 	tb_regfile
+# End time: 23:22:06 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 23:22:06 on Apr 25,2026, Elapsed time: 0:02:03
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" work.tb_regfile 
+# Start time: 23:22:06 on Apr 25,2026
+# Loading sv_std.std
+# Loading work.data_structures
+# Loading work.tb_regfile_sv_unit
+# Loading work.tb_regfile
+# Loading work.regfile_sv_unit
+# Loading work.regfile
+# .main_pane.wave.interior.cs.body.pw.wf
+# LIMPANDO REGISTRADORES PARA COMEÇAR OS TESTES
+# x1 = 1 e rs1Addr = 1
+# tudo funcionando?
+# ** Note: $stop    : tb_regfile.sv(45)
+#    Time: 20 ps  Iteration: 0  Instance: /tb_regfile
+# Break in Module tb_regfile at tb_regfile.sv line 45
+# 0 ps
+# 21 ps
+do /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/sim_alu.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:23:24 on Apr 25,2026
+# vlog -reportprogress 300 data_structures.sv 
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 23:23:24 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:23:24 on Apr 25,2026
+# vlog -reportprogress 300 regfile.sv 
+# -- Compiling package regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 23:23:24 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 23:23:24 on Apr 25,2026
+# vlog -reportprogress 300 tb_regfile.sv 
+# -- Compiling package tb_regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module tb_regfile
+# 
+# Top level modules:
+# 	tb_regfile
+# End time: 23:23:24 on Apr 25,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 23:23:25 on Apr 25,2026, Elapsed time: 0:01:19
+# Errors: 0, Warnings: 0
+# vsim -voptargs=""+acc"" work.tb_regfile 
+# Start time: 23:23:25 on Apr 25,2026
+# Loading sv_std.std
+# Loading work.data_structures
+# Loading work.tb_regfile_sv_unit
+# Loading work.tb_regfile
+# Loading work.regfile_sv_unit
+# Loading work.regfile
+# .main_pane.wave.interior.cs.body.pw.wf
+# LIMPANDO REGISTRADORES PARA COMEÇAR OS TESTES
+# x1 = 1 e rs1Addr = 1
+# tudo funcionando?
+# ** Note: $stop    : tb_regfile.sv(45)
+#    Time: 20 ps  Iteration: 0  Instance: /tb_regfile
+# Break in Module tb_regfile at tb_regfile.sv line 45
+# 0 ps
+# 21 ps
+# End time: 23:51:50 on Apr 25,2026, Elapsed time: 0:28:25
+# Errors: 0, Warnings: 0
