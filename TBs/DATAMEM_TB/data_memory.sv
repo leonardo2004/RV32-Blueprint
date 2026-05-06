@@ -17,23 +17,21 @@ module data_memory (
 
   data_t data_mem[1023:0];
 
+ 
 
   always @(posedge CLK) begin
     //Escrita
     if (memwrite_c) begin
       case (funct3_i)
-        0: data_mem[addr_i[31:2]] = wdata_i[7:0];
-        1: data_mem[addr_i[31:2]] = wdata_i[15:0];
-        default: data_mem[addr_i[31:2]] = wdata_i;
+        0 : data_mem[addr_i[31:2]] = wdata_i[7:0];
+        1 : data_mem[addr_i[31:2]] = wdata_i[15:0];
+        default : data_mem[addr_i[31:2]] = wdata_i;
       endcase
     end
     if (memread_c) begin
       case (funct3_i)
-        0: rdata_o = 32'(signed'(data_mem[addr_i[31:2]][7:0]));
-        1: rdata_o = 32'(signed'(data_mem[addr_i[31:2]][15:0]));
-        4: rdata_o = 32'(data_mem[addr_i[31:2]][7:0]);
-        5: rdata_o = 32'(data_mem[addr_i[31:2]][15:0]);
-        default: rdata_o = data_mem[addr_i[31:2]];
+        0 : rdata_o = 32'(signed'(data_mem[addr_i[31:2]][7:0]));
+        default : rdata_o = data_mem[addr_i[31:2]];
       endcase
     end
   end

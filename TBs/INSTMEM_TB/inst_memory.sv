@@ -2,9 +2,14 @@ import data_structures::*;
 
 module inst_memory (
     input wire RESET,
-    input register_t addr_i,
+    input address_t addr_i,
     output instruction_t inst_o
 );
+
+  instruction_t ins_mem[1023:0];
+
+  //Inicialização de memória de instruções,
+  //modificar para inserir programas
 
   initial begin
     integer i;
@@ -13,7 +18,6 @@ module inst_memory (
     end
   end
 
-  instruction_t ins_mem[1023:0];
   assign inst_o = (!RESET) ? 0 : ins_mem[addr_i[31:2]];
 
 endmodule

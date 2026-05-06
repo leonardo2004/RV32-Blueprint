@@ -1,0 +1,50 @@
+import data_structures::*;
+
+module DATAMEM_TB ();
+  logic CLK;
+  logic memwrite_c;
+  logic memread_c;
+  funct3_t funct3_i;
+  address_t addr_i;
+  data_t wdata_i;
+  data_t rdata_o;
+
+  data_memory dut (
+      .CLK(CLK),
+      .memwrite_c(memwrite_c),
+      .memread_c(memread_c),
+      .funct3_i(funct3_i),
+      .addr_i(addr_i),
+      .wdata_i(wdata_i),
+      .rdata_o(rdata_o)
+  );
+
+  initial begin
+    $display("Iniciando TB memória de dados...");
+    CLK = 0;
+    memwrite_c = 0;
+    memread_c = 0;
+    funct3_i = 2;
+    addr_i = 0;
+    wdata_i = 0;
+
+    #10;
+    memwrite_c = 1;
+    CLK = 1;
+    wdata_i = 2004;
+
+    #10;
+    memwrite_c = 0;
+    CLK = 0;
+
+    #10;
+    memread_c = 1;
+    CLK = 1;
+
+    #10 addr_i = 4;
+    CLK = 0;
+
+    #10 addr_i = 0;
+  end
+
+endmodule

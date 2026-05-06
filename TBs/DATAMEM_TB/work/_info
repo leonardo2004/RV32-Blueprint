@@ -1,0 +1,168 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB
+T_opt
+!i145 1
+!i144 0
+Z3 !s110 1778089671
+VG<khU`hHfgH7URaKme0`l2
+04 10 4 work DATAMEM_TB fast 0
+=1-4851c50e5641-69fb7ec7-3cdb9-235e
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+vdata_memory
+Z5 2data_memory.sv
+Z6 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z7 DXx4 work 15 data_structures 0 22 e`_Fb:7>@HIL`3Im51Ko@0
+DXx4 work 19 data_memory_sv_unit 0 22 PR^gHl2jmnfN`9D3FHZo=3
+Z8 !s110 1778089670
+Z9 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 >TgBELz]X:`<eg:I]a31Q0
+I]719mX;Ieo<aZUGaIJX:n0
+!s105 data_memory_sv_unit
+S1
+R2
+Z10 w1778088599
+Z11 8data_memory.sv
+Z12 Fdata_memory.sv
+!i122 4
+L0 3 36
+Z13 OL;L;2025.2;82
+31
+Z14 !s108 1778089670.000000
+Z15 !s107 data_memory.sv|
+Z16 !s90 -reportprogress|300|data_memory.sv|
+!i113 0
+Z17 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+Xdata_memory_sv_unit
+R5
+R6
+R7
+R8
+VPR^gHl2jmnfN`9D3FHZo=3
+r1
+!s85 0
+!i10b 1
+!s100 d5O8K8;ngCCl:XUh_9DE@3
+IPR^gHl2jmnfN`9D3FHZo=3
+!i103 1
+S1
+R2
+R10
+R11
+R12
+!i122 4
+Z18 L0 1 0
+R13
+31
+R14
+R15
+R16
+!i113 0
+R17
+R4
+Xdata_structures
+2data_structures.sv
+R6
+R8
+!i10b 1
+!s100 _RDQ6cS;m8O_gL0MJhDTf0
+Ie`_Fb:7>@HIL`3Im51Ko@0
+S1
+R2
+w1778077297
+8data_structures.sv
+Fdata_structures.sv
+!i122 3
+R18
+Ve`_Fb:7>@HIL`3Im51Ko@0
+R13
+r1
+!s85 0
+31
+R14
+!s107 data_structures.sv|
+!s90 -reportprogress|300|data_structures.sv|
+!i113 0
+R17
+R4
+vDATAMEM_TB
+Z19 2DATAMEM_TB.sv
+R6
+R7
+DXx4 work 18 DATAMEM_TB_sv_unit 0 22 X5oC3OnDEPWXL667KLda^2
+R3
+R9
+r1
+!s85 0
+!i10b 1
+!s100 hLRj8PmBX5YkgPzoo@C3K1
+I>0L8edGVbC_007EVW?C=91
+!s105 DATAMEM_TB_sv_unit
+S1
+R2
+Z20 w1778089631
+Z21 8DATAMEM_TB.sv
+Z22 FDATAMEM_TB.sv
+!i122 5
+L0 3 48
+R13
+31
+Z23 !s108 1778089671.000000
+Z24 !s107 DATAMEM_TB.sv|
+Z25 !s90 -reportprogress|300|DATAMEM_TB.sv|
+!i113 0
+R17
+R4
+n@d@a@t@a@m@e@m_@t@b
+XDATAMEM_TB_sv_unit
+R19
+R6
+R7
+R3
+VX5oC3OnDEPWXL667KLda^2
+r1
+!s85 0
+!i10b 1
+!s100 i1aWXf8oW`]JbCkc1fH^`0
+IX5oC3OnDEPWXL667KLda^2
+!i103 1
+S1
+R2
+R20
+R21
+R22
+!i122 5
+R18
+R13
+31
+R23
+R24
+R25
+!i113 0
+R17
+R4
+n@d@a@t@a@m@e@m_@t@b_sv_unit

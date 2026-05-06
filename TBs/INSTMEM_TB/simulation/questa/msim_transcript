@@ -1,0 +1,126 @@
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do INSTMEM_TB_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work rtl_work 
+# ** Note: (vmap-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Copying /opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/data_structures.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:11:30 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/data_structures.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:11:30 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/inst_memory.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:11:30 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/inst_memory.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package inst_memory_sv_unit
+# -- Importing package data_structures
+# -- Compiling module inst_memory
+# 
+# Top level modules:
+# 	inst_memory
+# End time: 12:11:30 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/INSTMEM_TB.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:11:30 on May 06,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/INSTMEM_TB.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package INSTMEM_TB_sv_unit
+# -- Importing package data_structures
+# -- Compiling module INSTMEM_TB
+# 
+# Top level modules:
+# 	INSTMEM_TB
+# End time: 12:11:30 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# 
+# stdin: <EOF>
+cd /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB
+# reading /opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini
+do /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/sim_instmem.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:11:53 on May 06,2026
+# vlog -reportprogress 300 data_structures.sv 
+# ** Note: (vlog-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 12:11:53 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:11:53 on May 06,2026
+# vlog -reportprogress 300 inst_memory.sv 
+# ** Note: (vlog-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package inst_memory_sv_unit
+# -- Importing package data_structures
+# -- Compiling module inst_memory
+# 
+# Top level modules:
+# 	inst_memory
+# End time: 12:11:53 on May 06,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 12:11:53 on May 06,2026
+# vlog -reportprogress 300 INSTMEM_TB.sv 
+# ** Note: (vlog-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# -- Compiling package INSTMEM_TB_sv_unit
+# -- Importing package data_structures
+# -- Compiling module INSTMEM_TB
+# 
+# Top level modules:
+# 	INSTMEM_TB
+# End time: 12:11:54 on May 06,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# ** Note: (vsim-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# vsim -voptargs=""+acc"" work.INSTMEM_TB 
+# Start time: 12:11:54 on May 06,2026
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vopt-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.data_structures(fast)
+# Loading work.INSTMEM_TB_sv_unit(fast)
+# Loading work.INSTMEM_TB(fast)
+# Loading work.inst_memory_sv_unit(fast)
+# Loading work.inst_memory(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (32) does not match connection size (1) for port 'inst_o'. The port definition is at: inst_memory.sv(6).
+#    Time: 0 ns  Iteration: 0  Instance: /INSTMEM_TB/dut File: INSTMEM_TB.sv Line: 10
+# .main_pane.wave.interior.cs.body.pw.wf
+# Começando TB...
+# 0 ns
+# 368 ns
+# End time: 12:13:48 on May 06,2026, Elapsed time: 0:01:54
+# Errors: 0, Warnings: 2
