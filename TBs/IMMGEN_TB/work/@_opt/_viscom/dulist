@@ -1,0 +1,5 @@
+2 15 data_structures 4 fast 56 /home/leotl/Documentos/RV32-Blueprint/TBs/IMMGEN_TB/work 0 0 0 0 52 0
+2 17 immgen_tb_sv_unit 4 fast 56 /home/leotl/Documentos/RV32-Blueprint/TBs/IMMGEN_TB/work 0 0 0 0 0 0
+2 27 immediate_generator_sv_unit 4 fast 56 /home/leotl/Documentos/RV32-Blueprint/TBs/IMMGEN_TB/work 0 0 0 0 0 0
+2 19 immediate_generator 4 fast 56 /home/leotl/Documentos/RV32-Blueprint/TBs/IMMGEN_TB/work 0 0 131072 0 72 0
+1 9 immgen_tb 4 fast 56 /home/leotl/Documentos/RV32-Blueprint/TBs/IMMGEN_TB/work 0 0 0 0 212 0

@@ -18,6 +18,19 @@ package data_structures;
     STORE = 3'b110
   } inst_type_t;
 
+  typedef enum logic [6:0] {
+    OP = 7'b0110011,
+    OP_IMM = 7'b0010011,
+    LOAD = 7'b0000011,
+    STORE = 7'b0100011,
+    BRANCH = 7'b1100011,
+    JAL = 7'b1101111,
+    JALR = 7'b1100111,
+    LUI = 7'b0110111,
+    AUIPC = 7'b0010111
+
+  } opcode_t;
+
   typedef enum logic [4:0] {
     ADD = 5'b00000,
     SUB = 5'b00001,

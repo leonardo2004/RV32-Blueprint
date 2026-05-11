@@ -1,5 +1,5 @@
 2 15 data_structures 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 41 0
-2 18 DATAMEM_TB_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 0 0
+1 18 DATAMEM_TB_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 0 0
 2 19 data_memory_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 0 0
-2 11 data_memory 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 63 0
-1 10 DATAMEM_TB 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 64 0
+2 11 data_memory 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 243 0
+1 10 DATAMEM_TB 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/DATAMEM_TB/work 0 0 0 0 87 0

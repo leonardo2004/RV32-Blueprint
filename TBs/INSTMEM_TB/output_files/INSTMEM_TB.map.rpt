@@ -1,5 +1,5 @@
 Analysis & Elaboration report for INSTMEM_TB
-Wed May  6 12:11:18 2026
+Thu May  7 14:08:37 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Wed May  6 12:11:18 2026           ;
+; Analysis & Elaboration Status      ; Successful - Thu May  7 14:08:37 2026           ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                      ; INSTMEM_TB                                      ;
 ; Top-level Entity Name              ; INSTMEM_TB                                      ;
@@ -174,7 +174,7 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Wed May  6 12:11:10 2026
+    Info: Processing started: Thu May  7 14:08:29 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off INSTMEM_TB -c INSTMEM_TB --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -188,14 +188,15 @@ Warning (10236): Verilog HDL Implicit Net warning at INSTMEM_TB.sv(13): created 
 Info (12127): Elaborating entity "INSTMEM_TB" for the top level hierarchy
 Info (10648): Verilog HDL Display System Task info at INSTMEM_TB.sv(17): Começando TB... File: /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/INSTMEM_TB.sv Line: 17
 Info (12128): Elaborating entity "inst_memory" for hierarchy "inst_memory:dut" File: /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/INSTMEM_TB.sv Line: 14
+Warning (10850): Verilog HDL warning at inst_memory.sv(19): number of words (5) in memory file does not match the number of elements in the address range [0:1023] File: /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/inst_memory.sv Line: 19
 Warning (10030): Net "ins_mem.data_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/inst_memory.sv Line: 9
 Warning (10030): Net "ins_mem.waddr_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/inst_memory.sv Line: 9
 Warning (10030): Net "ins_mem.we_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/inst_memory.sv Line: 9
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 659 megabytes
-    Info: Processing ended: Wed May  6 12:11:18 2026
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 662 megabytes
+    Info: Processing ended: Thu May  7 14:08:37 2026
     Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:21
+    Info: Total CPU time (on all processors): 00:00:23
 
 

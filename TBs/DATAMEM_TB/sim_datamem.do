@@ -12,7 +12,7 @@ vsim -voptargs="+acc" work.DATAMEM_TB
 # Configure the Waveform window
 # -- Inputs
 add wave -divider "CONTROLE"
-add wave -color "Orange" /DATAMEM_TB/dut/CLK
+add wave -color "Orange" /DATAMEM_TB/dut/clk_c
 add wave -color "Orange" /DATAMEM_TB/dut/memwrite_c
 add wave -color "Orange" /DATAMEM_TB/dut/memread_c
 add wave -color "Orange" -radix decimal /DATAMEM_TB/dut/funct3_i

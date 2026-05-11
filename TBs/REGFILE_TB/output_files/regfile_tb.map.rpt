@@ -1,5 +1,5 @@
 Analysis & Elaboration report for regfile_tb
-Sat Apr 25 23:17:19 2026
+Thu May  7 11:51:40 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Sat Apr 25 23:17:19 2026           ;
+; Analysis & Elaboration Status      ; Successful - Thu May  7 11:51:40 2026           ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                      ; regfile_tb                                      ;
 ; Top-level Entity Name              ; tb_regfile                                      ;
@@ -60,8 +60,8 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -173,26 +173,31 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Sat Apr 25 23:17:09 2026
+    Info: Processing started: Thu May  7 11:51:32 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off regfile_tb -c regfile_tb --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 0 entities, in source file data_structures.sv
-    Info (12022): Found design unit 1: data_structures (SystemVerilog) File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/data_structures.sv Line: 1
+    Info (12022): Found design unit 1: data_structures (SystemVerilog) File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/data_structures.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
-    Info (12023): Found entity 1: regfile File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/regfile.sv Line: 3
+    Info (12023): Found entity 1: regfile File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/regfile.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file tb_regfile.sv
-    Info (12023): Found entity 1: tb_regfile File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv Line: 3
+    Info (12023): Found entity 1: tb_regfile File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 3
 Info (12127): Elaborating entity "tb_regfile" for the top level hierarchy
-Info (10648): Verilog HDL Display System Task info at tb_regfile.sv(24): LIMPANDO REGISTRADORES PARA COMEÇAR OS TESTES File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv Line: 24
-Info (10648): Verilog HDL Display System Task info at tb_regfile.sv(35): x1 = 1 e rs1Addr = 1 File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv Line: 35
-Info (10648): Verilog HDL Display System Task info at tb_regfile.sv(44): tudo funcionando? File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv Line: 44
-Warning (10175): Verilog HDL warning at tb_regfile.sv(45): ignoring unsupported system task File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv Line: 45
-Info (12128): Elaborating entity "regfile" for hierarchy "regfile:dut" File: /home/leotl/Documentos/RV32-Blueprint/REGFILE_TB/tb_regfile.sv Line: 21
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 653 megabytes
-    Info: Processing ended: Sat Apr 25 23:17:19 2026
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:24
+Warning (10755): Verilog HDL warning at tb_regfile.sv(22): assignments to clk_c create a combinational loop File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 22
+Info (10648): Verilog HDL Display System Task info at tb_regfile.sv(25): Inicializando... File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 25
+Warning (10230): Verilog HDL assignment warning at tb_regfile.sv(40): truncated value with size 32 to match size of target (5) File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 40
+Info (10648): Verilog HDL Display System Task info at tb_regfile.sv(47): x1 = 2004 e rs1addr = 1 File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 47
+Info (10648): Verilog HDL Display System Task info at tb_regfile.sv(63): x1 = 2004 e rs2addr = 2 File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 63
+Info (10648): Verilog HDL Display System Task info at tb_regfile.sv(79): x2 = 2000 File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 79
+Warning (10175): Verilog HDL warning at tb_regfile.sv(94): ignoring unsupported system task File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 94
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:dut" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 20
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "clk_c" is missing source, defaulting to GND File: /home/leotl/Documentos/RV32-Blueprint/TBs/REGFILE_TB/tb_regfile.sv Line: 4
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 656 megabytes
+    Info: Processing ended: Thu May  7 11:51:40 2026
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:23
 
 

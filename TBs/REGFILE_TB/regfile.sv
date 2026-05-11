@@ -1,30 +1,29 @@
 import data_structures::*;
 
 module regfile (
-// Entradas de controle
-    input wire CLK, RESET, WE_c,
+    // Entradas de controle
+    input logic we_c,
+    clk_c,
 
-// Entradas de dados
-    input data_t rd_i,
-    input wire [4:0] rdAddr_i, rs1Addr_i, rs2Addr_i,
+    // Entradas
+    input data_t wdata_i,
+    input logic [4:0] rdaddr_i,
+    rs1addr_i,
+    rs2addr_i,
 
-// Saidas de dados
-    output register_t rs1_o, rs2_o
+    // Saidas
+    output register_t rs1_o,
+    rs2_o
 );
 
-  register_t [30:0] x;
-  const register_t x0 = 0;
+  register_t x[30:0];
 
-  always @(posedge CLK) begin
-    if (!RESET) begin
-      for (int i = 0; i < 31; i++) x[i] <= 0;
-    end else if (WE_c && rdAddr_i != 0) begin
-      x[(rdAddr_i-1)] <= rd_i;
-    end
-
+  always_ff @(posedge clk_c) begin : reg_write
+    if (we_c && rdaddr_i != 0) x[(rdaddr_i-1)] <= wdata_i;
   end
 
-  assign rs1_o = (rs1Addr_i == 0) ? x0 : x[rs1Addr_i-1];
-  assign rs2_o = (rs2Addr_i == 0) ? x0 : x[rs2Addr_i-1];
+  // reg read
+  assign rs1_o = (rs1addr_i == 0) ? 0 : x[rs1addr_i-1];
+  assign rs2_o = (rs2addr_i == 0) ? 0 : x[rs2addr_i-1];
 
 endmodule

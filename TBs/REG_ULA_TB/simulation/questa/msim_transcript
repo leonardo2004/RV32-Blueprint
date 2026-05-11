@@ -1,0 +1,119 @@
+# //  Questa Altera Starter FPGA Edition-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do REG_ULA_TB_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Altera Starter FPGA Edition-64 vmap 2025.2 Lib Mapping Utility 2025.05 May 31 2025
+# vmap work rtl_work 
+# ** Note: (vmap-220) '/opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini' is used as the ini file.
+# Copying /opt/intelFPGA/25.1/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_structures.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 16:26:37 on May 08,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_structures.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package data_structures
+# 
+# Top level modules:
+# 	--none--
+# End time: 16:26:37 on May 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 16:26:37 on May 08,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package integ_sv_unit
+# -- Importing package data_structures
+# -- Compiling module integ
+# 
+# Top level modules:
+# 	integ
+# End time: 16:26:37 on May 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 16:26:37 on May 08,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package inst_memory_sv_unit
+# -- Importing package data_structures
+# -- Compiling module inst_memory
+# 
+# Top level modules:
+# 	inst_memory
+# End time: 16:26:37 on May 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 16:26:37 on May 08,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package data_memory_sv_unit
+# -- Importing package data_structures
+# -- Compiling module data_memory
+# 
+# Top level modules:
+# 	data_memory
+# End time: 16:26:37 on May 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/regfile.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 16:26:37 on May 08,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/regfile.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package regfile_sv_unit
+# -- Importing package data_structures
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 16:26:37 on May 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 16:26:37 on May 08,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package alu_sv_unit
+# -- Importing package data_structures
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 16:26:37 on May 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB {/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv}
+# Questa Altera Starter FPGA Edition-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+# Start time: 16:26:37 on May 08,2026
+# vlog -reportprogress 300 -sv -work work "+incdir+/home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB" /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv 
+# ** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+# -- Compiling package REG_ULA_TB_sv_unit
+# -- Importing package data_structures
+# -- Compiling module REG_ULA_TB
+# ** Warning: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv(6): (vlog-8386) An enum variable 'inst_type_c' of type 'inst_type_t' may only be assigned the same enum typed variable or one of its values. Integer Value '0' requires an explicit cast.
+# 
+# Top level modules:
+# 	REG_ULA_TB
+# End time: 16:26:37 on May 08,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# 
+# 
+# stdin: <EOF>
