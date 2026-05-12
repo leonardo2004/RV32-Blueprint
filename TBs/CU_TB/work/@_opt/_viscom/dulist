@@ -1,0 +1,5 @@
+1 15 data_structures 4 fast 52 /home/leotl/Documentos/RV32-Blueprint/TBs/CU_TB/work 0 0 0 0 52 0
+1 13 cu_tb_sv_unit 4 fast 52 /home/leotl/Documentos/RV32-Blueprint/TBs/CU_TB/work 0 0 0 0 0 0
+1 20 control_unit_sv_unit 4 fast 52 /home/leotl/Documentos/RV32-Blueprint/TBs/CU_TB/work 0 0 0 0 0 0
+1 12 control_unit 4 fast 52 /home/leotl/Documentos/RV32-Blueprint/TBs/CU_TB/work 0 0 0 0 128 0
+1 5 cu_tb 4 fast 52 /home/leotl/Documentos/RV32-Blueprint/TBs/CU_TB/work 0 0 0 0 180 0

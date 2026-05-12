@@ -1,0 +1,5 @@
+__design_bin_path=/home/leotl/Documentos/RV32-Blueprint/TBs/CU_TB
+incr_run_version=16384
+incr_partial_run_stats=0:0
+incr_no_change_stats=0:0
+opt_data_elab=/home/leotl/Documentos/RV32-Blueprint/TBs/CU_TB/work/@_opt
