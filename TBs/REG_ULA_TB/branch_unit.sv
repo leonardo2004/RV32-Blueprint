@@ -5,7 +5,7 @@ module branch_unit (
     pc_i,
     input data_t aluout_i,
     imm_i,
-    input jump_c,
+    input logic jump_c,
     branch_c,
     pcsource_c,
 

@@ -1,5 +1,5 @@
 Analysis & Elaboration report for REG_ULA_TB
-Fri May  8 23:20:09 2026
+Tue May 12 11:49:20 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -10,10 +10,8 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   2. Analysis & Elaboration Summary
   3. Parallel Compilation
   4. Analysis & Elaboration Settings
-  5. Port Connectivity Checks: "integ:integ|control_unit:cu"
-  6. Port Connectivity Checks: "integ:integ|branch_unit:bu"
-  7. Port Connectivity Checks: "integ:integ"
-  8. Analysis & Elaboration Messages
+  5. Port Connectivity Checks: "integ:integ"
+  6. Analysis & Elaboration Messages
 
 
 
@@ -40,7 +38,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Elaboration Summary                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Elaboration Status      ; Successful - Fri May  8 23:20:09 2026           ;
+; Analysis & Elaboration Status      ; Successful - Tue May 12 11:49:20 2026           ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                      ; REG_ULA_TB                                      ;
 ; Top-level Entity Name              ; REG_ULA_TB                                      ;
@@ -62,8 +60,8 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 12          ;
+; Number detected on machine ; 28          ;
+; Maximum allowed            ; 14          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -159,35 +157,17 @@ on the Quartus Prime software download page.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "integ:integ|control_unit:cu"                                                                                                                       ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                                      ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; pcsource_c ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; inst       ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "integ:integ|branch_unit:bu"                                                                                                                       ;
-+------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type  ; Severity ; Details                                                                                                                                      ;
-+------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; pcsource_c ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +--------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "integ:integ"                                                                            ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 ; Port     ; Type   ; Severity ; Details                                                                             ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
-; RESET    ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; aluout_o ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; imm      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; rs1_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; rs2_o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; rdata_o  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; inst_o   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 +----------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -198,55 +178,59 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Fri May  8 23:19:58 2026
+    Info: Processing started: Tue May 12 11:49:07 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off REG_ULA_TB -c REG_ULA_TB --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
 Info (12021): Found 1 design units, including 0 entities, in source file data_structures.sv
-    Info (12022): Found design unit 1: data_structures (SystemVerilog) File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_structures.sv Line: 1
+    Info (12022): Found design unit 1: data_structures (SystemVerilog) File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_structures.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file control_unit.sv
-    Info (12023): Found entity 1: control_unit File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/control_unit.sv Line: 1
+    Info (12023): Found entity 1: control_unit File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/control_unit.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file branch_unit.sv
-    Info (12023): Found entity 1: branch_unit File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/branch_unit.sv Line: 3
+    Info (12023): Found entity 1: branch_unit File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/branch_unit.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file immediate_generator.sv
-    Info (12023): Found entity 1: immediate_generator File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/immediate_generator.sv Line: 3
-Info (12021): Found 1 design units, including 1 entities, in source file integ.sv
-    Info (12023): Found entity 1: integ File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 3
+    Info (12023): Found entity 1: immediate_generator File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/immediate_generator.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file inst_memory.sv
-    Info (12023): Found entity 1: inst_memory File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 3
+    Info (12023): Found entity 1: inst_memory File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file data_memory.sv
-    Info (12023): Found entity 1: data_memory File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 3
+    Info (12023): Found entity 1: data_memory File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
-    Info (12023): Found entity 1: regfile File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/regfile.sv Line: 3
+    Info (12023): Found entity 1: regfile File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/regfile.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
-    Info (12023): Found entity 1: alu File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv Line: 3
+    Info (12023): Found entity 1: alu File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file integ.sv
+    Info (12023): Found entity 1: integ File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file REG_ULA_TB.sv
-    Info (12023): Found entity 1: REG_ULA_TB File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 3
-Warning (10236): Verilog HDL Implicit Net warning at REG_ULA_TB.sv(20): created implicit net for "rs1_o" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at REG_ULA_TB.sv(21): created implicit net for "rs2_o" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 21
+    Info (12023): Found entity 1: REG_ULA_TB File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 3
 Info (12127): Elaborating entity "REG_ULA_TB" for the top level hierarchy
-Warning (10755): Verilog HDL warning at REG_ULA_TB.sv(26): assignments to clk_c create a combinational loop File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 26
-Info (10648): Verilog HDL Display System Task info at REG_ULA_TB.sv(31): Primeira instrução: ADDI x1, x0, 1 File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 31
-Info (12128): Elaborating entity "integ" for hierarchy "integ:integ" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 24
-Info (12128): Elaborating entity "inst_memory" for hierarchy "integ:integ|inst_memory:inst_mem" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 63
-Warning (10850): Verilog HDL warning at inst_memory.sv(19): number of words (1) in memory file does not match the number of elements in the address range [0:1023] File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 19
-Warning (10030): Net "ins_mem.data_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 9
-Warning (10030): Net "ins_mem.waddr_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 9
-Warning (10030): Net "ins_mem.we_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 9
-Info (12128): Elaborating entity "regfile" for hierarchy "integ:integ|regfile:regfile" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 74
-Info (12128): Elaborating entity "alu" for hierarchy "integ:integ|alu:alu" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 87
-Info (12128): Elaborating entity "data_memory" for hierarchy "integ:integ|data_memory:data_mem" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 97
-Info (10264): Verilog HDL Case Statement information at data_memory.sv(47): all case item expressions in this case statement are onehot File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 47
-Info (10264): Verilog HDL Case Statement information at data_memory.sv(62): all case item expressions in this case statement are onehot File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 62
-Info (10264): Verilog HDL Case Statement information at data_memory.sv(75): all case item expressions in this case statement are onehot File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 75
-Info (12128): Elaborating entity "immediate_generator" for hierarchy "integ:integ|immediate_generator:imm_gen" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 103
-Info (12128): Elaborating entity "branch_unit" for hierarchy "integ:integ|branch_unit:bu" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 128
-Info (12128): Elaborating entity "control_unit" for hierarchy "integ:integ|control_unit:cu" File: /home/leotl/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 147
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 9 warnings
-    Info: Peak virtual memory: 835 megabytes
-    Info: Processing ended: Fri May  8 23:20:09 2026
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:21
+Warning (10755): Verilog HDL warning at REG_ULA_TB.sv(27): assignments to clk_c create a combinational loop File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 27
+Info (10648): Verilog HDL Display System Task info at REG_ULA_TB.sv(34): Primeira instrução: ADDI x1, x0, 1 File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 34
+Warning (10175): Verilog HDL warning at REG_ULA_TB.sv(36): ignoring unsupported system task File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 36
+Info (12128): Elaborating entity "integ" for hierarchy "integ:integ" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 25
+Info (12128): Elaborating entity "inst_memory" for hierarchy "integ:integ|inst_memory:inst_mem" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 58
+Warning (10850): Verilog HDL warning at inst_memory.sv(19): number of words (11) in memory file does not match the number of elements in the address range [0:1023] File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 19
+Warning (10030): Net "ins_mem.data_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 9
+Warning (10030): Net "ins_mem.waddr_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 9
+Warning (10030): Net "ins_mem.we_a" at inst_memory.sv(9) has no driver or initial value, using a default initial value '0' File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/inst_memory.sv Line: 9
+Info (12128): Elaborating entity "regfile" for hierarchy "integ:integ|regfile:regfile" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 69
+Info (12128): Elaborating entity "alu" for hierarchy "integ:integ|alu:alu" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 82
+Warning (10230): Verilog HDL assignment warning at alu.sv(106): truncated value with size 64 to match size of target (32) File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv Line: 106
+Warning (10230): Verilog HDL assignment warning at alu.sv(108): truncated value with size 32 to match size of target (1) File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv Line: 108
+Warning (10230): Verilog HDL assignment warning at alu.sv(111): truncated value with size 32 to match size of target (1) File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv Line: 111
+Warning (10230): Verilog HDL assignment warning at alu.sv(112): truncated value with size 32 to match size of target (1) File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/alu.sv Line: 112
+Info (12128): Elaborating entity "data_memory" for hierarchy "integ:integ|data_memory:data_mem" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 92
+Info (10264): Verilog HDL Case Statement information at data_memory.sv(47): all case item expressions in this case statement are onehot File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 47
+Info (10264): Verilog HDL Case Statement information at data_memory.sv(62): all case item expressions in this case statement are onehot File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 62
+Info (10264): Verilog HDL Case Statement information at data_memory.sv(75): all case item expressions in this case statement are onehot File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/data_memory.sv Line: 75
+Info (12128): Elaborating entity "immediate_generator" for hierarchy "integ:integ|immediate_generator:imm_gen" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 98
+Info (12128): Elaborating entity "branch_unit" for hierarchy "integ:integ|branch_unit:bu" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 124
+Info (12128): Elaborating entity "control_unit" for hierarchy "integ:integ|control_unit:cu" File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/integ.sv Line: 143
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "clk_c" is missing source, defaulting to GND File: /home/leo/Documentos/RV32-Blueprint/TBs/REG_ULA_TB/REG_ULA_TB.sv Line: 6
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 810 megabytes
+    Info: Processing ended: Tue May 12 11:49:20 2026
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:36
 
 

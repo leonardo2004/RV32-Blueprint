@@ -1,5 +1,7 @@
+import data_structures::*;
+
 module control_unit (
-    input instruction_t inst,
+    input instruction_t inst_i,
 
     output inst_type_t inst_type_c,
 
@@ -16,9 +18,8 @@ module control_unit (
 
 );
 
-  opcode_t opcode = 0;
-
-  assign opcode = opcode_t'(inst[6:0]);
+  opcode_t opcode;
+  assign opcode = opcode_t'(inst_i[6:0]);
 
   always_comb begin : control_unit
     memwrite_c = 0;

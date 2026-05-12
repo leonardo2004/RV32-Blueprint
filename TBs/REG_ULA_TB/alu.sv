@@ -48,15 +48,15 @@ module alu (
       {OP, 3'd7, 7'd1} :  aluop = REMU;
 
       //OPI
-      {OPI, 3'd0, 7'b???????} :  aluop = ADD;
-      {OPI, 3'd4, 7'b???????} :  aluop = XOR;
-      {OPI, 3'd6, 7'b???????} :  aluop = OR;
-      {OPI, 3'd7, 7'b???????} :  aluop = AND;
-      {OPI, 3'd1, 7'd0} :  aluop = SLL;
-      {OPI, 3'd5, 7'd0} :  aluop = SRL;
+      {OPI, 3'd0, 7'b???????} : aluop = ADD;
+      {OPI, 3'd4, 7'b???????} : aluop = XOR;
+      {OPI, 3'd6, 7'b???????} : aluop = OR;
+      {OPI, 3'd7, 7'b???????} : aluop = AND;
+      {OPI, 3'd1, 7'd0} : aluop = SLL;
+      {OPI, 3'd5, 7'd0} : aluop = SRL;
       {OPI, 3'd5, 7'd32} : aluop = SRA;
-      {OPI, 3'd2, 7'b???????} :  aluop = SLT;
-      {OPI, 3'd3, 7'b???????} :  aluop = SLTU;
+      {OPI, 3'd2, 7'b???????} : aluop = SLT;
+      {OPI, 3'd3, 7'b???????} : aluop = SLTU;
 
       //LOAD
       {LOAD, 3'b???, 7'b???????} : aluop = ADD;
@@ -83,15 +83,8 @@ module alu (
   end
 
   always_comb begin : Op_Generator
-    if (!alusel1_c)
-      op_1 = rs1_i; 
-	 else
-      op_1 = pc_i;
-
-    if (!alusel2_c)
-      op_2 = rs2_i;
-    else
-      op_2 = imm_i;
+    op_1 = (alusel1_c) ? pc_i : rs1_i;
+    op_2 = (alusel2_c) ? imm_i : rs2_i;
   end
 
 
@@ -99,7 +92,7 @@ module alu (
 
   always_comb begin
     aluout_o = 0;
-	 tmp_reg = 0;
+    tmp_reg  = 0;
     case (aluop)
       ADD:    aluout_o = op_1 + op_2;
       SUB:    aluout_o = op_1 - op_2;
@@ -109,12 +102,12 @@ module alu (
       SLL:    aluout_o = op_1 << op_2[4:0];
       SRL:    aluout_o = op_1 >> op_2[4:0];
       SRA:    aluout_o = $signed(op_1) >>> op_2[4:0];
-      SLT:    aluout_o = ($signed(op_1) < $signed(op_2)) ? 1 : 0;
-      SLTU:   aluout_o = (op_1 < op_2) ? 1 : 0;
-      EQUAL:  aluout_o = $signed(op_1) == $signed(op_2);
-      NEQUAL: aluout_o = $signed(op_1) != $signed(op_2);
-      GOET:   aluout_o = ($signed(op_1) >= $signed(op_2)) ? 1 : 0;
-      GETU:   aluout_o = (op_1 >= op_2) ? 1 : 0;
+      SLT:    aluout_o[0] = ($signed(op_1) < $signed(op_2)) ? 1'b1 : 1'b0;
+      SLTU:   aluout_o[0] = (op_1 < op_2) ? 1'b1 : 1'b0;
+      EQUAL:  aluout_o[0] = $signed(op_1) === $signed(op_2);
+      NEQUAL: aluout_o[0] = $signed(op_1) !== $signed(op_2);
+      GOET:   aluout_o[0] = ($signed(op_1) >= $signed(op_2)) ? 1'b1 : 1'b0;
+      GETU:   aluout_o[0] = (op_1 >= op_2) ? 1'b1 : 1'b0;
       PCP4:   aluout_o = op_1 + 4;
       MUL: begin
         tmp_reg  = ($signed(op_1) * $signed(op_2));
@@ -136,6 +129,7 @@ module alu (
       DIVU:   aluout_o = (op_2 == 0) ? {32{1'b1}} : op_1 / op_2;
       REM:    aluout_o = $signed(op_1) % $signed(op_2);
       REMU:   aluout_o = op_1 % op_2;
+      default : begin end
     endcase
   end
 

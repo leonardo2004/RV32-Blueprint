@@ -1,0 +1,1 @@
+/opt/intelFPGA/25.1/questa_fse/linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 934320 work.REG_ULA_TB -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt -id 1-22024d06f52c-6a0342e3-1a087-5de4 +__betafsm

@@ -64,10 +64,10 @@ set_global_assignment -name SYSTEMVERILOG_FILE data_structures.sv
 set_global_assignment -name SYSTEMVERILOG_FILE control_unit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE branch_unit.sv
 set_global_assignment -name SYSTEMVERILOG_FILE immediate_generator.sv
-set_global_assignment -name SYSTEMVERILOG_FILE integ.sv
 set_global_assignment -name SYSTEMVERILOG_FILE inst_memory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE data_memory.sv
 set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
 set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE integ.sv
 set_global_assignment -name SYSTEMVERILOG_FILE REG_ULA_TB.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
