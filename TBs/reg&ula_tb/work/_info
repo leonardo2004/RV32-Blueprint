@@ -1,0 +1,237 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb
+T_opt
+!i145 1
+!i144 0
+Z3 !s110 1779222436
+VBYc<`D`UKRQSBPV[KEB0C2
+04 2 4 work tb fast 0
+=1-9274344c3a8b-6a0cc7a4-abf01-8c4d
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z4 tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+valu
+Z5 2alu.sv
+Z6 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z7 DXx4 work 15 data_structures 0 22 gXUWi5FhDPCOGC0:4]hG72
+DXx4 work 11 alu_sv_unit 0 22 =8f569?K5ljmCNgR=IIQN1
+R3
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 6Pc0nJ;XdiSYo<fP<L^R73
+IO8^eSaIQnE9b1@=<Vn9f]3
+!s105 alu_sv_unit
+S1
+R2
+Z9 w1778620549
+Z10 8alu.sv
+Z11 Falu.sv
+!i122 59
+L0 3 139
+Z12 OL;L;2025.2;82
+31
+Z13 !s108 1779222436.000000
+Z14 !s107 alu.sv|
+Z15 !s90 -reportprogress|300|alu.sv|
+!i113 0
+Z16 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+Xalu_sv_unit
+R5
+R6
+R7
+R3
+V=8f569?K5ljmCNgR=IIQN1
+r1
+!s85 0
+!i10b 1
+!s100 DCh5EE0AdV=^F4l7J1LYa1
+I=8f569?K5ljmCNgR=IIQN1
+!i103 1
+S1
+R2
+R9
+R10
+R11
+!i122 59
+Z17 L0 1 0
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R4
+Xdata_structures
+2data_structures.sv
+R6
+R3
+!i10b 1
+!s100 oCPl[kKWF82j<c6cHg@In1
+IgXUWi5FhDPCOGC0:4]hG72
+S1
+R2
+w1778618964
+8data_structures.sv
+Fdata_structures.sv
+!i122 57
+R17
+VgXUWi5FhDPCOGC0:4]hG72
+R12
+r1
+!s85 0
+31
+R13
+!s107 data_structures.sv|
+!s90 -reportprogress|300|data_structures.sv|
+!i113 0
+R16
+R4
+vregfile
+Z18 2regfile.sv
+R6
+R7
+DXx4 work 15 regfile_sv_unit 0 22 I44__F04P[JWTGR@h?`Gf2
+R3
+R8
+r1
+!s85 0
+!i10b 1
+!s100 `LZeZX1Ef[nj_=aZb0M413
+IE1IDF3DhHTbSXEU:CF<HI3
+!s105 regfile_sv_unit
+S1
+R2
+Z19 w1778263084
+Z20 8regfile.sv
+Z21 Fregfile.sv
+!i122 58
+L0 3 27
+R12
+31
+R13
+Z22 !s107 regfile.sv|
+Z23 !s90 -reportprogress|300|regfile.sv|
+!i113 0
+R16
+R4
+Xregfile_sv_unit
+R18
+R6
+R7
+R3
+VI44__F04P[JWTGR@h?`Gf2
+r1
+!s85 0
+!i10b 1
+!s100 USV]1_6k<M^oeXJ]YBQDV1
+II44__F04P[JWTGR@h?`Gf2
+!i103 1
+S1
+R2
+R19
+R20
+R21
+!i122 58
+R17
+R12
+31
+R13
+R22
+R23
+!i113 0
+R16
+R4
+vtb
+Z24 2tb.sv
+R6
+R7
+DXx4 work 10 tb_sv_unit 0 22 WdYDTLI`3<?1W1Ufh@fG62
+R3
+R8
+r1
+!s85 0
+!i10b 1
+!s100 KOAn68LeSQAB_VPlCJT>k1
+Ie8BfQ3Ef6J<5ZJO_UabPH2
+!s105 tb_sv_unit
+S1
+R2
+Z25 w1779222422
+Z26 8tb.sv
+Z27 Ftb.sv
+!i122 60
+L0 3 120
+R12
+31
+R13
+Z28 !s107 tb.sv|
+Z29 !s90 -reportprogress|300|tb.sv|
+!i113 0
+R16
+R4
+Xtb_sv_unit
+R24
+R6
+R7
+R3
+VWdYDTLI`3<?1W1Ufh@fG62
+r1
+!s85 0
+!i10b 1
+!s100 1Ug9<m=49P7MDK4Jji<`T3
+IWdYDTLI`3<?1W1Ufh@fG62
+!i103 1
+S1
+R2
+R25
+R26
+R27
+!i122 60
+R17
+R12
+31
+R13
+R28
+R29
+!i113 0
+R16
+R4

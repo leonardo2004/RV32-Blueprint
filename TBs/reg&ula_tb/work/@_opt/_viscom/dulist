@@ -1,0 +1,7 @@
+2 15 data_structures 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb/work 0 0 0 0 52 0
+1 10 tb_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb/work 0 0 0 0 0 0
+2 15 regfile_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb/work 0 0 0 0 0 0
+2 11 alu_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb/work 0 0 0 0 0 0
+2 7 regfile 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb/work 0 0 0 0 45 0
+2 3 alu 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb/work 0 0 131072 0 315 0
+1 2 tb 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/reg&ula_tb/work 0 0 0 0 130 0
