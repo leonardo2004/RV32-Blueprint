@@ -43,6 +43,30 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s11f vlog 2025.2 2025.05, May 31 2025
 13
 !s112 1.1
@@ -54,10 +78,10 @@ Z2 d/home/leotl/Documentos/RV32-Blueprint/TBs/alu_tb
 T_opt
 !i145 1
 !i144 0
-!s110 1778620518
-V>62T4LhFo:kNj6NS14VQ<1
+!s110 1778779659
+VmB8dU0VW0iK8YBY]DZ:o]1
 04 6 4 work tb_alu fast 0
-=1-9274344c3a8b-6a039866-209aa-5a91
+=1-4851c50e5641-6a06060b-ac266-1c93
 R1
 !s12f OEM100
 !s12b OEM100
@@ -72,7 +96,7 @@ Z4 2alu.sv
 Z5 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
 Z6 DXx4 work 15 data_structures 0 22 gXUWi5FhDPCOGC0:4]hG72
 DXx4 work 11 alu_sv_unit 0 22 =8f569?K5ljmCNgR=IIQN1
-Z7 !s110 1778620517
+Z7 !s110 1778779657
 Z8 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -82,14 +106,14 @@ IO8^eSaIQnE9b1@=<Vn9f]3
 !s105 alu_sv_unit
 S1
 R2
-Z9 w1778620510
+Z9 w1778620549
 Z10 8alu.sv
 Z11 Falu.sv
-!i122 72
+!i122 111
 L0 3 139
 Z12 OL;L;2025.2;82
 31
-Z13 !s108 1778620517.000000
+Z13 !s108 1778779657.000000
 Z14 !s107 alu.sv|
 Z15 !s90 -reportprogress|300|alu.sv|
 !i113 0
@@ -112,7 +136,7 @@ R2
 R9
 R10
 R11
-!i122 72
+!i122 111
 Z17 L0 1 0
 R12
 31
@@ -134,7 +158,7 @@ R2
 w1778618964
 8data_structures.sv
 Fdata_structures.sv
-!i122 71
+!i122 110
 R17
 VgXUWi5FhDPCOGC0:4]hG72
 R12
@@ -151,22 +175,22 @@ vtb_alu
 Z18 2tb.sv
 R5
 R6
-DXx4 work 10 tb_sv_unit 0 22 L0@@e_8Qc>7B[]J^zh=Fj0
+DXx4 work 10 tb_sv_unit 0 22 ]lhT;PYfdQ2II:f<aIc2_1
 R7
 R8
 r1
 !s85 0
 !i10b 1
-!s100 H?kf:[iHXoM>lo^?8RmKa3
-IE;9M_5GZ=_g`HgRhD1AEi0
+!s100 004Eo0nQ38AZ91W=bcD<B0
+ISQGzF^cN?<8agoWS1Pm622
 !s105 tb_sv_unit
 S1
 R2
-Z19 w1778619196
+Z19 w1778779613
 Z20 8tb.sv
 Z21 Ftb.sv
-!i122 73
-L0 3 224
+!i122 112
+L0 3 346
 R12
 31
 R13
@@ -180,19 +204,19 @@ R18
 R5
 R6
 R7
-VL0@@e_8Qc>7B[]J^zh=Fj0
+V]lhT;PYfdQ2II:f<aIc2_1
 r1
 !s85 0
 !i10b 1
-!s100 lg;0Y^AaaCC7CTS6m[<?40
-IL0@@e_8Qc>7B[]J^zh=Fj0
+!s100 9@cHDLQU]<hAPR@D6jPI]0
+I]lhT;PYfdQ2II:f<aIc2_1
 !i103 1
 S1
 R2
 R19
 R20
 R21
-!i122 73
+!i122 112
 R17
 R12
 31

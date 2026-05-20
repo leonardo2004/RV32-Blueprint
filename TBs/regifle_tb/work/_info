@@ -1,0 +1,171 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+R0
+R1
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z2 d/home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb
+T_opt
+!i145 1
+!i144 0
+!s110 1778780625
+V^U^kKIIgV^2WGjKU90@^00
+04 10 4 work tb_regfile fast 0
+=3-4851c50e5641-6a0609d1-b25fa-228a
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+R2
+Xdata_structures
+2data_structures.sv
+Z4 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z5 !s110 1778780870
+!i10b 1
+!s100 U=MQ^[c2Cz;2QPkCDLNPD3
+Ie6ohOg0`Xn4=L@;L_9Z8b3
+S1
+R2
+w1778292803
+8data_structures.sv
+Fdata_structures.sv
+!i122 24
+Z6 L0 1 0
+Ve6ohOg0`Xn4=L@;L_9Z8b3
+Z7 OL;L;2025.2;82
+r1
+!s85 0
+31
+Z8 !s108 1778780870.000000
+!s107 data_structures.sv|
+!s90 -reportprogress|300|data_structures.sv|
+!i113 0
+Z9 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+vregfile
+Z10 2regfile.sv
+R4
+Z11 DXx4 work 15 data_structures 0 22 e6ohOg0`Xn4=L@;L_9Z8b3
+DXx4 work 15 regfile_sv_unit 0 22 I44__F04P[JWTGR@h?`Gf2
+R5
+Z12 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 `LZeZX1Ef[nj_=aZb0M413
+IE1IDF3DhHTbSXEU:CF<HI3
+!s105 regfile_sv_unit
+S1
+R2
+Z13 w1778263084
+Z14 8regfile.sv
+Z15 Fregfile.sv
+!i122 25
+L0 3 27
+R7
+31
+R8
+Z16 !s107 regfile.sv|
+Z17 !s90 -reportprogress|300|regfile.sv|
+!i113 0
+R9
+R3
+Xregfile_sv_unit
+R10
+R4
+R11
+R5
+VI44__F04P[JWTGR@h?`Gf2
+r1
+!s85 0
+!i10b 1
+!s100 USV]1_6k<M^oeXJ]YBQDV1
+II44__F04P[JWTGR@h?`Gf2
+!i103 1
+S1
+R2
+R13
+R14
+R15
+!i122 25
+R6
+R7
+31
+R8
+R16
+R17
+!i113 0
+R9
+R3
+vtb_regfile
+Z18 2tb_regfile.sv
+R4
+R11
+DXx4 work 18 tb_regfile_sv_unit 0 22 7Fo]I]KU]^?ZSC<;fz_aL1
+R5
+R12
+r1
+!s85 0
+!i10b 1
+!s100 KdWK4gJ6:8B^;5f<7o6K>0
+ImlRVMQ[e_j?`KLTU@`Yk:0
+!s105 tb_regfile_sv_unit
+S1
+R2
+Z19 w1778780619
+Z20 8tb_regfile.sv
+Z21 Ftb_regfile.sv
+!i122 26
+L0 3 49
+R7
+31
+R8
+!s107 tb_regfile.sv|
+Z22 !s90 -reportprogress|300|tb_regfile.sv|
+!i113 0
+R9
+R3
+Xtb_regfile_sv_unit
+R18
+R4
+R11
+R5
+V7Fo]I]KU]^?ZSC<;fz_aL1
+r1
+!s85 0
+!i10b 1
+!s100 WlEQ:Q1I?@egX?SQ3eg>71
+I7Fo]I]KU]^?ZSC<;fz_aL1
+!i103 1
+S1
+R2
+R19
+R20
+R21
+!i122 26
+R6
+R7
+31
+R8
+Z23 !s107 tb_regfile.sv|
+R22
+!i113 0
+R9
+R3

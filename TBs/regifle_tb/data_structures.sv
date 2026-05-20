@@ -1,0 +1,61 @@
+package data_structures;
+  typedef logic [31:0] register_t;
+  typedef logic [31:0] instruction_t;
+  typedef logic [31:0] address_t;
+  typedef logic [31:0] data_t;
+
+  typedef logic [4:0] reg_addr_t;
+  typedef logic [6:0] funct7_t;
+  typedef logic [2:0] funct3_t;
+
+  typedef enum logic [2:0] {
+    OP = 3'b000,
+    OPI = 3'b001,
+    AUIPC = 3'b010,
+    BRANCH = 3'b011,
+    JUMP = 3'b100,
+    LOAD = 3'b101,
+    STORE = 3'b110
+  } inst_type_t;
+
+  typedef enum logic [6:0] {
+    opcode_OP = 7'b0110011,
+    opcode_OP_IMM = 7'b0010011,
+    opcode_LOAD = 7'b0000011,
+    opcode_STORE = 7'b0100011,
+    opcode_BRANCH = 7'b1100011,
+    opcode_JAL = 7'b1101111,
+    opcode_JALR = 7'b1100111,
+    opcode_LUI = 7'b0110111,
+    opcode_AUIPC = 7'b0010111
+  } opcode_t;
+
+  typedef enum logic [4:0] {
+    ADD = 5'b00000,
+    SUB = 5'b00001,
+    XOR = 5'b00010,
+    OR = 5'b00011,
+    AND = 5'b00100,
+    SLL = 5'b00101,
+    SRL = 5'b00110,
+    SRA = 5'b00111,
+    SLT = 5'b01000,
+    SLTU = 5'b01001,
+    EQUAL = 5'b01010,
+    NEQUAL = 5'b01011,
+    GOET = 5'b01100,
+    GETU = 5'b01101,
+    PCP4 = 5'b01110,
+    MUL = 5'b01111,
+    MULH = 5'b10000,
+    MULHSU = 5'b10001,
+    MULHU = 5'b10010,
+    DIV = 5'b10011,
+    DIVU = 5'b10100,
+    REM = 5'b10101,
+    REMU = 5'b10110
+  } aluop_t;
+
+
+
+endpackage

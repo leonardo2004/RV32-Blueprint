@@ -1,0 +1,164 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2025.2 2025.05, May 31 2025
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/leotl/Documentos/RV32-Blueprint/TBs/datamemory_tb
+T_opt
+!i145 1
+!i144 0
+Z2 !s110 1779222890
+VKfCa5@eZb46=>bRD685cW0
+04 2 4 work tb fast 0
+=1-9274344c3a8b-6a0cc96a-41acd-9155
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U2 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2025.2;82
+vdata_memory
+Z4 2data_memory.sv
+Z5 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z6 DXx4 work 15 data_structures 0 22 gXUWi5FhDPCOGC0:4]hG72
+DXx4 work 19 data_memory_sv_unit 0 22 S;[8IGZ^Lj8[S7oIR7Xj41
+Z7 !s110 1779222889
+Z8 VDg1SIo80bB@j0V0VzS_@n1
+r1
+!s85 0
+!i10b 1
+!s100 ?oBnDWWJzGHN<m<R:_nO83
+IAoblJPO^O<bhU]d:XlKME2
+!s105 data_memory_sv_unit
+S1
+R1
+Z9 w1778197222
+Z10 8data_memory.sv
+Z11 Fdata_memory.sv
+!i122 1
+L0 3 86
+Z12 OL;L;2025.2;82
+31
+Z13 !s108 1779222889.000000
+Z14 !s107 data_memory.sv|
+Z15 !s90 -reportprogress|300|data_memory.sv|
+!i113 0
+Z16 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+Xdata_memory_sv_unit
+R4
+R5
+R6
+R7
+VS;[8IGZ^Lj8[S7oIR7Xj41
+r1
+!s85 0
+!i10b 1
+!s100 maFcoKNDcl^_c<^GOlg7j2
+IS;[8IGZ^Lj8[S7oIR7Xj41
+!i103 1
+S1
+R1
+R9
+R10
+R11
+!i122 1
+Z17 L0 1 0
+R12
+31
+R13
+R14
+R15
+!i113 0
+R16
+R3
+Xdata_structures
+2data_structures.sv
+R5
+R7
+!i10b 1
+!s100 oCPl[kKWF82j<c6cHg@In1
+IgXUWi5FhDPCOGC0:4]hG72
+S1
+R1
+w1778618964
+8data_structures.sv
+Fdata_structures.sv
+!i122 0
+R17
+VgXUWi5FhDPCOGC0:4]hG72
+R12
+r1
+!s85 0
+31
+R13
+!s107 data_structures.sv|
+!s90 -reportprogress|300|data_structures.sv|
+!i113 0
+R16
+R3
+vtb
+Z18 2tb.sv
+R5
+R6
+DXx4 work 10 tb_sv_unit 0 22 _GJjl;jP[XTgb:HmPAYC91
+R2
+R8
+r1
+!s85 0
+!i10b 1
+!s100 `zMI?K2GK<X7eM1fPI38m2
+I;HS4Rfhg^Q5NI2JZQ;e9A1
+!s105 tb_sv_unit
+S1
+R1
+Z19 w1779222791
+Z20 8tb.sv
+Z21 Ftb.sv
+!i122 2
+L0 3 58
+R12
+31
+Z22 !s108 1779222890.000000
+Z23 !s107 tb.sv|
+Z24 !s90 -reportprogress|300|tb.sv|
+!i113 0
+R16
+R3
+Xtb_sv_unit
+R18
+R5
+R6
+R2
+V_GJjl;jP[XTgb:HmPAYC91
+r1
+!s85 0
+!i10b 1
+!s100 >`KBaRzOcJTD2TZ_z7cfB3
+I_GJjl;jP[XTgb:HmPAYC91
+!i103 1
+S1
+R1
+R19
+R20
+R21
+!i122 2
+R17
+R12
+31
+R22
+R23
+R24
+!i113 0
+R16
+R3

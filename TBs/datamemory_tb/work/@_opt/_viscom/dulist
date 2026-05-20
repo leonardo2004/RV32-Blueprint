@@ -1,0 +1,5 @@
+1 15 data_structures 4 fast 60 /home/leotl/Documentos/RV32-Blueprint/TBs/datamemory_tb/work 0 0 0 0 52 0
+1 10 tb_sv_unit 4 fast 60 /home/leotl/Documentos/RV32-Blueprint/TBs/datamemory_tb/work 0 0 0 0 0 0
+1 19 data_memory_sv_unit 4 fast 60 /home/leotl/Documentos/RV32-Blueprint/TBs/datamemory_tb/work 0 0 0 0 0 0
+1 11 data_memory 4 fast 60 /home/leotl/Documentos/RV32-Blueprint/TBs/datamemory_tb/work 0 0 131072 0 243 0
+1 2 tb 4 fast 60 /home/leotl/Documentos/RV32-Blueprint/TBs/datamemory_tb/work 0 0 0 0 87 0

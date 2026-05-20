@@ -40,6 +40,7 @@ module tb_alu ();
     alusel2_c = 0;
     #10;
 
+    /*
     $display("Instruções tipo R - Aritméticas");
     inst_type_c = OP;
     alusel1_c = 0;
@@ -114,8 +115,10 @@ module tb_alu ();
     funct3_i = 3'd7;
     funct7_i = 7'd1;
     #10;
+    */
+
     /*
-    $display("Instruções tipo R - Deslocamentos");
+    $display("Instruções tipo R - Shift");
 
     //SLL
     rs1_i = 32'h0000FFFF;
@@ -137,7 +140,7 @@ module tb_alu ();
     funct3_i = 3'd5;
     funct7_i = 7'd32;
     #10;
-*/
+    */
 
     /*
     $display("Instruções do tipo R - Lógicas");
@@ -164,60 +167,179 @@ module tb_alu ();
 
 
     //SLT
-    rs1_i = 32'd100;
-    rs2_i = 32'd10;
+    rs1_i = 32'd10;
+    rs2_i = 32'd100;
     funct3_i = 3'd2;
     funct7_i = 7'd0;
     #10;
 
     //SLTU
-    rs1_i = 32'd100;
-    rs2_i = 32'd10;
+    rs1_i = 32'd10;
+    rs2_i = 32'd100;
     funct3_i = 3'd3;
     funct7_i = 7'd0;
     #10;
+*/
 
-    /*--- 3. Test ADDI (I-Type) ---
-    // OPI, funct3 = 0
-    rs1_i = 32'd100;
-    imm_i = 32'd75;
+    /*
+    $display("Instruções tipo I");
     inst_type_c = OPI;
-    funct3_i = 3'd0;
     alusel1_c = 0;
     alusel2_c = 1;  // op1 = rs1, op2 = imm
+
+    // ADDI
+    rs1_i = 32'd100;
+    imm_i = 32'd75;
+    funct3_i = 3'd0;
     #10;
 
+    // XORI
+    rs1_i = 32'd1;
+    imm_i = 32'd3;
+    funct3_i = 3'd4;
+    #10;
 
+    // ORI
+    rs1_i = 32'd1;
+    imm_i = 32'd2;
+    funct3_i = 3'd6;
+    #10;
 
-    // --- 5. Test BRANCH (BEQ) ---
-    // BRANCH, funct3 = 0 (EQUAL)
+    // ANDI
+    rs1_i = 32'd1;
+    imm_i = 32'd3;
+    funct3_i = 3'd7;
+    #10;
+
+    // SLL
+    rs1_i = 32'd1024;
+    imm_i = 32'd1;
+    funct3_i = 3'd1;
+    funct7_i = 7'd0;
+    #10;
+
+    // SRL
+    rs1_i = 32'd1024;
+    imm_i = 32'd1;
+    funct3_i = 3'd5;
+    funct7_i = 7'd0;
+    #10;
+
+    // SRA
+    rs1_i = -32'd1024;
+    imm_i = 32'd1;
+    funct3_i = 3'd5;
+    funct7_i = 7'd32;
+    #10;
+
+    // SLT
+    rs1_i = 32'd1024;
+    imm_i = -32'd1;
+    funct3_i = 3'd2;
+    funct7_i = 7'd32;
+    #10;
+
+    // SLTU
+    rs1_i = 32'd1024;
+    imm_i = -32'd1;
+    funct3_i = 3'd3;
+    funct7_i = 7'd32;
+    #10;
+
+    */
+
+    /*
+    $display("Instruções LOAD e Instruções STORE");
+    alusel1_c = 0;
+    alusel2_c = 1;
+
+    //LOAD
+    inst_type_c = LOAD;
+    rs1_i = 32'h00000000;
+    imm_i = 32'h0000000F;
+    #10;
+
+    //STORE
+    inst_type_c = STORE;
+    #10;
+*/
+
+/*
+    $display("Instruções tipo B");
+    inst_type_c = BRANCH;
+    alusel1_c = 0;
+    alusel2_c = 0;
+
+    //BEQ
     rs1_i = 32'd50;
     rs2_i = 32'd50;
-    inst_type_c = BRANCH;
     funct3_i = 3'd0;
-    funct7_i = 7'b0;
     #10;
-    // Make them not equal to see the output drop to 0
+
     rs2_i = 32'd51;
     #10;
 
-    // --- 6. Test JUMP (JAL/JALR) ---
-    // Requires PC + 4
+    //BNE
+    rs1_i = 32'd50;
+    rs2_i = 32'd50;
+    funct3_i = 3'd1;
+    #10;
+
+    rs2_i = 32'd51;
+    #10;
+
+    //BLT
+    rs1_i = 32'd50;
+    rs2_i = -32'd50;
+    funct3_i = 3'd4;
+    #10;
+
+    rs2_i = 32'd51;
+    #10;
+
+    //BGE
+    rs1_i = 32'd50;
+    rs2_i = -32'd50;
+    funct3_i = 3'd5;
+    #10;
+
+    rs2_i = 32'd50;
+    #10;
+    rs2_i = 32'd51;
+    #10;
+    //BLTU
+    rs1_i = 32'd50;
+    rs2_i = 32'd50;
+    funct3_i = 3'd6;
+    #10;
+
+    rs2_i = 32'd51;
+    #10;
+
+    //BGEU
+    rs1_i = 32'd50;
+    rs2_i = 32'd50;
+    funct3_i = 3'd7;
+    #10;
+
+    rs2_i = 32'd51;
+    #10;
+    rs2_i = -32'd51;
+    #10;
+
+    */
+    $display("Instruções tipo J");
+    //JAL E JALR
     pc_i = 32'h00001004;
     inst_type_c = JUMP;
     alusel1_c = 1;  // op1 = pc_i
     #10;
 
-    // --- 7. Test MUL (M Extension) ---
-    // OP, funct3 = 0, funct7 = 1
-    rs1_i = 32'd7;
-    rs2_i = 32'd6;
-    inst_type_c = OP;
-    funct3_i = 3'd0;
-    funct7_i = 7'd1;
-    alusel1_c = 0;
-    alusel2_c = 0;
-    #10;*/
+    //AUIPC
+    imm_i = 4;
+    alusel2_c = 1;
+    inst_type_c = AUIPC;
+    #10;
 
     $display("Fim");
     $stop;  // Pauses ModelSim instead of closing it completely
