@@ -1,6 +1,6 @@
 addi x5, x0, 0
 addi x6, x0, 1
-addi x10, x0, 10
+addi x10, x0, 7
 addi x28, x0, 1
 
 loop:

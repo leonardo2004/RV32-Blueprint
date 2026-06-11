@@ -12,7 +12,7 @@ module inst_memory (
   //modificar para inserir programas
 
   initial begin
-    $readmemh("dados.txt",ins_mem);
+    $readmemh("inst.hex",ins_mem);
   end
 
   assign inst_o = (!RESET) ? 0 : ins_mem[addr_i[31:2]];
