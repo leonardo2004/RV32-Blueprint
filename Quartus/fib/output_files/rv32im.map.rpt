@@ -1,0 +1,521 @@
+Analysis & Synthesis report for rv32im
+Fri Jul 10 20:35:36 2026
+Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for Inferred Entity Instance: integ:integ|alu:alu|lpm_divide:Mod0
+ 11. Parameter Settings for Inferred Entity Instance: integ:integ|alu:alu|lpm_divide:Div0
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Jul 10 20:35:35 2026           ;
+; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
+; Revision Name                      ; rv32im                                          ;
+; Top-level Entity Name              ; rv32im                                          ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 65,182                                          ;
+;     Total combinational functions  ; 31,358                                          ;
+;     Dedicated logic registers      ; 34,081                                          ;
+; Total registers                    ; 34081                                           ;
+; Total pins                         ; 130                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                            ; rv32im             ; rv32im             ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                            ; On                 ; Off                ;
+; Maximum processors allowed for parallel compilation              ; 11                 ;                    ;
+; Verilog Show LMF Mapping Messages                                ; Off                ;                    ;
+; Verilog Version                                                  ; SystemVerilog_2005 ; Verilog_2001       ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 11          ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 11          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.2%      ;
+;     Processor 3            ;   0.2%      ;
+;     Processor 4            ;   0.2%      ;
+;     Processor 5            ;   0.2%      ;
+;     Processor 6            ;   0.2%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-11        ;   0.1%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                ;
++----------------------------------+-----------------+---------------------------------------------+--------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                   ; File Name with Absolute Path                                             ; Library ;
++----------------------------------+-----------------+---------------------------------------------+--------------------------------------------------------------------------+---------+
+; rv32im.sv                        ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/rv32im.sv              ;         ;
+; regfile.sv                       ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/regfile.sv             ;         ;
+; integ.sv                         ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv               ;         ;
+; inst_memory.sv                   ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv         ;         ;
+; immediate_generator.sv           ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/immediate_generator.sv ;         ;
+; data_structures.sv               ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/data_structures.sv     ;         ;
+; data_memory.sv                   ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/data_memory.sv         ;         ;
+; control_unit.sv                  ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/control_unit.sv        ;         ;
+; branch_unit.sv                   ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/branch_unit.sv         ;         ;
+; alu.sv                           ; yes             ; User SystemVerilog HDL File                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv                 ;         ;
+; fib.hex                          ; yes             ; Auto-Found Hexadecimal (Intel-Format) File  ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/fib.hex                ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                                ; /opt/intelFPGA/25.1/quartus/libraries/megafunctions/lpm_divide.tdf       ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                                ; /opt/intelFPGA/25.1/quartus/libraries/megafunctions/abs_divider.inc      ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                                ; /opt/intelFPGA/25.1/quartus/libraries/megafunctions/sign_div_unsign.inc  ;         ;
+; aglobal251.inc                   ; yes             ; Megafunction                                ; /opt/intelFPGA/25.1/quartus/libraries/megafunctions/aglobal251.inc       ;         ;
+; db/lpm_divide_cqo.tdf            ; yes             ; Auto-Generated Megafunction                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/lpm_divide_cqo.tdf  ;         ;
+; db/abs_divider_4dg.tdf           ; yes             ; Auto-Generated Megafunction                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/abs_divider_4dg.tdf ;         ;
+; db/alt_u_div_6af.tdf             ; yes             ; Auto-Generated Megafunction                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/alt_u_div_6af.tdf   ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/add_sub_7pc.tdf     ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/add_sub_8pc.tdf     ;         ;
+; db/lpm_abs_i0a.tdf               ; yes             ; Auto-Generated Megafunction                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/lpm_abs_i0a.tdf     ;         ;
+; db/lpm_divide_92p.tdf            ; yes             ; Auto-Generated Megafunction                 ; /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/lpm_divide_92p.tdf  ;         ;
++----------------------------------+-----------------+---------------------------------------------+--------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary          ;
++---------------------------------------------+--------+
+; Resource                                    ; Usage  ;
++---------------------------------------------+--------+
+; Estimated Total logic elements              ; 65,182 ;
+;                                             ;        ;
+; Total combinational functions               ; 31358  ;
+; Logic element usage by number of LUT inputs ;        ;
+;     -- 4 input functions                    ; 28873  ;
+;     -- 3 input functions                    ; 2073   ;
+;     -- <=2 input functions                  ; 412    ;
+;                                             ;        ;
+; Logic elements by mode                      ;        ;
+;     -- normal mode                          ; 30064  ;
+;     -- arithmetic mode                      ; 1294   ;
+;                                             ;        ;
+; Total registers                             ; 34081  ;
+;     -- Dedicated logic registers            ; 34081  ;
+;     -- I/O registers                        ; 0      ;
+;                                             ;        ;
+; I/O pins                                    ; 130    ;
+;                                             ;        ;
+; Embedded Multiplier 9-bit elements          ; 0      ;
+;                                             ;        ;
+; Maximum fan-out node                        ; clk_c  ;
+; Maximum fan-out                             ; 34049  ;
+; Total fan-out                               ; 224653 ;
+; Average fan-out                             ; 3.42   ;
++---------------------------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                          ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |rv32im                                      ; 31358 (47)          ; 34081 (33)                ; 0           ; 0            ; 0       ; 0         ; 130  ; 0            ; |rv32im                                                                                                                                       ; rv32im              ; work         ;
+;    |integ:integ|                             ; 31311 (175)         ; 34048 (32)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ                                                                                                                           ; integ               ; work         ;
+;       |alu:alu|                              ; 3009 (636)          ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu                                                                                                                   ; alu                 ; work         ;
+;          |lpm_divide:Div0|                   ; 1081 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Div0                                                                                                   ; lpm_divide          ; work         ;
+;             |lpm_divide_92p:auto_generated|  ; 1081 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated                                                                     ; lpm_divide_92p      ; work         ;
+;                |abs_divider_4dg:divider|     ; 1081 (33)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider                                             ; abs_divider_4dg     ; work         ;
+;                   |alt_u_div_6af:divider|    ; 1048 (1048)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider                       ; alt_u_div_6af       ; work         ;
+;          |lpm_divide:Mod0|                   ; 1292 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0                                                                                                   ; lpm_divide          ; work         ;
+;             |lpm_divide_cqo:auto_generated|  ; 1292 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated                                                                     ; lpm_divide_cqo      ; work         ;
+;                |abs_divider_4dg:divider|     ; 1292 (32)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider                                             ; abs_divider_4dg     ; work         ;
+;                   |alt_u_div_6af:divider|    ; 1151 (1148)         ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider                       ; alt_u_div_6af       ; work         ;
+;                      |add_sub_7pc:add_sub_0| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider|add_sub_7pc:add_sub_0 ; add_sub_7pc         ; work         ;
+;                      |add_sub_8pc:add_sub_1| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc         ; work         ;
+;                   |lpm_abs_i0a:my_abs_den|   ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_den                      ; lpm_abs_i0a         ; work         ;
+;                   |lpm_abs_i0a:my_abs_num|   ; 45 (45)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num                      ; lpm_abs_i0a         ; work         ;
+;       |branch_unit:bu|                       ; 97 (97)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|branch_unit:bu                                                                                                            ; branch_unit         ; work         ;
+;       |control_unit:cu|                      ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|control_unit:cu                                                                                                           ; control_unit        ; work         ;
+;       |data_memory:data_mem|                 ; 26341 (26341)       ; 33024 (33024)             ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|data_memory:data_mem                                                                                                      ; data_memory         ; work         ;
+;       |immediate_generator:imm_gen|          ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|immediate_generator:imm_gen                                                                                               ; immediate_generator ; work         ;
+;       |inst_memory:inst_mem|                 ; 205 (205)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|inst_memory:inst_mem                                                                                                      ; inst_memory         ; work         ;
+;       |regfile:regfile|                      ; 1431 (1431)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|regfile:regfile                                                                                                           ; regfile             ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 34081 ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 33855 ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[0][22]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[1][25]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[2][12]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[3][3]          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[4][24]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[5][3]          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[6][9]          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[7][13]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[8][1]          ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[9][29]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[10][18]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[11][15]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[12][20]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[13][27]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[14][15]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[15][26]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[16][17]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[17][24]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[18][31]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[19][10]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[20][6]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[21][14]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[22][14]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[23][17]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[24][24]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[25][31]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[26][1]         ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[27][21]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[28][24]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[29][24]        ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[30][26]        ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |rv32im|integ:integ|pc[5]                            ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_data[17] ;
+; 1025:1             ; 32 bits   ; 21856 LEs     ; 21856 LEs            ; 0 LEs                  ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|mem_data[2] ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |rv32im|integ:integ|regfile:regfile|rs1_o[6]         ;
+; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |rv32im|integ:integ|regfile:regfile|rs2_o[4]         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |rv32im|integ:integ|Mux2                             ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |rv32im|integ:integ|Mux5                             ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |rv32im|integ:integ|Mux8                             ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |rv32im|integ:integ|Mux21                            ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 40 LEs               ; 15 LEs                 ; No         ; |rv32im|integ:integ|Mux18                            ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector14               ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector22               ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 49 LEs               ; 28 LEs                 ; No         ; |rv32im|integ:integ|Mux31                            ;
+; 23:1               ; 4 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector6                ;
+; 23:1               ; 4 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector24               ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector3                ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector28               ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector1                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: integ:integ|alu:alu|lpm_divide:Mod0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                    ;
+; LPM_WIDTHD             ; 32             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_cqo ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: integ:integ|alu:alu|lpm_divide:Div0 ;
++------------------------+----------------+--------------------------------------------+
+; Parameter Name         ; Value          ; Type                                       ;
++------------------------+----------------+--------------------------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                                    ;
+; LPM_WIDTHD             ; 32             ; Untyped                                    ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                    ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                    ;
+; LPM_PIPELINE           ; 0              ; Untyped                                    ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                    ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                    ;
+; CBXI_PARAMETER         ; lpm_divide_92p ; Untyped                                    ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                    ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                    ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                 ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                               ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                               ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                             ;
++------------------------+----------------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 130                         ;
+; cycloneiii_ff         ; 34081                       ;
+;     ENA               ; 33855                       ;
+;     SCLR              ; 32                          ;
+;     plain             ; 194                         ;
+; cycloneiii_lcell_comb ; 31358                       ;
+;     arith             ; 1294                        ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 89                          ;
+;         3 data inputs ; 1204                        ;
+;     normal            ; 30064                       ;
+;         0 data inputs ; 61                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 259                         ;
+;         3 data inputs ; 869                         ;
+;         4 data inputs ; 28873                       ;
+;                       ;                             ;
+; Max LUT depth         ; 162.80                      ;
+; Average LUT depth     ; 80.51                       ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:04:43     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+    Info: Processing started: Fri Jul 10 20:30:31 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rv32im -c rv32im
+Info (20032): Parallel compilation is enabled and will use up to 11 processors
+Info (12021): Found 1 design units, including 1 entities, in source file rv32im.sv
+    Info (12023): Found entity 1: rv32im File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/rv32im.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.sv
+    Info (12023): Found entity 1: regfile File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/regfile.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file integ.sv
+    Info (12023): Found entity 1: integ File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file inst_memory.sv
+    Info (12023): Found entity 1: inst_memory File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file immediate_generator.sv
+    Info (12023): Found entity 1: immediate_generator File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/immediate_generator.sv Line: 3
+Info (12021): Found 1 design units, including 0 entities, in source file data_structures.sv
+    Info (12022): Found design unit 1: data_structures (SystemVerilog) File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/data_structures.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file data_memory.sv
+    Info (12023): Found entity 1: data_memory File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/data_memory.sv Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file control_unit.sv
+    Info (12023): Found entity 1: control_unit File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/control_unit.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file branch_unit.sv
+    Info (12023): Found entity 1: branch_unit File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/branch_unit.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
+    Info (12023): Found entity 1: alu File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 3
+Info (12127): Elaborating entity "rv32im" for the top level hierarchy
+Info (12128): Elaborating entity "integ" for hierarchy "integ:integ" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/rv32im.sv Line: 25
+Info (12128): Elaborating entity "inst_memory" for hierarchy "integ:integ|inst_memory:inst_mem" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 52
+Warning (10850): Verilog HDL warning at inst_memory.sv(15): number of words (92) in memory file does not match the number of elements in the address range [0:255] File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 15
+Warning (10030): Net "rom.data_a" at inst_memory.sv(8) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 8
+Warning (10030): Net "rom.waddr_a" at inst_memory.sv(8) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 8
+Warning (10030): Net "rom.we_a" at inst_memory.sv(8) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 8
+Info (12128): Elaborating entity "regfile" for hierarchy "integ:integ|regfile:regfile" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 64
+Info (12128): Elaborating entity "alu" for hierarchy "integ:integ|alu:alu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 77
+Info (12128): Elaborating entity "data_memory" for hierarchy "integ:integ|data_memory:data_mem" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 89
+Info (12128): Elaborating entity "immediate_generator" for hierarchy "integ:integ|immediate_generator:imm_gen" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 95
+Info (12128): Elaborating entity "branch_unit" for hierarchy "integ:integ|branch_unit:bu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 121
+Info (12128): Elaborating entity "control_unit" for hierarchy "integ:integ|control_unit:cu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 142
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/rv32im.ram0_inst_memory_38b34dae.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "integ:integ|alu:alu|Mod0" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 134
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "integ:integ|alu:alu|Div0" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 131
+Info (12130): Elaborated megafunction instantiation "integ:integ|alu:alu|lpm_divide:Mod0" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 134
+Info (12133): Instantiated megafunction "integ:integ|alu:alu|lpm_divide:Mod0" with the following parameter: File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 134
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_cqo.tdf
+    Info (12023): Found entity 1: lpm_divide_cqo File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/lpm_divide_cqo.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_4dg.tdf
+    Info (12023): Found entity 1: abs_divider_4dg File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/abs_divider_4dg.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_6af.tdf
+    Info (12023): Found entity 1: alt_u_div_6af File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/alt_u_div_6af.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/add_sub_8pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_i0a.tdf
+    Info (12023): Found entity 1: lpm_abs_i0a File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/lpm_abs_i0a.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "integ:integ|alu:alu|lpm_divide:Div0" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 131
+Info (12133): Instantiated megafunction "integ:integ|alu:alu|lpm_divide:Div0" with the following parameter: File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 131
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_92p.tdf
+    Info (12023): Found entity 1: lpm_divide_92p File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/lpm_divide_92p.tdf Line: 25
+Info (13014): Ignored 124 buffer(s)
+    Info (13016): Ignored 124 CARRY_SUM buffer(s)
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/output_files/rv32im.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 65376 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 66 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 65246 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 925 megabytes
+    Info: Processing ended: Fri Jul 10 20:35:36 2026
+    Info: Elapsed time: 00:05:05
+    Info: Total CPU time (on all processors): 00:05:15
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/output_files/rv32im.map.smsg.
+
+

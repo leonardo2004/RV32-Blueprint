@@ -18,9 +18,19 @@ vsim -voptargs="+acc" work.tb
 
 view wave
 
+add wave -divider "Debug"
+add wave -radix unsigned /tb/integ/imm_gen/imm_o
+add wave -radix decimal /tb/systeminput
+add wave -radix decimal /tb/systemoutput
+add wave -radix unsigned /tb/integ/rs1addr
+add wave -radix unsigned /tb/integ/rs2addr
+add wave -radix unsigned /tb/integ/wdata
+
 add wave -divider "Entradas de controle"
-add wave -radix binary /tb/integ/clk_c
+add wave -radix binary /tb/integ/clk_i
 add wave -radix binary /tb/integ/RESET
+
+add wave -radix binary /tb/integ/ebreak_c
 
 add wave -divider "PC"
 add wave -radix hexadecimal /tb/integ/pc

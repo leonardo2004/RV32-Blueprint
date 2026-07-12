@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at integ.sv(18): object "halt" differs only in case from object "Halt" in the same scope File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 18

@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Jul 10 20:35:35 2026
+Quartus Prime Version : 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
+Revision Name : rv32im
+Top-level Entity Name : rv32im
+Family : Cyclone IV E
+Total logic elements : 65,182
+    Total combinational functions : 31,358
+    Dedicated logic registers : 34,081
+Total registers : 34081
+Total pins : 130
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
