@@ -11,9 +11,6 @@ vsim -voptargs="+acc" work.tb
 
 view wave
 
-add wave -divider "Entradas de controle"
-add wave -color "Gray60" -radix binary /tb/dut/RESET
-
 add wave -divider "Entradas de endereço"
 add wave -color "Orange" -radix hexadecimal /tb/dut/addr_i
 

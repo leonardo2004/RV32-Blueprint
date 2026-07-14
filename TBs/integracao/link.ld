@@ -4,7 +4,7 @@ ENTRY(_start)
 MEMORY
 {
   /* 1024 * 4 bytes = 4K depth */
-  INST_MEM (rx)  : ORIGIN = 0x00000000, LENGTH = 4K
+  INST_MEM (rx)  : ORIGIN = 0x00000000, LENGTH = 1K
   DATA_MEM (rwx) : ORIGIN = 0x00000000, LENGTH = 4K
 }
 

@@ -13,7 +13,8 @@ view wave
 
 add wave -divider "Entradas de controle"
 add wave -color "Gray60" -radix binary /tb_regfile/dut/we_c
-add wave -color "Gray60" -radix binary /tb_regfile/dut/clk_c
+add wave -color "Gray60" -radix binary /tb_regfile/dut/clk_i
+add wave -color "Gray60" -radix binary /tb_regfile/dut/RESET
 
 
 add wave -divider "Entradas de dados"

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rv32im
-Fri Jul 10 20:35:36 2026
+Mon Jul 13 00:23:38 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -17,10 +17,11 @@ Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
  10. Parameter Settings for Inferred Entity Instance: integ:integ|alu:alu|lpm_divide:Mod0
  11. Parameter Settings for Inferred Entity Instance: integ:integ|alu:alu|lpm_divide:Div0
- 12. Post-Synthesis Netlist Statistics for Top Partition
- 13. Elapsed Time Per Partition
- 14. Analysis & Synthesis Messages
- 15. Analysis & Synthesis Suppressed Messages
+ 12. Port Connectivity Checks: "integ:integ"
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -47,16 +48,16 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 10 20:35:35 2026           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 13 00:23:37 2026           ;
 ; Quartus Prime Version              ; 25.1std.0 Build 1129 10/21/2025 SC Lite Edition ;
 ; Revision Name                      ; rv32im                                          ;
 ; Top-level Entity Name              ; rv32im                                          ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 65,182                                          ;
-;     Total combinational functions  ; 31,358                                          ;
-;     Dedicated logic registers      ; 34,081                                          ;
-; Total registers                    ; 34081                                           ;
-; Total pins                         ; 130                                             ;
+; Total logic elements               ; 65,213                                          ;
+;     Total combinational functions  ; 31,425                                          ;
+;     Dedicated logic registers      ; 34,045                                          ;
+; Total registers                    ; 34045                                           ;
+; Total pins                         ; 39                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -170,9 +171,10 @@ on the Quartus Prime software download page.
 ;     Processor 4            ;   0.2%      ;
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
-;     Processor 7            ;   0.1%      ;
+;     Processor 7            ;   0.2%      ;
 ;     Processor 8            ;   0.1%      ;
-;     Processors 9-11        ;   0.1%      ;
+;     Processor 9            ;   0.1%      ;
+;     Processors 10-11       ;   0.1%      ;
 +----------------------------+-------------+
 
 
@@ -211,30 +213,30 @@ on the Quartus Prime software download page.
 +---------------------------------------------+--------+
 ; Resource                                    ; Usage  ;
 +---------------------------------------------+--------+
-; Estimated Total logic elements              ; 65,182 ;
+; Estimated Total logic elements              ; 65,213 ;
 ;                                             ;        ;
-; Total combinational functions               ; 31358  ;
+; Total combinational functions               ; 31425  ;
 ; Logic element usage by number of LUT inputs ;        ;
-;     -- 4 input functions                    ; 28873  ;
-;     -- 3 input functions                    ; 2073   ;
-;     -- <=2 input functions                  ; 412    ;
+;     -- 4 input functions                    ; 27537  ;
+;     -- 3 input functions                    ; 3495   ;
+;     -- <=2 input functions                  ; 393    ;
 ;                                             ;        ;
 ; Logic elements by mode                      ;        ;
-;     -- normal mode                          ; 30064  ;
-;     -- arithmetic mode                      ; 1294   ;
+;     -- normal mode                          ; 30127  ;
+;     -- arithmetic mode                      ; 1298   ;
 ;                                             ;        ;
-; Total registers                             ; 34081  ;
-;     -- Dedicated logic registers            ; 34081  ;
+; Total registers                             ; 34045  ;
+;     -- Dedicated logic registers            ; 34045  ;
 ;     -- I/O registers                        ; 0      ;
 ;                                             ;        ;
-; I/O pins                                    ; 130    ;
+; I/O pins                                    ; 39     ;
 ;                                             ;        ;
 ; Embedded Multiplier 9-bit elements          ; 0      ;
 ;                                             ;        ;
 ; Maximum fan-out node                        ; clk_c  ;
-; Maximum fan-out                             ; 34049  ;
-; Total fan-out                               ; 224653 ;
-; Average fan-out                             ; 3.42   ;
+; Maximum fan-out                             ; 34013  ;
+; Total fan-out                               ; 223305 ;
+; Average fan-out                             ; 3.41   ;
 +---------------------------------------------+--------+
 
 
@@ -243,9 +245,9 @@ on the Quartus Prime software download page.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |rv32im                                      ; 31358 (47)          ; 34081 (33)                ; 0           ; 0            ; 0       ; 0         ; 130  ; 0            ; |rv32im                                                                                                                                       ; rv32im              ; work         ;
-;    |integ:integ|                             ; 31311 (175)         ; 34048 (32)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ                                                                                                                           ; integ               ; work         ;
-;       |alu:alu|                              ; 3009 (636)          ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu                                                                                                                   ; alu                 ; work         ;
+; |rv32im                                      ; 31425 (47)          ; 34045 (33)                ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |rv32im                                                                                                                                       ; rv32im              ; work         ;
+;    |integ:integ|                             ; 31378 (224)         ; 34012 (32)                ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ                                                                                                                           ; integ               ; work         ;
+;       |alu:alu|                              ; 2996 (623)          ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu                                                                                                                   ; alu                 ; work         ;
 ;          |lpm_divide:Div0|                   ; 1081 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Div0                                                                                                   ; lpm_divide          ; work         ;
 ;             |lpm_divide_92p:auto_generated|  ; 1081 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated                                                                     ; lpm_divide_92p      ; work         ;
 ;                |abs_divider_4dg:divider|     ; 1081 (33)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Div0|lpm_divide_92p:auto_generated|abs_divider_4dg:divider                                             ; abs_divider_4dg     ; work         ;
@@ -258,12 +260,12 @@ on the Quartus Prime software download page.
 ;                      |add_sub_8pc:add_sub_1| ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|alt_u_div_6af:divider|add_sub_8pc:add_sub_1 ; add_sub_8pc         ; work         ;
 ;                   |lpm_abs_i0a:my_abs_den|   ; 64 (64)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_den                      ; lpm_abs_i0a         ; work         ;
 ;                   |lpm_abs_i0a:my_abs_num|   ; 45 (45)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|alu:alu|lpm_divide:Mod0|lpm_divide_cqo:auto_generated|abs_divider_4dg:divider|lpm_abs_i0a:my_abs_num                      ; lpm_abs_i0a         ; work         ;
-;       |branch_unit:bu|                       ; 97 (97)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|branch_unit:bu                                                                                                            ; branch_unit         ; work         ;
-;       |control_unit:cu|                      ; 20 (20)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|control_unit:cu                                                                                                           ; control_unit        ; work         ;
-;       |data_memory:data_mem|                 ; 26341 (26341)       ; 33024 (33024)             ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|data_memory:data_mem                                                                                                      ; data_memory         ; work         ;
-;       |immediate_generator:imm_gen|          ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|immediate_generator:imm_gen                                                                                               ; immediate_generator ; work         ;
-;       |inst_memory:inst_mem|                 ; 205 (205)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|inst_memory:inst_mem                                                                                                      ; inst_memory         ; work         ;
-;       |regfile:regfile|                      ; 1431 (1431)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|regfile:regfile                                                                                                           ; regfile             ; work         ;
+;       |branch_unit:bu|                       ; 96 (96)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|branch_unit:bu                                                                                                            ; branch_unit         ; work         ;
+;       |control_unit:cu|                      ; 19 (19)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|control_unit:cu                                                                                                           ; control_unit        ; work         ;
+;       |data_memory:data_mem|                 ; 26373 (26373)       ; 32988 (32988)             ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|data_memory:data_mem                                                                                                      ; data_memory         ; work         ;
+;       |immediate_generator:imm_gen|          ; 34 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|immediate_generator:imm_gen                                                                                               ; immediate_generator ; work         ;
+;       |inst_memory:inst_mem|                 ; 201 (201)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|inst_memory:inst_mem                                                                                                      ; inst_memory         ; work         ;
+;       |regfile:regfile|                      ; 1435 (1435)         ; 992 (992)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |rv32im|integ:integ|regfile:regfile                                                                                                           ; regfile             ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -273,8 +275,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 34081 ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Total registers                              ; 34045 ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -283,61 +285,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[0][22]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[1][25]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[2][12]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[3][3]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[4][24]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[5][3]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[6][9]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[7][13]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[8][1]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[9][29]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[10][18]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[11][15]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[12][20]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[13][27]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[14][15]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[15][26]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[16][17]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[17][24]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[18][31]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[19][10]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[20][6]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[21][14]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[22][14]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[23][17]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[24][24]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[25][31]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[26][1]         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[27][21]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[28][24]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[29][24]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |rv32im|integ:integ|regfile:regfile|x[30][26]        ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |rv32im|integ:integ|pc[5]                            ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_data[17] ;
-; 1025:1             ; 32 bits   ; 21856 LEs     ; 21856 LEs            ; 0 LEs                  ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|mem_data[2] ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |rv32im|integ:integ|regfile:regfile|rs1_o[6]         ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 672 LEs              ; 32 LEs                 ; No         ; |rv32im|integ:integ|regfile:regfile|rs2_o[4]         ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |rv32im|integ:integ|Mux2                             ;
-; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |rv32im|integ:integ|Mux5                             ;
-; 11:1               ; 8 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |rv32im|integ:integ|Mux8                             ;
-; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |rv32im|integ:integ|Mux21                            ;
-; 17:1               ; 5 bits    ; 55 LEs        ; 40 LEs               ; 15 LEs                 ; No         ; |rv32im|integ:integ|Mux18                            ;
-; 22:1               ; 8 bits    ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector14               ;
-; 22:1               ; 8 bits    ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector22               ;
-; 17:1               ; 7 bits    ; 77 LEs        ; 49 LEs               ; 28 LEs                 ; No         ; |rv32im|integ:integ|Mux31                            ;
-; 23:1               ; 4 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector6                ;
-; 23:1               ; 4 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector24               ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector3                ;
-; 24:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector28               ;
-; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector1                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |rv32im|integ:integ|pc[31]                             ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_data[12]   ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_mem[3][2]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_mem[3][10] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_mem[3][19] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_mem[3][29] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_mem[2][4]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_mem[2][12] ;
+; 5:1                ; 7 bits    ; 21 LEs        ; 7 LEs                ; 14 LEs                 ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|io_mem[2][17] ;
+; 1025:1             ; 32 bits   ; 21856 LEs     ; 21856 LEs            ; 0 LEs                  ; Yes        ; |rv32im|integ:integ|data_memory:data_mem|mem_data[28]  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |rv32im|integ:integ|Mux2                               ;
+; 10:1               ; 6 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; No         ; |rv32im|integ:integ|Mux6                               ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |rv32im|integ:integ|Mux12                              ;
+; 16:1               ; 2 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |rv32im|integ:integ|Mux22                              ;
+; 17:1               ; 5 bits    ; 55 LEs        ; 40 LEs               ; 15 LEs                 ; No         ; |rv32im|integ:integ|Mux19                              ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector11                 ;
+; 22:1               ; 8 bits    ; 112 LEs       ; 112 LEs              ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector23                 ;
+; 17:1               ; 7 bits    ; 77 LEs        ; 49 LEs               ; 28 LEs                 ; No         ; |rv32im|integ:integ|Mux31                              ;
+; 23:1               ; 4 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector5                  ;
+; 23:1               ; 4 bits    ; 60 LEs        ; 60 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector24                 ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector3                  ;
+; 24:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector29                 ;
+; 25:1               ; 2 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |rv32im|integ:integ|alu:alu|Selector0                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
@@ -386,30 +362,44 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++---------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "integ:integ"                                                                                         ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                  ; Type   ; Severity ; Details                                                                             ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+; systeminput[1][22..0] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; systeminput[0]        ; Input  ; Info     ; Stuck at GND                                                                        ;
+; systemoutput[1]       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; systemoutput[0][31]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; systemoutput[0][23]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; systemoutput[0][15]   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; systemoutput[0][7]    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 130                         ;
-; cycloneiii_ff         ; 34081                       ;
+; boundary_port         ; 39                          ;
+; cycloneiii_ff         ; 34045                       ;
 ;     ENA               ; 33855                       ;
-;     SCLR              ; 32                          ;
-;     plain             ; 194                         ;
-; cycloneiii_lcell_comb ; 31358                       ;
-;     arith             ; 1294                        ;
+;     plain             ; 190                         ;
+; cycloneiii_lcell_comb ; 31425                       ;
+;     arith             ; 1298                        ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 89                          ;
-;         3 data inputs ; 1204                        ;
-;     normal            ; 30064                       ;
+;         2 data inputs ; 92                          ;
+;         3 data inputs ; 1205                        ;
+;     normal            ; 30127                       ;
 ;         0 data inputs ; 61                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 259                         ;
-;         3 data inputs ; 869                         ;
-;         4 data inputs ; 28873                       ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 236                         ;
+;         3 data inputs ; 2290                        ;
+;         4 data inputs ; 27537                       ;
 ;                       ;                             ;
-; Max LUT depth         ; 162.80                      ;
-; Average LUT depth     ; 80.51                       ;
+; Max LUT depth         ; 161.80                      ;
+; Average LUT depth     ; 81.47                       ;
 +-----------------------+-----------------------------+
 
 
@@ -418,7 +408,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:04:43     ;
+; Top            ; 00:04:32     ;
 +----------------+--------------+
 
 
@@ -428,7 +418,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 10 20:30:31 2026
+    Info: Processing started: Mon Jul 13 00:18:44 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rv32im -c rv32im
 Info (20032): Parallel compilation is enabled and will use up to 11 processors
 Info (12021): Found 1 design units, including 1 entities, in source file rv32im.sv
@@ -452,18 +442,20 @@ Info (12021): Found 1 design units, including 1 entities, in source file branch_
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
     Info (12023): Found entity 1: alu File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 3
 Info (12127): Elaborating entity "rv32im" for the top level hierarchy
-Info (12128): Elaborating entity "integ" for hierarchy "integ:integ" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/rv32im.sv Line: 25
+Info (12128): Elaborating entity "integ" for hierarchy "integ:integ" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/rv32im.sv Line: 45
 Info (12128): Elaborating entity "inst_memory" for hierarchy "integ:integ|inst_memory:inst_mem" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 52
 Warning (10850): Verilog HDL warning at inst_memory.sv(15): number of words (92) in memory file does not match the number of elements in the address range [0:255] File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 15
 Warning (10030): Net "rom.data_a" at inst_memory.sv(8) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 8
 Warning (10030): Net "rom.waddr_a" at inst_memory.sv(8) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 8
 Warning (10030): Net "rom.we_a" at inst_memory.sv(8) has no driver or initial value, using a default initial value '0' File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/inst_memory.sv Line: 8
-Info (12128): Elaborating entity "regfile" for hierarchy "integ:integ|regfile:regfile" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 64
-Info (12128): Elaborating entity "alu" for hierarchy "integ:integ|alu:alu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 77
-Info (12128): Elaborating entity "data_memory" for hierarchy "integ:integ|data_memory:data_mem" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 89
-Info (12128): Elaborating entity "immediate_generator" for hierarchy "integ:integ|immediate_generator:imm_gen" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 95
-Info (12128): Elaborating entity "branch_unit" for hierarchy "integ:integ|branch_unit:bu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 121
-Info (12128): Elaborating entity "control_unit" for hierarchy "integ:integ|control_unit:cu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 142
+Info (12128): Elaborating entity "regfile" for hierarchy "integ:integ|regfile:regfile" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 63
+Info (12128): Elaborating entity "alu" for hierarchy "integ:integ|alu:alu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 76
+Info (12128): Elaborating entity "data_memory" for hierarchy "integ:integ|data_memory:data_mem" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 88
+Info (12128): Elaborating entity "immediate_generator" for hierarchy "integ:integ|immediate_generator:imm_gen" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 94
+Info (12128): Elaborating entity "branch_unit" for hierarchy "integ:integ|branch_unit:bu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 120
+Info (12128): Elaborating entity "control_unit" for hierarchy "integ:integ|control_unit:cu" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/integ.sv Line: 141
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276007): RAM logic "integ:integ|regfile:regfile|x" is uninferred due to asynchronous read logic File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/regfile.sv Line: 19
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "/home/leotl/Documentos/RV32-Blueprint/Quartus/fib/db/rv32im.ram0_inst_memory_38b34dae.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Info (278001): Inferred 2 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "integ:integ|alu:alu|Mod0" File: /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/alu.sv Line: 134
@@ -502,15 +494,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file /home/leotl/Documentos/RV32-Blueprint/Quartus/fib/output_files/rv32im.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 65376 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 66 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 65246 logic cells
+Info (21057): Implemented 65316 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 65277 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 925 megabytes
-    Info: Processing ended: Fri Jul 10 20:35:36 2026
-    Info: Elapsed time: 00:05:05
-    Info: Total CPU time (on all processors): 00:05:15
+    Info: Peak virtual memory: 820 megabytes
+    Info: Processing ended: Mon Jul 13 00:23:38 2026
+    Info: Elapsed time: 00:04:54
+    Info: Total CPU time (on all processors): 00:05:03
 
 
 +------------------------------------------+

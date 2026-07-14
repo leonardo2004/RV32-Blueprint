@@ -1,5 +1,0 @@
-2 15 data_structures 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/work 0 0 0 0 41 0
-2 18 INSTMEM_TB_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/work 0 0 0 0 0 0
-1 19 inst_memory_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/work 0 0 0 0 0 0
-1 11 inst_memory 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/work 0 0 0 0 20 0
-2 10 INSTMEM_TB 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/INSTMEM_TB/work 0 0 0 0 65 0

@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-# Date created = 21:10:31  julho 10, 2026
+# Date created = 21:11:35  julho 07, 2026
 #
 # -------------------------------------------------------------------------- #
 #
@@ -41,18 +41,8 @@ set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
 set_global_assignment -name TOP_LEVEL_ENTITY rv32im
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 25.1STD.0
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:10:31  JULHO 10, 2026"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "21:11:35  JULHO 07, 2026"
 set_global_assignment -name LAST_QUARTUS_VERSION "25.1std.0 Lite Edition"
-set_global_assignment -name SYSTEMVERILOG_FILE rv32im.sv
-set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
-set_global_assignment -name SYSTEMVERILOG_FILE integ.sv
-set_global_assignment -name SYSTEMVERILOG_FILE inst_memory.sv
-set_global_assignment -name SYSTEMVERILOG_FILE immediate_generator.sv
-set_global_assignment -name SYSTEMVERILOG_FILE data_structures.sv
-set_global_assignment -name SYSTEMVERILOG_FILE data_memory.sv
-set_global_assignment -name SYSTEMVERILOG_FILE control_unit.sv
-set_global_assignment -name SYSTEMVERILOG_FILE branch_unit.sv
-set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
@@ -65,14 +55,6 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name ENABLE_OCT_DONE OFF
-set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
-set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
-set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
-set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -81,6 +63,67 @@ set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS 11
 set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name OPTIMIZATION_MODE BALANCED
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name ENABLE_OCT_DONE OFF
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_AB28 -to RESET
+set_global_assignment -name ENABLE_BENEFICIAL_SKEW_OPTIMIZATION ON
 set_global_assignment -name OPTIMIZE_TIMING OFF
 set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_location_assignment PIN_Y2 -to clk_i
+set_global_assignment -name SYSTEMVERILOG_FILE rv32im.sv
+set_global_assignment -name SYSTEMVERILOG_FILE regfile.sv
+set_global_assignment -name SYSTEMVERILOG_FILE integ.sv
+set_global_assignment -name SYSTEMVERILOG_FILE inst_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE immediate_generator.sv
+set_global_assignment -name SYSTEMVERILOG_FILE data_structures.sv
+set_global_assignment -name SYSTEMVERILOG_FILE data_memory.sv
+set_global_assignment -name SYSTEMVERILOG_FILE control_unit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE branch_unit.sv
+set_global_assignment -name SYSTEMVERILOG_FILE alu.sv
+set_location_assignment PIN_G18 -to HEX0[0]
+set_location_assignment PIN_F22 -to HEX0[1]
+set_location_assignment PIN_L26 -to HEX0[3]
+set_location_assignment PIN_E17 -to HEX0[2]
+set_location_assignment PIN_L25 -to HEX0[4]
+set_location_assignment PIN_J22 -to HEX0[5]
+set_location_assignment PIN_H22 -to HEX0[6]
+set_location_assignment PIN_M24 -to HEX1[0]
+set_location_assignment PIN_Y22 -to HEX1[1]
+set_location_assignment PIN_W21 -to HEX1[2]
+set_location_assignment PIN_W22 -to HEX1[3]
+set_location_assignment PIN_W25 -to HEX1[4]
+set_location_assignment PIN_U23 -to HEX1[5]
+set_location_assignment PIN_U24 -to HEX1[6]
+set_location_assignment PIN_AA25 -to HEX2[0]
+set_location_assignment PIN_AA26 -to HEX2[1]
+set_location_assignment PIN_Y25 -to HEX2[2]
+set_location_assignment PIN_W26 -to HEX2[3]
+set_location_assignment PIN_Y26 -to HEX2[4]
+set_location_assignment PIN_W27 -to HEX2[5]
+set_location_assignment PIN_V21 -to HEX3[0]
+set_location_assignment PIN_W28 -to HEX2[6]
+set_location_assignment PIN_U21 -to HEX3[1]
+set_location_assignment PIN_AB20 -to HEX3[2]
+set_location_assignment PIN_AA21 -to HEX3[3]
+set_location_assignment PIN_AF23 -to HEX3[5]
+set_location_assignment PIN_AD24 -to HEX3[4]
+set_location_assignment PIN_Y19 -to HEX3[6]
+set_location_assignment PIN_AB25 -to SW17_9[0]
+set_location_assignment PIN_AC24 -to SW17_9[1]
+set_location_assignment PIN_AB24 -to SW17_9[2]
+set_location_assignment PIN_AB23 -to SW17_9[3]
+set_location_assignment PIN_AA24 -to SW17_9[4]
+set_location_assignment PIN_AA23 -to SW17_9[5]
+set_location_assignment PIN_AA22 -to SW17_9[6]
+set_location_assignment PIN_Y24 -to SW17_9[7]
+set_location_assignment PIN_Y23 -to SW17_9[8]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

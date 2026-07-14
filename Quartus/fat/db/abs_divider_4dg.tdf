@@ -23,7 +23,7 @@ RETURNS ( quotient[31..0], remainder[31..0]);
 FUNCTION lpm_abs_i0a (data[31..0])
 RETURNS ( overflow, result[31..0]);
 
---synthesis_resources = lut 683 
+--synthesis_resources = lut 128 
 SUBDESIGN abs_divider_4dg
 ( 
 	denominator[31..0]	:	input;

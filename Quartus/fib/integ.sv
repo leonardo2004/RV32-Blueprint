@@ -59,8 +59,7 @@ module integ (
       .rs1addr_i(rs1addr),
       .rs2addr_i(rs2addr),
       .rs1_o(rs1),
-      .rs2_o(rs2),
-		.RESET(RESET)
+      .rs2_o(rs2)
   );
 
   alu alu (

@@ -27,7 +27,8 @@ package data_structures;
     opcode_JAL = 7'b1101111,
     opcode_JALR = 7'b1100111,
     opcode_LUI = 7'b0110111,
-    opcode_AUIPC = 7'b0010111
+    opcode_AUIPC = 7'b0010111,
+    opcode_EBREAK = 7'b1110011
   } opcode_t;
 
   typedef enum logic [4:0] {

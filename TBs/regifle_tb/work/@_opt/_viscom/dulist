@@ -1,5 +1,5 @@
-2 15 data_structures 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 52 0
+2 15 data_structures 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 53 0
 2 18 tb_regfile_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 0 0
 2 15 regfile_sv_unit 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 0 0
-2 7 regfile 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 45 0
-1 10 tb_regfile 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 68 0
+1 7 regfile 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 66 0
+2 10 tb_regfile 4 fast 57 /home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb/work 0 0 0 0 106 0

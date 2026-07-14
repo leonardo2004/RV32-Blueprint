@@ -183,6 +183,12 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
+R0
+R1
 !s12c _opt1
 R1
 Z2 !s12c _opt
@@ -246,10 +252,10 @@ R3
 T_opt2
 !i145 1
 !i144 0
-!s110 1783726085
-Vc0d_IHUdI=FnWNb_ef1dU3
+Z12 !s110 1783904677
+VH<hn6>akFzcoMNCFJT9K<2
 R4
-=1-4851c50e5641-6a518004-e28f8-fb4
+=1-4851c50e5641-6a5439a5-2b811-53e3
 R1
 R5
 R6
@@ -260,12 +266,12 @@ R10
 n@_opt2
 R11
 valu
-Z12 2alu.sv
-Z13 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z14 DXx4 work 15 data_structures 0 22 gPihg>oJh[;BOdzHOn3PA1
+Z13 2alu.sv
+Z14 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z15 DXx4 work 15 data_structures 0 22 gPihg>oJh[;BOdzHOn3PA1
 DXx4 work 11 alu_sv_unit 0 22 =8f569?K5ljmCNgR=IIQN1
-Z15 !s110 1783726084
-Z16 VDg1SIo80bB@j0V0VzS_@n1
+Z16 !s110 1783904676
+Z17 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
@@ -274,24 +280,24 @@ IO8^eSaIQnE9b1@=<Vn9f]3
 !s105 alu_sv_unit
 S1
 R3
-Z17 w1783104055
-Z18 8alu.sv
-Z19 Falu.sv
-!i122 1977
+Z18 w1783104055
+Z19 8alu.sv
+Z20 Falu.sv
+!i122 2015
 L0 3 139
-Z20 OL;L;2025.2;82
+Z21 OL;L;2025.2;82
 31
-Z21 !s108 1783726084.000000
-Z22 !s107 alu.sv|
-Z23 !s90 -reportprogress|300|alu.sv|
+Z22 !s108 1783904676.000000
+Z23 !s107 alu.sv|
+Z24 !s90 -reportprogress|300|alu.sv|
 !i113 0
-Z24 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z25 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R10
 Xalu_sv_unit
-R12
 R13
 R14
 R15
+R16
 V=8f569?K5ljmCNgR=IIQN1
 r1
 !s85 0
@@ -301,26 +307,26 @@ I=8f569?K5ljmCNgR=IIQN1
 !i103 1
 S1
 R3
-R17
 R18
 R19
-!i122 1977
-Z25 L0 1 0
 R20
-31
+!i122 2015
+Z26 L0 1 0
 R21
+31
 R22
 R23
-!i113 0
 R24
+!i113 0
+R25
 R10
 vbranch_unit
-Z26 2branch_unit.sv
-R13
+Z27 2branch_unit.sv
 R14
-DXx4 work 19 branch_unit_sv_unit 0 22 =3I6^@?WC3bM:X0C`=9>^2
 R15
+DXx4 work 19 branch_unit_sv_unit 0 22 =3I6^@?WC3bM:X0C`=9>^2
 R16
+R17
 r1
 !s85 0
 !i10b 1
@@ -329,24 +335,24 @@ I:?odZXfdzLQ;mcnXTz6kg2
 !s105 branch_unit_sv_unit
 S1
 R3
-Z27 w1783702664
-Z28 8branch_unit.sv
-Z29 Fbranch_unit.sv
-!i122 1978
+Z28 w1783702664
+Z29 8branch_unit.sv
+Z30 Fbranch_unit.sv
+!i122 2016
 L0 3 21
-R20
-31
 R21
-Z30 !s107 branch_unit.sv|
-Z31 !s90 -reportprogress|300|branch_unit.sv|
+31
+R22
+Z31 !s107 branch_unit.sv|
+Z32 !s90 -reportprogress|300|branch_unit.sv|
 !i113 0
-R24
+R25
 R10
 Xbranch_unit_sv_unit
-R26
-R13
+R27
 R14
 R15
+R16
 V=3I6^@?WC3bM:X0C`=9>^2
 r1
 !s85 0
@@ -356,26 +362,26 @@ I=3I6^@?WC3bM:X0C`=9>^2
 !i103 1
 S1
 R3
-R27
 R28
 R29
-!i122 1978
-R25
-R20
-31
-R21
 R30
+!i122 2016
+R26
+R21
+31
+R22
 R31
+R32
 !i113 0
-R24
+R25
 R10
 vcontrol_unit
-Z32 2control_unit.sv
-R13
+Z33 2control_unit.sv
 R14
-DXx4 work 20 control_unit_sv_unit 0 22 MKj;J[WY@7ZanNcXN[1_Y2
 R15
+DXx4 work 20 control_unit_sv_unit 0 22 MKj;J[WY@7ZanNcXN[1_Y2
 R16
+R17
 r1
 !s85 0
 !i10b 1
@@ -384,24 +390,24 @@ I71^BYNYC1oGWlm6d[]hic0
 !s105 control_unit_sv_unit
 S1
 R3
-Z33 w1783702640
-Z34 8control_unit.sv
-Z35 Fcontrol_unit.sv
-!i122 1979
+Z34 w1783702640
+Z35 8control_unit.sv
+Z36 Fcontrol_unit.sv
+!i122 2017
 L0 3 102
-R20
-31
 R21
-Z36 !s107 control_unit.sv|
-Z37 !s90 -reportprogress|300|control_unit.sv|
+31
+R22
+Z37 !s107 control_unit.sv|
+Z38 !s90 -reportprogress|300|control_unit.sv|
 !i113 0
-R24
+R25
 R10
 Xcontrol_unit_sv_unit
-R32
-R13
+R33
 R14
 R15
+R16
 VMKj;J[WY@7ZanNcXN[1_Y2
 r1
 !s85 0
@@ -411,26 +417,26 @@ IMKj;J[WY@7ZanNcXN[1_Y2
 !i103 1
 S1
 R3
-R33
 R34
 R35
-!i122 1979
-R25
-R20
-31
-R21
 R36
+!i122 2017
+R26
+R21
+31
+R22
 R37
+R38
 !i113 0
-R24
+R25
 R10
 vdata_memory
-Z38 2data_memory.sv
-R13
+Z39 2data_memory.sv
 R14
-DXx4 work 19 data_memory_sv_unit 0 22 ^V4n4WA10?i5LbDdA3:h^1
 R15
+DXx4 work 19 data_memory_sv_unit 0 22 ^V4n4WA10?i5LbDdA3:h^1
 R16
+R17
 r1
 !s85 0
 !i10b 1
@@ -439,24 +445,24 @@ I[nkRm[BO@U>S`bO?P]KQX0
 !s105 data_memory_sv_unit
 S1
 R3
-Z39 w1783703021
-Z40 8data_memory.sv
-Z41 Fdata_memory.sv
-!i122 1980
+Z40 w1783703021
+Z41 8data_memory.sv
+Z42 Fdata_memory.sv
+!i122 2018
 L0 5 117
-R20
-31
 R21
-Z42 !s107 data_memory.sv|
-Z43 !s90 -reportprogress|300|data_memory.sv|
+31
+R22
+Z43 !s107 data_memory.sv|
+Z44 !s90 -reportprogress|300|data_memory.sv|
 !i113 0
-R24
+R25
 R10
 Xdata_memory_sv_unit
-R38
-R13
+R39
 R14
 R15
+R16
 V^V4n4WA10?i5LbDdA3:h^1
 r1
 !s85 0
@@ -466,23 +472,23 @@ I^V4n4WA10?i5LbDdA3:h^1
 !i103 1
 S1
 R3
-R39
 R40
 R41
-!i122 1980
-L0 2 0
-R20
-31
-R21
 R42
+!i122 2018
+L0 2 0
+R21
+31
+R22
 R43
+R44
 !i113 0
-R24
+R25
 R10
 Xdata_structures
 2data_structures.sv
-R13
-R15
+R14
+R16
 !i10b 1
 !s100 Od5J`BgW9Go=CGG0^FK=Q2
 IgPihg>oJh[;BOdzHOn3PA1
@@ -491,26 +497,26 @@ R3
 w1783107205
 8data_structures.sv
 Fdata_structures.sv
-!i122 1976
-R25
+!i122 2014
+R26
 VgPihg>oJh[;BOdzHOn3PA1
-R20
+R21
 r1
 !s85 0
 31
-R21
+R22
 !s107 data_structures.sv|
 !s90 -reportprogress|300|data_structures.sv|
 !i113 0
-R24
+R25
 R10
 vimmediate_generator
-Z44 2immediate_generator.sv
-R13
+Z45 2immediate_generator.sv
 R14
-DXx4 work 27 immediate_generator_sv_unit 0 22 @Z;oh]QJmG:`cNT_i4SRO2
 R15
+DXx4 work 27 immediate_generator_sv_unit 0 22 @Z;oh]QJmG:`cNT_i4SRO2
 R16
+R17
 r1
 !s85 0
 !i10b 1
@@ -519,24 +525,24 @@ I:4V[W@lRfS]hcS]dg6o>?0
 !s105 immediate_generator_sv_unit
 S1
 R3
-Z45 w1783576917
-Z46 8immediate_generator.sv
-Z47 Fimmediate_generator.sv
-!i122 1981
-L0 3 28
-R20
-31
+Z46 w1783576917
+Z47 8immediate_generator.sv
+Z48 Fimmediate_generator.sv
+!i122 2019
+Z49 L0 3 28
 R21
-Z48 !s107 immediate_generator.sv|
-Z49 !s90 -reportprogress|300|immediate_generator.sv|
+31
+R22
+Z50 !s107 immediate_generator.sv|
+Z51 !s90 -reportprogress|300|immediate_generator.sv|
 !i113 0
-R24
+R25
 R10
 Ximmediate_generator_sv_unit
-R44
-R13
+R45
 R14
 R15
+R16
 V@Z;oh]QJmG:`cNT_i4SRO2
 r1
 !s85 0
@@ -546,52 +552,52 @@ I@Z;oh]QJmG:`cNT_i4SRO2
 !i103 1
 S1
 R3
-R45
 R46
 R47
-!i122 1981
-R25
-R20
-31
-R21
 R48
-R49
+!i122 2019
+R26
+R21
+31
+R22
+R50
+R51
 !i113 0
-R24
+R25
 R10
 vinst_memory
-Z50 2inst_memory.sv
-R13
+Z52 2inst_memory.sv
 R14
-DXx4 work 19 inst_memory_sv_unit 0 22 4:2]Q2nnI=ge2SSZ6iMMe0
 R15
+DXx4 work 19 inst_memory_sv_unit 0 22 4:2]Q2nnI=ge2SSZ6iMMe0
 R16
+R17
 r1
 !s85 0
 !i10b 1
-!s100 P4B9@edh;bO78W1QA>RWD2
-ITi]neh=MoM92]@m;83ll32
+!s100 9ESQ?Qk`JH1]`fhb=Hb0n2
+IlE;oCQLz8;FUUR1JoC>=L0
 !s105 inst_memory_sv_unit
 S1
 R3
-Z51 w1783725683
-Z52 8inst_memory.sv
-Z53 Finst_memory.sv
-!i122 1982
+Z53 w1783904660
+Z54 8inst_memory.sv
+Z55 Finst_memory.sv
+!i122 2020
 L0 3 17
-R20
-31
 R21
-Z54 !s107 inst_memory.sv|
-Z55 !s90 -reportprogress|300|inst_memory.sv|
+31
+R22
+Z56 !s107 inst_memory.sv|
+Z57 !s90 -reportprogress|300|inst_memory.sv|
 !i113 0
-R24
+R25
 R10
 Xinst_memory_sv_unit
-R50
-R13
+R52
 R14
 R15
+R16
 V4:2]Q2nnI=ge2SSZ6iMMe0
 r1
 !s85 0
@@ -601,181 +607,181 @@ I4:2]Q2nnI=ge2SSZ6iMMe0
 !i103 1
 S1
 R3
-R51
-R52
 R53
-!i122 1982
-R25
-R20
-31
-R21
 R54
 R55
+!i122 2020
+R26
+R21
+31
+R22
+R56
+R57
 !i113 0
-R24
+R25
 R10
 vinteg
-Z56 2integ.sv
-R13
+Z58 2integ.sv
 R14
-DXx4 work 13 integ_sv_unit 0 22 ETI@XEOA3:Qbg4b_2fdST2
 R15
+DXx4 work 13 integ_sv_unit 0 22 0hJ<5Anag5dj><Gz;J11c0
 R16
+R17
 r1
 !s85 0
 !i10b 1
-!s100 UBd:TBM_KPa@hgG4?g`U@2
-IB`@>78YMk>k3?0N6=k<eK1
+!s100 mV;`m;?A<O9^2z]6Qa[nm3
+INao<SQM2b16WH2@[g:RJZ3
 !s105 integ_sv_unit
 S1
 R3
-Z57 w1783716538
-Z58 8integ.sv
-Z59 Finteg.sv
-!i122 1984
-L0 3 141
-R20
-31
+Z59 w1783902465
+Z60 8integ.sv
+Z61 Finteg.sv
+!i122 2022
+L0 3 140
 R21
-Z60 !s107 integ.sv|
-Z61 !s90 -reportprogress|300|integ.sv|
+31
+R22
+Z62 !s107 integ.sv|
+Z63 !s90 -reportprogress|300|integ.sv|
 !i113 0
-R24
+R25
 R10
 Xinteg_sv_unit
-R56
-R13
+R58
 R14
 R15
-VETI@XEOA3:Qbg4b_2fdST2
+R16
+V0hJ<5Anag5dj><Gz;J11c0
 r1
 !s85 0
 !i10b 1
-!s100 RRgd93ENH=5gJDM12dk3>1
-IETI@XEOA3:Qbg4b_2fdST2
+!s100 en8O5lP4BGeDMXGF3RP@>0
+I0hJ<5Anag5dj><Gz;J11c0
 !i103 1
 S1
 R3
-R57
-R58
 R59
-!i122 1984
-R25
-R20
-31
-R21
 R60
 R61
+!i122 2022
+R26
+R21
+31
+R22
+R62
+R63
 !i113 0
-R24
+R25
 R10
 vregfile
-Z62 2regfile.sv
-R13
+Z64 2regfile.sv
 R14
-DXx4 work 15 regfile_sv_unit 0 22 nZ@nScAL6GI<9bkaZAKm[1
 R15
+DXx4 work 15 regfile_sv_unit 0 22 SbPihHVJILiZ7QbmmAELK3
 R16
+R17
 r1
 !s85 0
 !i10b 1
-!s100 SUSP>=6bo<;6@fE^eQTmD3
-IbzaVkIiSMTW;glPgK_J9E3
+!s100 Fk@gk?4omPO94ORZ[4`ec3
+IS`mHWA8:fVSbglicG9kkM2
 !s105 regfile_sv_unit
 S1
 R3
-Z63 w1783716235
-Z64 8regfile.sv
-Z65 Fregfile.sv
-!i122 1983
-L0 3 34
-R20
-31
+Z65 w1783902398
+Z66 8regfile.sv
+Z67 Fregfile.sv
+!i122 2021
+R49
 R21
-Z66 !s107 regfile.sv|
-Z67 !s90 -reportprogress|300|regfile.sv|
+31
+R22
+Z68 !s107 regfile.sv|
+Z69 !s90 -reportprogress|300|regfile.sv|
 !i113 0
-R24
+R25
 R10
 Xregfile_sv_unit
-R62
-R13
+R64
 R14
 R15
-VnZ@nScAL6GI<9bkaZAKm[1
+R16
+VSbPihHVJILiZ7QbmmAELK3
 r1
 !s85 0
 !i10b 1
-!s100 :7[Gd6b8oQi3T=RGod3H82
-InZ@nScAL6GI<9bkaZAKm[1
+!s100 8LUjY^ShZ[RJNC=n`o`5Z1
+ISbPihHVJILiZ7QbmmAELK3
 !i103 1
 S1
 R3
-R63
-R64
 R65
-!i122 1983
-R25
-R20
-31
-R21
 R66
 R67
+!i122 2021
+R26
+R21
+31
+R22
+R68
+R69
 !i113 0
-R24
+R25
 R10
 vtb
-Z68 2tb.sv
-R13
+Z70 2tb.sv
 R14
-DXx4 work 10 tb_sv_unit 0 22 I]kK?F?^029`SK9ai]F6F2
 R15
-R16
+DXx4 work 10 tb_sv_unit 0 22 Y``hncOXcmn96UazFhkUX3
+R12
+R17
 r1
 !s85 0
 !i10b 1
-!s100 N[UIY?WO[YU0cPfeVDMMU1
-I9LfA[B^[CbSF9iYBNY?VN0
+!s100 eWBEJT:X;IJ:9Z84dCIQB1
+ICSWJ8``WJmLJHNE8cIUge1
 !s105 tb_sv_unit
 S1
 R3
-Z69 w1783572961
-Z70 8tb.sv
-Z71 Ftb.sv
-!i122 1985
-L0 3 31
-R20
-31
+Z71 w1783904111
+Z72 8tb.sv
+Z73 Ftb.sv
+!i122 2023
+L0 3 29
 R21
-Z72 !s107 tb.sv|
-Z73 !s90 -reportprogress|300|tb.sv|
+31
+Z74 !s108 1783904677.000000
+Z75 !s107 tb.sv|
+Z76 !s90 -reportprogress|300|tb.sv|
 !i113 0
-R24
+R25
 R10
 Xtb_sv_unit
-R68
-R13
+R70
 R14
 R15
-VI]kK?F?^029`SK9ai]F6F2
+R12
+VY``hncOXcmn96UazFhkUX3
 r1
 !s85 0
 !i10b 1
-!s100 f@jkiO2coo6I]5RPWmjom1
-II]kK?F?^029`SK9ai]F6F2
+!s100 [CWk]>MUm1YjO=`mcPIa=1
+IY``hncOXcmn96UazFhkUX3
 !i103 1
 S1
 R3
-R69
-R70
 R71
-!i122 1985
-R25
-R20
-31
-R21
 R72
 R73
+!i122 2023
+R26
+R21
+31
+R74
+R75
+R76
 !i113 0
-R24
+R25
 R10

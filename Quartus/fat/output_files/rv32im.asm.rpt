@@ -1,5 +1,5 @@
 Assembler report for rv32im
-Fri Jul 10 22:40:04 2026
+Mon Jul 13 17:19:38 2026
 Quartus Prime Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
 
 
@@ -38,7 +38,7 @@ on the Quartus Prime software download page.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jul 10 22:40:04 2026 ;
+; Assembler Status      ; Successful - Mon Jul 13 17:19:38 2026 ;
 ; Revision Name         ; rv32im                                ;
 ; Top-level Entity Name ; rv32im                                ;
 ; Family                ; Cyclone IV E                          ;
@@ -67,8 +67,8 @@ on the Quartus Prime software download page.
 +----------------+---------------------+
 ; Option         ; Setting             ;
 +----------------+---------------------+
-; JTAG usercode  ; 0x02405E34          ;
-; Checksum       ; 0x02405E34          ;
+; JTAG usercode  ; 0x0247B307          ;
+; Checksum       ; 0x0247B307          ;
 +----------------+---------------------+
 
 
@@ -78,14 +78,14 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 25.1std.0 Build 1129 10/21/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 10 22:39:58 2026
+    Info: Processing started: Mon Jul 13 17:19:31 2026
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off rv32im -c rv32im
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 528 megabytes
-    Info: Processing ended: Fri Jul 10 22:40:04 2026
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 532 megabytes
+    Info: Processing ended: Mon Jul 13 17:19:38 2026
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:07
 
 

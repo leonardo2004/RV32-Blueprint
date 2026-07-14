@@ -71,6 +71,10 @@ module cu_tb ();
 
     // 9. Teste: AUIPC
     inst_i = 32'h00000017;
+    #10;
+
+    // 10. Teste: EBREAK
+    inst_i = 32'h00100073;
 
     #20;
     $stop;

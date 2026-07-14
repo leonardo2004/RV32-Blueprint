@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk_c'
-Slack : -200.895
-TNS   : -6436053.050
+Slack : -217.166
+TNS   : -7037902.763
 
 Type  : Slow 1200mV 85C Model Setup 'clk_i'
-Slack : -2.849
-TNS   : -67.051
+Slack : -2.847
+TNS   : -67.228
 
 Type  : Slow 1200mV 85C Model Hold 'clk_i'
-Slack : -2.870
-TNS   : -2.870
+Slack : -2.827
+TNS   : -2.827
 
 Type  : Slow 1200mV 85C Model Hold 'clk_c'
-Slack : 0.404
+Slack : 0.403
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_i'
@@ -24,22 +24,22 @@ TNS   : -45.405
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_c'
 Slack : -1.285
-TNS   : -43751.680
+TNS   : -43705.420
 
 Type  : Slow 1200mV 0C Model Setup 'clk_c'
-Slack : -183.687
-TNS   : -5863116.427
+Slack : -198.283
+TNS   : -6416987.824
 
 Type  : Slow 1200mV 0C Model Setup 'clk_i'
-Slack : -2.441
-TNS   : -56.606
+Slack : -2.437
+TNS   : -56.748
 
 Type  : Slow 1200mV 0C Model Hold 'clk_i'
-Slack : -2.616
-TNS   : -2.616
+Slack : -2.573
+TNS   : -2.573
 
 Type  : Slow 1200mV 0C Model Hold 'clk_c'
-Slack : 0.356
+Slack : 0.352
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_i'
@@ -48,30 +48,30 @@ TNS   : -45.405
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_c'
 Slack : -1.285
-TNS   : -43751.680
+TNS   : -43705.420
 
 Type  : Fast 1200mV 0C Model Setup 'clk_c'
-Slack : -101.742
-TNS   : -3240861.674
+Slack : -111.207
+TNS   : -3583391.704
 
 Type  : Fast 1200mV 0C Model Setup 'clk_i'
-Slack : -0.921
-TNS   : -16.475
+Slack : -0.918
+TNS   : -16.518
 
 Type  : Fast 1200mV 0C Model Hold 'clk_i'
-Slack : -1.575
-TNS   : -1.575
+Slack : -1.535
+TNS   : -1.535
 
 Type  : Fast 1200mV 0C Model Hold 'clk_c'
-Slack : 0.183
+Slack : 0.181
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_i'
 Slack : -3.000
-TNS   : -38.025
+TNS   : -38.041
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_c'
 Slack : -1.000
-TNS   : -34048.000
+TNS   : -34012.000
 
 ------------------------------------------------------------

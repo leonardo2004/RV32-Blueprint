@@ -9,6 +9,10 @@ R0
 R1
 R0
 R1
+R0
+R1
+R0
+R1
 !s11f vlog 2025.2 2025.05, May 31 2025
 13
 !s112 1.1
@@ -20,10 +24,10 @@ Z2 d/home/leotl/Documentos/RV32-Blueprint/TBs/regifle_tb
 T_opt
 !i145 1
 !i144 0
-!s110 1778780625
-V^U^kKIIgV^2WGjKU90@^00
+!s110 1783900488
+V?8KPQh@H4T>5kZSXOoz<m3
 04 10 4 work tb_regfile fast 0
-=3-4851c50e5641-6a0609d1-b25fa-228a
+=1-4851c50e5641-6a542947-e05bf-2c3a
 R1
 !s12f OEM100
 !s12b OEM100
@@ -33,27 +37,26 @@ o-quiet -auto_acc_if_foreign -work work +acc
 Z3 tCvgOpt 0
 n@_opt
 OL;O;2025.2;82
-R2
 Xdata_structures
 2data_structures.sv
 Z4 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z5 !s110 1778780870
+Z5 !s110 1783900486
 !i10b 1
-!s100 U=MQ^[c2Cz;2QPkCDLNPD3
-Ie6ohOg0`Xn4=L@;L_9Z8b3
+!s100 Od5J`BgW9Go=CGG0^FK=Q2
+IgPihg>oJh[;BOdzHOn3PA1
 S1
 R2
-w1778292803
+w1783107205
 8data_structures.sv
 Fdata_structures.sv
-!i122 24
+!i122 35
 Z6 L0 1 0
-Ve6ohOg0`Xn4=L@;L_9Z8b3
+VgPihg>oJh[;BOdzHOn3PA1
 Z7 OL;L;2025.2;82
 r1
 !s85 0
 31
-Z8 !s108 1778780870.000000
+Z8 !s108 1783900486.000000
 !s107 data_structures.sv|
 !s90 -reportprogress|300|data_structures.sv|
 !i113 0
@@ -62,23 +65,23 @@ R3
 vregfile
 Z10 2regfile.sv
 R4
-Z11 DXx4 work 15 data_structures 0 22 e6ohOg0`Xn4=L@;L_9Z8b3
-DXx4 work 15 regfile_sv_unit 0 22 I44__F04P[JWTGR@h?`Gf2
+Z11 DXx4 work 15 data_structures 0 22 gPihg>oJh[;BOdzHOn3PA1
+DXx4 work 15 regfile_sv_unit 0 22 nZ@nScAL6GI<9bkaZAKm[1
 R5
 Z12 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 `LZeZX1Ef[nj_=aZb0M413
-IE1IDF3DhHTbSXEU:CF<HI3
+!s100 L@c;U4D;NlzNj=_b=Pg:O1
+I;>K4dW]1klnYcBVoSh]4j3
 !s105 regfile_sv_unit
 S1
 R2
-Z13 w1778263084
+Z13 w1783900482
 Z14 8regfile.sv
 Z15 Fregfile.sv
-!i122 25
-L0 3 27
+!i122 36
+L0 3 34
 R7
 31
 R8
@@ -92,19 +95,19 @@ R10
 R4
 R11
 R5
-VI44__F04P[JWTGR@h?`Gf2
+VnZ@nScAL6GI<9bkaZAKm[1
 r1
 !s85 0
 !i10b 1
-!s100 USV]1_6k<M^oeXJ]YBQDV1
-II44__F04P[JWTGR@h?`Gf2
+!s100 :7[Gd6b8oQi3T=RGod3H82
+InZ@nScAL6GI<9bkaZAKm[1
 !i103 1
 S1
 R2
 R13
 R14
 R15
-!i122 25
+!i122 36
 R6
 R7
 31
@@ -118,27 +121,27 @@ vtb_regfile
 Z18 2tb_regfile.sv
 R4
 R11
-DXx4 work 18 tb_regfile_sv_unit 0 22 7Fo]I]KU]^?ZSC<;fz_aL1
+DXx4 work 18 tb_regfile_sv_unit 0 22 9J<VN0<`BzS1j^;`mzP@a3
 R5
 R12
 r1
 !s85 0
 !i10b 1
-!s100 KdWK4gJ6:8B^;5f<7o6K>0
-ImlRVMQ[e_j?`KLTU@`Yk:0
+!s100 X:9`eh7aizLIoL@IY?7M?3
+IIUW0d`J91khoY;9_^m3W03
 !s105 tb_regfile_sv_unit
 S1
 R2
-Z19 w1778780619
+Z19 w1783900425
 Z20 8tb_regfile.sv
 Z21 Ftb_regfile.sv
-!i122 26
-L0 3 49
+!i122 37
+L0 3 66
 R7
 31
 R8
-!s107 tb_regfile.sv|
-Z22 !s90 -reportprogress|300|tb_regfile.sv|
+Z22 !s107 tb_regfile.sv|
+Z23 !s90 -reportprogress|300|tb_regfile.sv|
 !i113 0
 R9
 R3
@@ -147,25 +150,25 @@ R18
 R4
 R11
 R5
-V7Fo]I]KU]^?ZSC<;fz_aL1
+V9J<VN0<`BzS1j^;`mzP@a3
 r1
 !s85 0
 !i10b 1
-!s100 WlEQ:Q1I?@egX?SQ3eg>71
-I7Fo]I]KU]^?ZSC<;fz_aL1
+!s100 @L50[meUIE=9HWSAL3OHW1
+I9J<VN0<`BzS1j^;`mzP@a3
 !i103 1
 S1
 R2
 R19
 R20
 R21
-!i122 26
+!i122 37
 R6
 R7
 31
 R8
-Z23 !s107 tb_regfile.sv|
 R22
+R23
 !i113 0
 R9
 R3

@@ -23,9 +23,7 @@ module tb ();
     RESET = 1;
 
     systeminput[1] = 32'h05800000;
-    systeminput[0] = 128;
-    //ADDI x1, x, 1 -> 00000000000100000000000010010011 -> 00100093
-    $display("Primeira instrução: ADDI x1, x0, 1");
+
     #2800;
     #2800;
     $finish;

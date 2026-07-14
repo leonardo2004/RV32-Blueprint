@@ -1,8 +1,10 @@
 m255
 K4
 z2
-!s12c _opt
-Z0 !s99 nomlopt
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
 !s11f vlog 2025.2 2025.05, May 31 2025
 13
 !s112 1.1
@@ -10,155 +12,155 @@ Z0 !s99 nomlopt
 !i10e 25
 !i10f 100
 cModel Technology
-Z1 d/home/leotl/Documentos/RV32-Blueprint/TBs/control_tb
+Z2 d/home/leotl/Documentos/RV32-Blueprint/TBs/control_tb
 T_opt
 !i145 1
 !i144 0
-Z2 !s110 1779902093
-V^ZQQzoj^nlXU>3T17>Caj1
+Z3 !s110 1783900979
+VYSbRg8zk_cDf;h_cCzAFz2
 04 5 4 work cu_tb fast 0
-=1-4851c50e5641-6a17268d-4282d-d3f
-R0
+=1-4851c50e5641-6a542b33-2955f-33e2
+R1
 !s12f OEM100
 !s12b OEM100
 !s124 OEM10U2 
 !s135 nogc
 o-quiet -auto_acc_if_foreign -work work +acc
-Z3 tCvgOpt 0
+Z4 tCvgOpt 0
 n@_opt
 OL;O;2025.2;82
 vcontrol_unit
-Z4 2control_unit.sv
-Z5 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
-Z6 DXx4 work 15 data_structures 0 22 gXUWi5FhDPCOGC0:4]hG72
-DXx4 work 20 control_unit_sv_unit 0 22 <56LQO[oNOKLQ4Ymo3N<M1
-Z7 !s110 1779902092
-Z8 VDg1SIo80bB@j0V0VzS_@n1
+Z5 2control_unit.sv
+Z6 DXx6 sv_std 3 std 0 22 @5XbY]_OacJl=`ToSm<M^0
+Z7 DXx4 work 15 data_structures 0 22 gPihg>oJh[;BOdzHOn3PA1
+DXx4 work 20 control_unit_sv_unit 0 22 MKj;J[WY@7ZanNcXN[1_Y2
+Z8 !s110 1783900978
+Z9 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
 !i10b 1
-!s100 Q7:j54C@ZT6R4^fSJO<gM2
-IOVP=88V0kkUd]kY>i8m@:2
+!s100 7_FPnRz1nR0WmEW>^:6f63
+I71^BYNYC1oGWlm6d[]hic0
 !s105 control_unit_sv_unit
 S1
-R1
-Z9 w1778611393
-Z10 8control_unit.sv
-Z11 Fcontrol_unit.sv
-!i122 1
-L0 3 96
-Z12 OL;L;2025.2;82
+R2
+Z10 w1783702640
+Z11 8control_unit.sv
+Z12 Fcontrol_unit.sv
+!i122 4
+L0 3 102
+Z13 OL;L;2025.2;82
 31
-Z13 !s108 1779902092.000000
-Z14 !s107 control_unit.sv|
-Z15 !s90 -reportprogress|300|control_unit.sv|
+Z14 !s108 1783900978.000000
+Z15 !s107 control_unit.sv|
+Z16 !s90 -reportprogress|300|control_unit.sv|
 !i113 0
-Z16 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R3
-Xcontrol_unit_sv_unit
+Z17 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R4
+Xcontrol_unit_sv_unit
 R5
 R6
 R7
-V<56LQO[oNOKLQ4Ymo3N<M1
+R8
+VMKj;J[WY@7ZanNcXN[1_Y2
 r1
 !s85 0
 !i10b 1
-!s100 jP_NUCg^TA`WSnomIBA6d0
-I<56LQO[oNOKLQ4Ymo3N<M1
+!s100 GEnjScg?AGhFHETBV=R>g1
+IMKj;J[WY@7ZanNcXN[1_Y2
 !i103 1
 S1
-R1
-R9
+R2
 R10
 R11
-!i122 1
-Z17 L0 1 0
 R12
-31
+!i122 4
+Z18 L0 1 0
 R13
+31
 R14
 R15
-!i113 0
 R16
-R3
+!i113 0
+R17
+R4
 vcu_tb
-Z18 2cu_tb.sv
-R5
+Z19 2cu_tb.sv
 R6
-DXx4 work 13 cu_tb_sv_unit 0 22 0oGknQYUZGNa^JnD[3J7W0
-R2
-R8
+R7
+DXx4 work 13 cu_tb_sv_unit 0 22 91@Hf>hN`zN9^SMmFnAFl3
+R3
+R9
 r1
 !s85 0
 !i10b 1
-!s100 ;WCP@6Aj?MY[ckYif1f=60
-IHRbb^4AFW<C07ekhf4SWA1
+!s100 gM^XPjBoP<B``jMX78j@93
+I2RM4l72[53AcD@Hgf[<VI3
 !s105 cu_tb_sv_unit
 S1
-R1
-Z19 w1778530190
-Z20 8cu_tb.sv
-Z21 Fcu_tb.sv
-!i122 2
-L0 3 78
-R12
-31
-R13
-Z22 !s107 cu_tb.sv|
-Z23 !s90 -reportprogress|300|cu_tb.sv|
-!i113 0
-R16
-R3
-Xcu_tb_sv_unit
-R18
-R5
-R6
 R2
-V0oGknQYUZGNa^JnD[3J7W0
+Z20 w1783900949
+Z21 8cu_tb.sv
+Z22 Fcu_tb.sv
+!i122 5
+L0 3 82
+R13
+31
+R14
+Z23 !s107 cu_tb.sv|
+Z24 !s90 -reportprogress|300|cu_tb.sv|
+!i113 0
+R17
+R4
+Xcu_tb_sv_unit
+R19
+R6
+R7
+R3
+V91@Hf>hN`zN9^SMmFnAFl3
 r1
 !s85 0
 !i10b 1
-!s100 Y[EEUE@g=7[]3i8>JkU9C1
-I0oGknQYUZGNa^JnD[3J7W0
+!s100 CXF:oADk>g@1lFag54HU21
+I91@Hf>hN`zN9^SMmFnAFl3
 !i103 1
 S1
-R1
-R19
+R2
 R20
 R21
-!i122 2
-R17
-R12
-31
-R13
 R22
+!i122 5
+R18
+R13
+31
+R14
 R23
+R24
 !i113 0
-R16
-R3
+R17
+R4
 Xdata_structures
 2data_structures.sv
-R5
-R7
+R6
+R8
 !i10b 1
-!s100 oCPl[kKWF82j<c6cHg@In1
-IgXUWi5FhDPCOGC0:4]hG72
+!s100 Od5J`BgW9Go=CGG0^FK=Q2
+IgPihg>oJh[;BOdzHOn3PA1
 S1
-R1
-w1778618964
+R2
+w1783107205
 8data_structures.sv
 Fdata_structures.sv
-!i122 0
-R17
-VgXUWi5FhDPCOGC0:4]hG72
-R12
+!i122 3
+R18
+VgPihg>oJh[;BOdzHOn3PA1
+R13
 r1
 !s85 0
 31
-R13
+R14
 !s107 data_structures.sv|
 !s90 -reportprogress|300|data_structures.sv|
 !i113 0
-R16
-R3
+R17
+R4

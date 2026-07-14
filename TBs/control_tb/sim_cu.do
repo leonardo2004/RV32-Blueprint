@@ -30,6 +30,7 @@ add wave -color "Gray60" -radix binary /cu_tb/dut/lui_c
 add wave -color "Gray60" -radix binary /cu_tb/dut/branch_c
 add wave -color "Gray60" -radix binary /cu_tb/dut/jump_c
 add wave -color "Gray60" -radix binary /cu_tb/dut/pcsource_c
+add wave -color "Gray60" -radix binary /cu_tb/dut/ebreak_c
 
 # Run the simulation until $stop is reached
 run -all
