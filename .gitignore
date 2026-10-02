@@ -1,0 +1,8 @@
+work/
+*.wlf
+transcript
+
+db/
+incremental_db/
+greybox_tmp/
+*.qws
