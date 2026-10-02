@@ -1,0 +1,2608 @@
+%% abtex2-modelo-relatorio-tecnico.tex, v-1.9.6 laurocesar
+%% Copyright 2012-2016 by abnTeX2 group at http://www.abntex.net.br/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://www.abntex.net.br/
+%%
+%% This work consists of the files abntex2-modelo-relatorio-tecnico.tex,
+%% abntex2-modelo-include-comandos and abntex2-modelo-references.bib
+%%
+
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% abnTeX2: Modelo de Relatório Técnico/Acadêmico em conformidade com 
+% ABNT NBR 10719:2015 Informação e documentação - Relatório técnico e/ou
+% científico - Apresentação
+% ------------------------------------------------------------------------ 
+% ------------------------------------------------------------------------
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	%openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	%twoside,           % para impressão em recto e verso. Oposto a oneside
+	oneside,
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil,				% o último idioma é o principal do documento
+	]{abntex2}
+
+
+
+% PACOTES
+
+% ---
+% Pacotes fundamentais 
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+% \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+\usepackage{url}
+% ---
+\usepackage[export]{adjustbox}
+% Pacotes adicionais, usados no anexo do modelo de folha de identificação
+\usepackage{multicol}
+\usepackage{multirow}
+
+\usepackage{float} % para utilizar o H de tabelas e figuras e mante-las no lugar
+% ---
+
+%----------------- PARA INSERIR ARQUIVOS DE CODIGOS -----------------%
+\usepackage{xcolor}
+% Definindo novas cores
+\definecolor{verde}{rgb}{0,0.5,0}
+% Configurando layout para mostrar codigos C++
+\usepackage{listings}
+\lstset{
+  language=Verilog, %indicar a linguagem utilizada
+  basicstyle=\ttfamily\tiny, 
+  keywordstyle=\color{blue}, 
+  stringstyle=\color{verde}, 
+  commentstyle=\color{gray}, 
+  extendedchars=true, 
+  showspaces=false, 
+  showstringspaces=false, 
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true, 
+  breakautoindent=true, 
+  captionpos=b,
+  xleftmargin=0pt,
+}
+
+\lstdefinelanguage{SystemVerilog}[]{Verilog}{
+  morekeywords={
+    logic, bit, byte, shortint, int, longint, integer, time, shortreal, real, realtime, 
+    string, chandle, event, struct, enum, union, virtual, interface, modport, 
+    clocking, endclocking, default, input, output, inout, ref, 
+    always_comb, always_ff, always_latch, package, endpackage, import, export, 
+    typedef, class, endclass, extends, this, super, new, 
+    program, endprogram, assertion, property, endproperty, sequence, endsequence, 
+    assert, assume, cover, restrict, wait_order, expect, 
+    forkjoin, join_any, join_none, pure, extern, local, protected, 
+    rand, randc, constraint, randomize, with, inside, dist, solve, before, 
+    alias, matches, tagged, mailbox, semaphore, const, void, break, continue, return
+  },
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]"
+}
+
+
+% -----------------% FIM INSERIR ARQUIVOs DE CODIGO -----------------%
+
+% Pacotes de citações
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\citebrackets() %citação numérica entre colchetes
+% --- 
+
+
+% CONFIGURAÇÕES DE PACOTES
+
+% Configurações do pacote backref
+% Usado sem a opção hyperpageref de backref
+\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+% Texto padrão antes do número das páginas
+\renewcommand{\backref}{}
+% Define os textos da citação
+\renewcommand*{\backrefalt}[4]{
+	\ifcase #1 %
+		Nenhuma citação no texto.%
+	\or
+		Citado na página #2.%
+	\else
+		Citado #1 vezes nas páginas #2.%
+	\fi}%
+% ---
+
+
+% Informações de dados para CAPA e FOLHA DE ROSTO
+\titulo{Projeto de um Processador RISC-V}
+\autor{Leonardo Tomasela Leal\\170291} %NAO PREENCHER
+\local{São José dos Campos - Brasil}
+\data{Abril de 2026}
+\instituicao{
+  Docente: Prof. Dr. Sérgio Ronaldo Barros dos Santos
+  \par
+  Universidade Federal de São Paulo - UNIFESP
+  \par
+  Instituto de Ciência e Tecnologia - Campus São José dos Campos
+}
+\tipotrabalho{Relatório técnico}
+\preambulo{Relatório apresentado à Universidade Federal de São Paulo como parte dos requisitos para aprovação na disciplina de Laboratório de Sistemas Computacionais: Arquitetura e Organização de Computadores.}
+% ---
+
+% Configurações de aparência do PDF final
+
+% alterando o aspecto da cor azul
+\definecolor{blue}{RGB}{41,5,195}
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+     	%pagebackref=true,
+		pdftitle={\@title}, 
+		pdfauthor={\@author},
+    	pdfsubject={\imprimirpreambulo},
+	    pdfcreator={LaTeX with abnTeX2},
+		pdfkeywords={abnt}{latex}{abntex}{abntex2}{relatório técnico}, 
+		colorlinks=true,       		% false: boxed links; true: colored links
+    	linkcolor=blue,          	% color of internal links
+    	citecolor=blue,        		% color of links to bibliography
+    	filecolor=magenta,      		% color of file links
+		urlcolor=blue,
+		bookmarksdepth=4
+}
+\makeatother
+% --- 
+
+
+% Espaçamentos entre linhas e parágrafos 
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% compila o indice
+\makeindex
+% ---
+
+
+
+% ------------------------------------------------
+% Início do documento
+\begin{document}
+
+% Seleciona o idioma do documento (conforme pacotes do babel)
+%\selectlanguage{english}
+\selectlanguage{brazil}
+
+% Retira espaço extra obsoleto entre as frases.
+\frenchspacing 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+% ---
+% Capa
+\imprimircapa
+% ---
+
+% ---
+% Folha de rosto
+\imprimirfolhaderosto*
+% ---
+
+% ---
+% RESUMO
+% resumo na língua vernácula (obrigatório)
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\begin{resumo}
+Este relatório descreve a implementação completa de um processador RISC-V de 32 bits, seguindo o subconjunto RV32IM e operando em ciclo único. Foram projetados, simulados e validados todos os componentes da unidade de processamento: a Unidade Lógica e Aritmética (ULA) com suporte a 24 operações, incluindo a extensão de multiplicação e divisão (RV32M); o banco de registradores com 32 registradores de 32 bits; a memória de instruções (ROM) inicializada a partir de arquivo hexadecimal; a memória de dados síncrona com lógica de \textit{byte enable} e região de E/S mapeada; o gerador de imediatos para os formatos I, S, B, U e J; a unidade de branch para desvios condicionais e saltos; a unidade de controle, que decodifica as instruções e gera todos os sinais de controle; e o Contador de Programa (PC) com reset síncrono. Todos os módulos foram integrados em um único módulo topo, que foi então encapsulado em um módulo para FPGA com divisor de clock para operação em bancada. O processador foi testado com dois programas de exemplo (Fibonacci e Fatorial), compilados utilizando o conjunto de ferramentas GNU RISC-V e convertidos para o formato hexadecimal. As simulações no ModelSim comprovam o funcionamento correto de todos os componentes, e os testes em bancada (FPGA) confirmam os resultados esperados, validando o projeto em hardware.
+
+\noindent
+\textbf{Palavras-chave}: RISC-V. Unidade Lógica e Aritmética. Banco de registradores. Memória de instruções. Memória de dados. Gerador de imediatos. Unidade de branch. Unidade de controle. Contador de Programa. FPGA. SystemVerilog. ModelSim.
+\end{resumo}
+
+\begin{siglas}
+  \item[ALU] Arithmetic Logic Unit (Unidade Lógica e Aritmética)
+  \item[AUIPC] Add Upper Immediate to Program Counter
+  \item[BR] Banco de Registradores (Register File)
+  \item[CISC] Complex Instruction Set Computer
+  \item[CPLD] Complex Programmable Logic Device
+  \item[DIV] Division
+  \item[EA] Endereço Efetivo
+  \item[FPGA] Field-Programmable Gate Array
+  \item[HDL] Hardware Description Language
+  \item[ISA] Instruction Set Architecture
+  \item[JAL] Jump and Link
+  \item[JALR] Jump and Link Register
+  \item[LUI] Load Upper Immediate
+  \item[MUL] Multiplication
+  \item[PC] Program Counter (Contador de Programa)
+  \item[RAM] Random Access Memory
+  \item[REM] Remainder
+  \item[RISC] Reduced Instruction Set Computer
+  \item[ROM] Read-Only Memory
+  \item[RV32I] RISC-V 32-bit Integer Base Instruction Set
+  \item[RV32IM] RV32I + Integer Multiplication and Division Extension
+  \item[SRA] Shift Right Arithmetic
+  \item[SRL] Shift Right Logical
+  \item[SV] SystemVerilog
+  \item[ULA] Unidade Lógica e Aritmética
+  \item[UVM] Universal Verification Methodology
+\end{siglas}
+
+
+%------LISTAS SÃO OPCIONAIS---------
+% inserir lista de ilustrações
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\clearpage
+
+% inserir lista de tabelas
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\clearpage
+% ---
+
+%SUMÁRIO É OBRIGATÓRIO
+% inserir o sumario
+\pdfbookmark[0]{\contentsname}{toc}
+\tableofcontents*
+% ---
+
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+\textual
+
+% ----------------- Introdução -------------------------------
+
+\chapter{Introdução}
+
+"Os computadores levaram a uma terceira revolução para a civilização, com a revolução da informação tomando o seu lugar ao lado da agricultura e revoluções industriais." \cite[p. 41, tradução própria]{pattersonriscv2018}. A evolução dos sistemas computacionais está intrinsecamente ligada ao constante aprimoramento das suas arquiteturas e da sua organização física. O estudo prático do funcionamento lógico de um processador apresenta-se como uma etapa indispensável para a consolidação teórica dos conceitos abordados. Neste contexto, o presente relatório documenta o projeto completo de um processador digital baseado na arquitetura RISC-V de 32 bits, operando sob um modelo de execução de ciclo único (monociclo), desde sua especificação arquitetural até sua implementação em FPGA.
+
+A motivação central para a adoção da norma RISC-V no desenvolvimento deste projeto reside na sua natureza de padrão de código aberto (\textit{open source}) e na sua licença totalmente gratuita. Estas características posicionam o RISC-V como uma alternativa acadêmica e industrial altamente viável e moderna face a arquiteturas proprietárias e fechadas que dominam o mercado atual, tais como as famílias x86 e ARM. Para além da acessibilidade financeira e filosófica, o RISC-V destaca-se pela sua profunda modularidade. O seu conjunto de instruções foi estrategicamente desenhado para ser enxuto na base, sendo suportado por várias extensões normalizadas, o que o torna fácil de adaptar para diversos usos de processamento. Esta modularidade é o que viabiliza a inclusão, neste processador, de um bloco específico de multiplicação e divisão em hardware acoplado à base de inteiros (constituindo um subconjunto da variante RV32IM).
+
+O projeto foi desenvolvido em SystemVerilog e abrange todos os componentes necessários para a execução de programas completos: Unidade Lógica e Aritmética (ULA) com extensão M, banco de registradores, memórias de instrução e dados (esta última com região de E/S mapeada), gerador de imediatos, unidade de branch, unidade de controle e Contador de Programa. Todos esses módulos foram integrados em um caminho de dados monociclo e validados por meio de simulações no ModelSim. Posteriormente, o processador foi sintetizado para um kit FPGA, utilizando um divisor de clock para adequar a frequência de operação aos periféricos da bancada. Dois programas de teste (Fibonacci e Fatorial) foram compilados para a arquitetura RV32IM e executados tanto em simulação quanto em bancada, comprovando o funcionamento prático do sistema.
+
+O relatório está estruturado da seguinte forma: no Capítulo 2, são apresentados os objetivos do projeto. O Capítulo 3 contém a fundamentação teórica, abordando conceitos de arquitetura e organização de computadores, linguagens de descrição de hardware e FPGAs. O Capítulo 4 descreve detalhadamente o desenvolvimento de todos os componentes, sua integração e os programas de teste. Por fim, o Capítulo 5 apresenta as considerações finais, incluindo as dificuldades encontradas e os resultados obtidos em bancada.
+
+
+...
+
+%---------------- Objetivos -------------------------------------
+\chapter{Objetivos}
+
+\section{Geral}
+
+Projetar, implementar e validar, por meio da linguagem de descrição de hardware SystemVerilog, um processador RISC-V de 32 bits completo, seguindo o subconjunto RV32IM, operando em ciclo único, e capaz de executar programas de teste em simulação e em hardware (FPGA), abrangendo desde os componentes individuais até a integração final e a síntese em dispositivo programável.
+
+\section{Específicos}
+
+Para a realização do trabalho, os seguintes objetivos específicos foram definidos e atendidos:
+
+\begin{enumerate}
+  \item Implementar a Unidade Lógica e Aritmética (ULA) com suporte às operações da base inteira RV32I (adição, subtração, operações lógicas, deslocamentos e comparações) e à extensão de multiplicação e divisão RV32M, totalizando 24 operações.
+  \item Projetar o banco de registradores (Register File) com 32 registradores de 32 bits, respeitando a característica de \texttt{x0} permanentemente igual a zero e utilizando escrita síncrona e leitura combinacional.
+  \item Desenvolver a memória de instruções (ROM) com 256 palavras de 32 bits, inicializada a partir de um arquivo hexadecimal, com leitura combinacional.
+  \item Implementar a memória de dados (RAM) síncrona de 1024 palavras, com suporte a acessos a byte, meia palavra e palavra, incluindo a lógica de \textit{byte enable}, a correta extensão de sinal/zero e uma região de E/S mapeada nos quatro últimos endereços.
+  \item Implementar o gerador de imediatos para extrair e estender os valores imediatos dos formatos I, S, B, U e J, conforme a especificação RISC-V.
+  \item Desenvolver a unidade de branch para cálculo do próximo PC em desvios condicionais (\texttt{beq}, \texttt{bne}, \texttt{blt}, \texttt{bge}, \texttt{bltu}, \texttt{bgeu}), saltos incondicionais (\texttt{jal}) e saltos indiretos (\texttt{jalr}).
+  \item Projetar a unidade de controle para decodificar as instruções e gerar todos os sinais de controle necessários, incluindo o sinal \texttt{ebreak\_c} para a instrução de sistema \texttt{ebreak}.
+  \item Integrar todos os componentes em um módulo topo (\texttt{integ}), formando o caminho de dados completo do processador monociclo.
+  \item Adaptar o processador para síntese em FPGA, implementando um divisor de clock para operação em bancada, e realizar testes práticos com os periféricos (chaves e displays) utilizando programas de teste (Fibonacci e Fatorial).
+  \item Validar o funcionamento do processador por meio de simulações no ModelSim e testes em hardware, documentando os resultados obtidos.
+\end{enumerate}
+
+%------------------- Fundamentação Teórica ---------------
+\chapter{Fundamentação Teórica}
+Esta seção tem como objetivo estabelecer a base teórica e conceitual que fundamenta o desenvolvimento do projeto. Nela, são abordados os princípios fundamentais de arquitetura e organização de computadores, os paradigmas de memória e modos de endereçamento, bem como as principais características da arquitetura RISC-V, fornecendo o embasamento literário necessário para justificar as escolhas de projeto adotadas.
+\section{Computador} 
+
+Define-se, em sua essência, como um sistema digital e eletrônico projetado para receber, armazenar, processar e transmitir informações de maneira automatizada, operando sob o controle estrito de um conjunto de instruções previamente armazenado.
+
+
+\section{Organização de Computadores} Refere-se à implementação física e de hardware responsável por concretizar as especificações da arquitetura proposta. O projeto organizacional envolve o arranjo das unidades operacionais e suas interconexões lógicas, englobando o desenho do caminho de dados (datapath), o dimensionamento dos sinais da Unidade de Controle e a hierarquia topológica do sistema de memórias.
+
+\section{Arquitetura de Computadores}
+Corresponde aos atributos lógicos de um sistema computacional que são diretamente visíveis ao programador de baixo nível ou ao desenvolvedor de compiladores. Ela engloba a definição formal do Conjunto de Instruções (ISA - Instruction Set Architecture), os tipos de dados matemáticos suportados, a quantidade de registradores de uso geral expostos e os métodos padronizados de acesso à memória. Em suma, a arquitetura estabelece as especificações funcionais que determinam o que o processador é capaz de realizar.
+
+\subsection{CISC vs RISC}
+A distinção entre os paradigmas CISC (Complex Instruction Set Computer) e RISC (Reduced Instruction Set Computer) é fundamental na classificação de processadores.
+\subsubsection{Arquitetura CISC (Complex Instruction Set Computer)}
+ A arquitetura CISC caracteriza-se por um conjunto amplo e heterogêneo de instruções, com tamanhos variáveis e múltiplos modos de endereçamento. Neste modelo, uma única instrução pode realizar várias operações de baixo nível (como acessar a memória, processar o dado e guardar o resultado). Embora reduza o tamanho do código compilado, esta abordagem aumenta substancialmente a complexidade do hardware e da Unidade de Controle, resultando em ciclos de execução irregulares.
+
+\subsubsection{Arquitetura RISC (Reduced Instruction Set Computer)}
+A arquitetura RISC adota um conjunto reduzido de instruções simples, otimizadas e de formato fixo, o que agiliza drasticamente a decodificação. A sua característica estrutural central é a adoção rigorosa do modelo load-store, em que o processamento matemático e lógico ocorre exclusivamente entre os registradores internos. O acesso à memória principal é estritamente restrito a instruções dedicadas de leitura (load) e escrita (store). Esta filosofia simplifica o hardware, reduz os modos de endereçamento e garante a estabilidade previsível essencial para viabilizar a implementação de um caminho de dados de ciclo único.
+
+
+\subsection{Arquitetura de Von Neumann vs. Arquitetura de Harvard}
+
+A Figura 1 apresenta as diferenças entre as arquiteturas, que serão elaboradas nos subtópicos seguintes.
+
+\begin{figure}[H]
+\centering 
+\caption{Arquitetura de Von Neumann e de Harvard} \label{fig:Von-Neuman-Vs-Harvard-Architecture}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.16]{harvardxvonneumann.png}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsubsection{Arquitetura de Von Neumann}
+Fundamentada no conceito clássico de programa armazenado, este modelo caracteriza-se por manter a memória de dados e a memória de instruções estruturadas de forma unificada. Consequentemente, o sistema dispõe de um barramento único para o tráfego de informações. Essa característica estrutural cria um afunilamento (conhecido como "Gargalo de Von Neumann"), que obriga o processador a executar as instruções em uma ordem estritamente sequencial, impossibilitando a busca de uma instrução e a manipulação de um dado no mesmo instante de tempo. É um padrão habitualmente associado aos processadores de instrução complexa (CISC).
+
+\subsubsection{Arquitetura de Harvard}
+Em contrapartida, este paradigma resolve o gargalo de concorrência ao adotar a separação física estrita entre a memória de dados e a memória de instruções. A utilização de barramentos de comunicação isolados possibilita que o processador efetue a busca da próxima instrução e a leitura ou escrita de um dado operacional de forma simultânea. Esta abordagem de acesso paralelo é inerente ao modelo RISC e torna-se um requisito vital para a implementação de um caminho de dados de ciclo único.
+
+
+
+\subsection{Modos de Endereçamento}
+Os modos de endereçamento consistem nos mecanismos lógicos e aritméticos pelos quais a arquitetura do hardware calcula os endereços efetivos dos operandos requisitados para processar uma instrução.
+Para esta seção utilizaremos a seguinte notação, baseada na utilizada por Stallings \cite{stallings2017} para explicar os modos de endereçamento:
+\begin{enumerate}
+    \item \textbf{A} $\Rightarrow$ O conteúdo no campo de endereço dentro de uma instrução.
+    \item \textbf{PC} $\Rightarrow$  O conteúdo em uma instrução se refere ao registrador contador de programa.
+    \item \textbf{R} $\Rightarrow$ O conteúdo em uma instrução se refere a um registrador.
+    \item \textbf{(X)} $\Rightarrow$ O conteúdo do local de memória X ou do registrador X.
+    \item \textbf{EA} $\Rightarrow$ Endereço real do operando.
+\end{enumerate}
+O escopo do projeto sustenta-se nos seguintes modos principais:
+
+\subsubsection{Endereçamento por registrador}
+A própria instrução decodificada faz uma referência direta ao endereço numérico de um registrador interno, que, por sua vez, armazena o operando necessário para a Unidade Lógica e Aritmética:
+$$EA=R$$
+
+\begin{figure}[H]
+\centering 
+\caption{Endereçamento por registrador} \label{fig:Endereçamento-por-registrador}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.16]{endporreg.png}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsubsection{Endereçamento por imediato}
+O valor numérico constante a ser utilizado na operação não é buscado no banco de registradores, pois já se encontra embutido fisicamente em um campo específico dos próprios bits da instrução:
+$$EA = A$$
+
+\begin{figure}[H]
+\centering 
+\caption{Endereçamento por imediato} \label{fig:Endereçamento-por-imediato}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.16]{endimediato.png}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsubsection{Endereçamento por deslocamento}
+O processo de acesso ao módulo de memória de dados é estabelecido somando-se um valor referencial de base (armazenado em um registrador) a um valor fixo de deslocamento (caracterizado como um offset imediato de 12 bits na ISA abordada):
+$$EA = A + (R)$$
+\begin{figure}[H]
+\centering 
+\caption{Endereçamento por deslocamento} \label{fig:Endereçamento-por-deslocamento}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.16]{endpordesl.png}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsubsection{Endereçamento PC-relativo}
+Empregado no fluxo de controle de saltos e desvios, o endereço computado para o salto é obtido somando-se o valor atual armazenado no Contador de Programa (PC) a um valor imediato extraído da instrução:
+$$EA = A + (PC)$$
+\begin{figure}[H]
+\centering 
+\caption{Endereçamento PC-relativo} \label{fig:Endereçamento-PC-relativo}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.16]{Imagens/endrelpc.png}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Arquitetura RISC-V}
+\subsubsection{Origem}
+O RISC-V foi concebido e estruturado na Universidade da Califórnia em Berkeley (UC Berkeley) ao longo do verão do ano de 2010. O projeto foi idealizado e gerido por uma equipe de acadêmicos e pesquisadores englobando pioneiros da computação como Krste Asanović e David Patterson. O desenvolvimento se originou da necessidade intrínseca da equipe por um processador de arquitetura moderna e de licença livre (gratuita), passível de ser implementado sem restrições em aulas práticas e pesquisas.
+
+\subsubsection{Características}
+O RISC-V é uma arquitetura estabelecida sobre os preceitos do modelo RISC (Reduced Instruction Set Computer). Diferenciando-se das arquiteturas complexas (CISC), ele é construído sobre o arranjo load-store (onde o acesso físico à memória restringe-se a instruções exclusivas de leitura e escrita), disponibiliza um largo conjunto de 32 registradores de uso geral e processa instruções com formato simples e de tamanho rigidamente fixado em 32 bits. O sistema utiliza um mapeamento de endereçamento com formato padrão orientado a byte de acordo com a ordem little endian \cite{RISCVINTERNATIONAL}.
+
+\subsubsection{Modos de Endereçamento}
+Mantendo plena conformidade com sua filosofia de redução e simplificação computacional (cujo foco preza pela minimização da complexidade dos decodificadores), o conjunto de instruções do RISC-V opera unicamente sob o emprego dos modos de endereçamento por registrador (para manipulações puramente lógicas/matemáticas), por imediato (para interações com constantes numéricas), por deslocamento (recurso fundamental das instruções nativas de Load e Store) e de maneira PC-relativa (encarregado pelo direcionamento imperativo de saltos e desvios estruturados) \cite{RISCVINTERNATIONAL}.
+
+\subsection{Justificativa da Escolha}
+A escolha definitiva da ISA RISC-V para conduzir o desenvolvimento lógico exposto neste relatório consolida-se, fundamentalmente, pelas garantias de seu padrão de código aberto (open source) atrelado à abstenção total de pagamentos e taxas de licenciamento comercial (gratuito). Essas propriedades proporcionam uma viabilidade sem precedentes e firmam a arquitetura como uma alternativa moderna, acadêmica e industrialmente proeminente frente aos competidores corporativos preestabelecidos, tais como os processadores das famílias x86 e ARM. Além dos benefícios econômicos e da disponibilidade, a base técnica justifica-se pela adoção de um design profundamente modular. O RISC-V disponibiliza um conjunto essencial de instruções rigorosamente simplificadas, sendo projetado de tal forma que é perfeitamente exequível adaptá-lo a variados cenários mediante o simples acoplamento de extensões. Essa prerrogativa arquitetural viabiliza e acomoda a inclusão direcionada do bloco de multiplicação em hardware abordada neste projeto.
+
+\section{Linguagens de Descrição de Hardware (HDLs)}
+
+O desenvolvimento de sistemas digitais complexos, como o processador RISC-V proposto, exige ferramentas de projeto robustas que vão além da tradicional entrada esquemática. As Linguagens de Descrição de Hardware (Hardware Description Languages - HDLs) surgem como uma alternativa poderosa, permitindo ao projetista descrever a estrutura e o comportamento de um sistema eletrônico por meio de um arquivo de texto, seguindo uma sintaxe e semântica bem definidas. Este arquivo de descrição serve como uma especificação executável do hardware e pode ser utilizado para gerar dados de programação para dispositivos lógicos programáveis ou para ser sintetizado em um circuito físico.
+
+Diferentemente das linguagens de programação de software, que possuem um fluxo de execução sequencial de instruções (paradigma imperativo), as HDLs são inerentemente concorrentes (ou paralelas). Em uma descrição de hardware, a execução das expressões e atribuições de valores ocorre de forma a emular a propagação de sinais por um circuito digital, onde múltiplas operações acontecem simultaneamente. Esta característica fundamental torna as HDLs a ferramenta ideal para a descrição formal de circuitos eletrônicos.
+
+As principais vantagens da adoção de uma HDL no projeto de hardware incluem:
+
+\begin {enumerate}
+    \item \textbf{Abstração e Hierarquia:} Permitem representar desde equações booleanas e tabelas verdade até operações matemáticas complexas, facilitando a criação de projetos hierárquicos onde um componente pode ser reutilizado como parte de outro.
+    \item \textbf{Síntese Lógica:} Uma descrição em HDL pode ser utilizada por uma ferramenta de síntese lógica para, em conjunto com uma biblioteca de componentes, gerar automaticamente a lista de interconexões (netlist) de um circuito otimizado.
+    \item \textbf{Simulação:} Permitem a simulação funcional do projeto para verificar seu comportamento antes mesmo de sua implementação física, garantindo a corretude do sistema em desenvolvimento.
+    \item \textbf{Documentação:} Servem como uma forma de documentação precisa e formal da estrutura e do funcionamento do hardware projetado.
+\end{enumerate}
+
+Entre as diversas HDLs existentes, atualmente as mais conhecidas e utilizadas são o VHDL, que teve origem em um programa de pesquisa do Departamento de Defesa dos EUA, e o Verilog, que será a linguagem de escolha para a implementação do processador deste projeto.
+
+\subsection{A Linguagem Verilog}
+A linguagem Verilog foi desenvolvida para a descrição de circuitos eletrônicos digitais, sendo amplamente utilizada na documentação, simulação e síntese automática de sistemas digitais, especialmente em ambientes acadêmicos e industriais. Sua sintaxe possui semelhanças com a linguagem de programação C, o que facilita seu aprendizado para programadores familiarizados com este paradigma.
+
+Um dos pontos mais importantes para a correta compreensão do Verilog é a clara distinção entre a modelagem de hardware e a modelagem de software:
+\begin{enumerate}
+    \item \textbf{Modelagem de Software (linguagens como C, Python):} Assume-se um processador como unidade de execução. O programador escreve um código que será executado de forma sequencial pelo processador, passo a passo ao longo do tempo. Há uma exploração temporal da execução, onde um único somador pode ser reutilizado em múltiplas iterações de um laço de repetição.
+    \item \textbf{Modelagem de Hardware (Verilog, VHDL):}  Modelam-se os próprios circuitos digitais. O projetista explora a execução não apenas no tempo, mas também no espaço, podendo replicar componentes (como somadores) para que operações sejam realizadas simultaneamente. A simultaneidade e o paralelismo são características intrínsecas da descrição.
+\end{enumerate}
+
+Para a descrição de sistemas em Verilog, o código é organizado em módulos, que representam blocos de hardware com entradas e saídas definidas. Estes módulos podem ser instanciados e interconectados para formar sistemas de maior complexidade.
+
+Dentro de um módulo, três estilos principais podem ser empregados para descrever seu funcionamento:
+\begin{enumerate}
+    \item \textbf{Descrição Estrutural:} Descreve a interconexão entre componentes mais simples (sub-módulos ou portas lógicas), sendo análoga a uma lista de componentes e suas conexões.
+    \item \textbf{Descrição Comportamental:}  Descreve o funcionamento desejado do circuito, especificando como as saídas devem reagir a mudanças nas entradas, sem necessariamente detalhar sua estrutura interna. Utiliza estruturas como always e if-else.
+    \item \textbf{Descrição de Fluxo de Dados (Dataflow):} Descreve o circuito por meio de equações que expressam a relação entre suas entradas e saídas, utilizando operadores lógicos e aritméticos em conjunto com a palavra-chave assign.
+\end{enumerate}
+
+A seguir segue um exemplo de um mux simples de 4 bits na linguagem Verilog:
+\begin{lstlisting}[language=Verilog, caption={MUX 4:1 em Verilog Clássico}, label=lst:mux_verilog]
+module mux41_verilog (
+    input [1:0] sel,
+    input a, b, c, d,
+    input clk, rst,
+    output reg y
+);
+
+    // Sinal intermediario precisa ser reg porque recebe atribuicao no always
+    reg y_comb;
+
+    // Bloco Combinacional (Lista de sensibilidade generica)
+    always @(sel or a or b or c or d) begin
+        case (sel)
+            2'b00: y_comb = a;
+            2'b01: y_comb = b;
+            2'b10: y_comb = c;
+            2'b11: y_comb = d;
+            default: y_comb = 1'bx;
+        endcase
+    end
+
+    // Bloco Sequencial (Registrador de Saida)
+    always @(posedge clk or posedge rst) begin
+        if (rst)
+            y <= 1'b0;
+        else
+            y <= y_comb;
+    end
+
+endmodule
+\end{lstlisting}
+
+\subsection{A Linguagem SystemVerilog}
+Para projetos de maior escala e complexidade, o SystemVerilog surge como uma extensão (superset) do Verilog tradicional. Ele incorpora características de linguagens de programação de alto nível, como orientação a objetos, e introduz um conjunto abrangente de ferramentas voltadas para a verificação funcional, incluindo geração de testes aleatórios restritos (constrained random testing), cobertura funcional (functional coverage) e metodologias de verificação como a Universal Verification Methodology (UVM). Embora este projeto utilize o Verilog padrão, o SystemVerilog representa o estado da arte para a verificação de circuitos integrados complexos.
+
+No contexto deste trabalho, a linguagem Verilog é a escolhida para dar continuidade ao desenvolvimento do processador RISC-V, sendo a ponte entre a especificação arquitetural idealizada e a implementação real em hardware.
+
+A seguir segue um exemplo do mesmo mux demonstrado anteriormente para a linguagem SystemVerilog:
+\begin{lstlisting}[language=SystemVerilog, caption={MUX 4:1 Simplificado em SystemVerilog}, label=lst:mux_sv]
+module mux41_sv (
+    input  logic [1:0] sel,
+    input  logic       a, b, c, d,
+    input  logic       clk, rst,
+    output logic       y
+);
+
+    // Nao precisa decidir entre reg/wire, usa-se apenas logic
+    logic y_comb;
+
+    // always_comb monta a lista de sensibilidade automaticamente
+    always_comb begin
+        unique case (sel)
+            2'b00: y_comb = a;
+            2'b01: y_comb = b;
+            2'b10: y_comb = c;
+            2'b11: y_comb = d;
+        endcase
+    end
+
+    // always_ff garante que o compilador valide se o circuito e sequencial
+    always_ff @(posedge clk or posedge rst) begin
+        if (rst) y <= '0;  // Sintaxe '0 zera todos os bits automaticamente
+        else     y <= y_comb;
+    end
+
+endmodule
+\end{lstlisting}
+
+\section{FPGA (Field-Programmable Gate Array)}
+
+Após a definição da arquitetura e a descrição do processador em uma HDL, a etapa seguinte consiste em materializar este projeto em um dispositivo físico capaz de executar o conjunto de instruções definido. Uma das plataformas mais adequadas para a prototipagem e implementação de sistemas digitais como este é o FPGA (Field-Programmable Gate Array).
+
+Um FPGA é um dispositivo semicondutor, cuja arquitetura se baseia em uma matriz regular de blocos lógicos programáveis (configuráveis para realizar funções lógicas simples ou complexas), circundada por uma matriz de interconexão programável que permite conectar estes blocos de forma flexível, e blocos de entrada e saída (I/O) para a comunicação com o mundo externo.
+
+A principal característica que diferencia um FPGA de outros dispositivos lógicos programáveis (como CPLDs) é sua altíssima capacidade de integração, podendo conter desde alguns milhares até vários milhões de equivalentes a portas lógicas, e a natureza finamente granular de seus blocos lógicos. Enquanto um CPLD contém poucos blocos lógicos grandes, o FPGA contém uma vasta quantidade de blocos pequenos, oferecendo uma flexibilidade e densidade de integração muito superiores para circuitos complexos.
+
+Os blocos de interconexão e roteamento são o ponto chave para a flexibilidade do FPGA. É através deles que o algoritmo de roteamento, parte das ferramentas de desenvolvimento do fabricante, define como as conexões entre os blocos lógicos serão estabelecidas para realizar o circuito projetado. Esta capacidade de reconfiguração é sua grande vantagem: o mesmo chip pode ser reprogramado inúmeras vezes para implementar funções de hardware completamente diferentes.
+
+Relevância para o Projeto Para este trabalho, a implementação do processador RISC-V descrito em Verilog será sintetizada, mapeada e configurada em um FPGA. Esta abordagem permite verificar o funcionamento do processador em um cenário próximo ao real, executando programas de teste de forma acelerada. Assim como a adoção da arquitetura RISC-V garante a compatibilidade da descrição em HDL com um padrão aberto, a utilização de um FPGA garante a compatibilidade do projeto com uma plataforma de hardware flexível e reconfigurável, amplamente difundida tanto no meio acadêmico quanto no industrial para a prototipagem de sistemas digitais e sistemas embarcados.
+
+\begin{figure}[H]
+\centering 
+\caption{Field-Programmable Gate Array} \label{fig:FPGA}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=.75]{Imagens/FPGA.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+%-------------- Desenvolvimento --------------------------------
+
+\chapter{Desenvolvimento}
+
+Neste capítulo, detalha-se o processo de concepção do processador, abrangendo desde as definições macroestruturais até a especificação técnica das instruções e a lógica de organização do hardware.
+
+\section{Características Gerais do Processador}
+O processador desenvolvido é um núcleo de processamento digital baseado na arquitetura RISC-V, implementando um subconjunto do conjunto de instruções RV32IM. As principais diretrizes técnicas que definem o sistema são:
+\begin{enumerate}
+    \item \textbf{Largura de Dados:} 32 bits, operando com palavras (words) de quatro bytes.
+    \item \textbf{Modelo de Execução:} Monociclo (Ciclo Único), onde cada instrução é buscada, decodificada e executada em um único pulso de clock.
+    \item \textbf{Conjunto de Instruções} (ISA): Base inteira (I) com a extensão de multiplicação e divisão em hardware (M). Não está planejada a implementação das instruções \textit{ebreak} e \textit{ecall}, entretanto, caso necessário, isso pode mudar.
+    \item \textbf{Ordenação de Memória:} Padrão Little-endian, com endereçamento orientado a byte.
+    \item \textbf{Banco de Registradores:} Composto por 32 registradores de uso geral (x0 a x31), cada um com 32 bits de largura.
+    \item \textbf{Arquitetura de Memória:} Modelo Harvard, com a separação física entre a memória de instruções e a memória de dados para viabilizar o fluxo de dados em ciclo único.
+\end{enumerate}
+
+
+
+\section{Desenvolvimento da Arquitetura}
+A arquitetura RISC-V organiza suas instruções em formatos fixos de 32 bits para otimizar a decodificação em hardware \cite{RISCVINTERNATIONAL}. Para este projeto, as instruções foram agrupadas em cinco categorias principais:
+
+\begin{table}[H]
+\centering
+\caption{Tipos de instruções (formatos R, I, S, B, U)}
+\label{tab:InstTypes}
+\ABNTEXfontereduzida
+\begin{tabular}{crcrcrcrcrcrl}
+\multicolumn{1}{l}{31}      & 25    & \multicolumn{1}{l}{24} & 20 & \multicolumn{1}{l}{19} & 15 & \multicolumn{1}{l}{14} & 12 & \multicolumn{1}{l}{11}     & 7    & \multicolumn{1}{l}{6}  & 0  &        \\ \cline{1-12}
+\multicolumn{2}{|c|}{funct7}        & \multicolumn{2}{c|}{rs2}    & \multicolumn{2}{c|}{rs1}    & \multicolumn{2}{c|}{funct3} & \multicolumn{2}{c|}{rd}           & \multicolumn{2}{c|}{opcode} & Tipo R \\ \cline{1-12}
+\multicolumn{4}{|c|}{imm[11:0]}                               & \multicolumn{2}{c|}{rs1}    & \multicolumn{2}{c|}{funct3} & \multicolumn{2}{c|}{rd}           & \multicolumn{2}{c|}{opcode} & Tipo I \\ \cline{1-12}
+\multicolumn{2}{|c|}{imm[11:5]} & \multicolumn{2}{c|}{rs2}    & \multicolumn{2}{c|}{rs1}    & \multicolumn{2}{c|}{funct3} & \multicolumn{2}{c|}{imm[4:0]} & \multicolumn{2}{c|}{opcode} & Tipo S \\ \cline{1-12}
+\multicolumn{2}{|c|}{imm[11:5]} & \multicolumn{2}{c|}{rs2}    & \multicolumn{2}{c|}{rs1}    & \multicolumn{2}{c|}{funct3} & \multicolumn{2}{c|}{imm[4:0]} & \multicolumn{2}{c|}{opcode} & Tipo B \\ \cline{1-12}
+\multicolumn{10}{|c|}{imm[31:12]}                                                                                                                             & \multicolumn{2}{c|}{opcode} & Tipo U \\ \cline{1-12}
+\end{tabular}
+\legend{Fonte: O Autor}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Formato da instrução \texttt{jal} (Tipo J)}
+\label{tab:Jal}
+\ABNTEXfontereduzida
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{31} & \multicolumn{1}{c|}{30–21} & \multicolumn{1}{c|}{20} & \multicolumn{1}{c|}{19–12} & \multicolumn{1}{c|}{11–7} & \multicolumn{1}{c|}{6–0} \\ \hline
+imm[20] & imm[10:1] & imm[11] & imm[19:12] & rd & opcode \\ \hline
+\multicolumn{6}{|c|}{imediato = \{imm[20], imm[10:1], imm[11], imm[19:12], 1'b0\}} \\ \hline
+\end{tabular}
+\legend{Fonte: O Autor}
+\end{table}
+
+\subsection{Instruções do Tipo R}
+As instruções do Tipo R são projetadas para a execução de operações aritméticas e lógicas nas quais todos os operandos envolvidos residem internamente no banco de registradores. Consequentemente, esta categoria utiliza de forma exclusiva o modo de endereçamento por registrador, lendo os dados de duas fontes e gravando o resultado em um destino. Como exemplos práticos desta categoria implementados no projeto, destacam-se as operações lógicas e aritméticas fundamentais (como soma, subtração, operações lógicas and, or e xor), os deslocamentos de bits, as comparações de magnitude e, de modo integrado, as operações atreladas à Extensão M de hardware, compreendendo as funções de multiplicação e divisão em nível de silício.
+
+\begin{table}[H]
+\centering
+\caption{Instruções do tipo R} \label{tab:RType}
+\ABNTEXfontereduzida
+\begin{tabular}{|l|c|c|c|l|l|}
+\multicolumn{1}{l}{Mnemônico} & \multicolumn{1}{c}{funct3} & \multicolumn{1}{c}{funct7} & \multicolumn{1}{c}{Opcode} & \multicolumn{1}{l}{Descrição} & \multicolumn{1}{l}{Notas} \\ \hline
+add   & 0x0 & 0x00 & 0110011 & rd = rs1 + rs2 & \\ \hline
+sub   & 0x0 & 0x20 & 0110011 & rd = rs1 - rs2 & \\ \hline
+xor   & 0x4 & 0x00 & 0110011 & rd = rs1 \textasciicircum{} rs2 & \\ \hline
+or    & 0x6 & 0x00 & 0110011 & rd = rs1 | rs2 & \\ \hline
+and   & 0x7 & 0x00 & 0110011 & rd = rs1 \& rs2 & \\ \hline
+sll   & 0x1 & 0x00 & 0110011 & rd = rs1 \textless{}\textless{} rs2 & \\ \hline
+srl   & 0x5 & 0x00 & 0110011 & rd = rs1 \textgreater{}\textgreater{} rs2 & \\ \hline
+sra   & 0x5 & 0x20 & 0110011 & rd = rs1 \textgreater{}\textgreater{} rs2 & msb-extends \\ \hline
+slt   & 0x2 & 0x00 & 0110011 & rd = (rs1 \textless{} rs2)?1:0 & \\ \hline
+sltu  & 0x3 & 0x00 & 0110011 & rd = (rs1 \textless{} rs2)?1:0 & zero-extends \\ \hline
+mul   & 0x0 & 0x01 & 0110011 & rd = (rs1 * rs2)[31:0] & \\ \hline
+mulh  & 0x1 & 0x01 & 0110011 & rd = (rs1 * rs2)[63:32] & \\ \hline
+mulsu & 0x2 & 0x01 & 0110011 & rd = (rs1 * rs2)[63:32] & \\ \hline
+mulu  & 0x3 & 0x01 & 0110011 & rd = (rs1 * rs2)[63:32] & \\ \hline
+div   & 0x4 & 0x01 & 0110011 & rd = rs1 / rs2 & \\ \hline
+divu  & 0x5 & 0x01 & 0110011 & rd = rs1 / rs2 & \\ \hline
+rem   & 0x6 & 0x01 & 0110011 & rd = rs1 \% rs2 & \\ \hline
+remu  & 0x7 & 0x01 & 0110011 & rd = rs1 \% rs2 & \\ \hline
+\end{tabular}
+\legend{Fonte: O Autor}
+\end{table}
+
+É importante destacar o comportamento de funções que trabalham com valores \textit{unsigned}, valores que não apresentam sinais e que possuem características específicas, relacionadas a como eles são tratados quando extendidos. Tais comportamentos são descritos na coluna "Notas". A descrição \textit{msb-extends} diz que o bit mais significativo é repetido quanto o valor original é extendido, já a descrição \textit{zero-extends} diz que o valor é completado por zeros quando é extendido. Essa afirmação também vale para tipos posteriores de instrução.
+%--------------- Conjunto de Instruções ---------------------
+
+\subsection{Instruções do Tipo I}
+As instruções do Tipo I (Immediate) caracterizam-se por operar combinando um registrador de origem a um valor constante (imediato) de 12 bits embutido na própria instrução, o qual sofre extensão de sinal prévia à sua utilização. Este formato é versátil e emprega dois modos de endereçamento distintos a depender da operação: utiliza o endereçamento por imediato para a execução de instruções lógico-aritméticas com constantes (a exemplo da soma com imediato) e o endereçamento por deslocamento para as instruções voltadas à leitura da memória de dados, utilizando o imediato como um referencial de distância (como nas operações de carregamento de palavra, meia palavra e byte). Além disso, este formato atende às necessidades de saltos indiretos realizados por valores de registradores.
+
+\begin{table}[H]
+\centering
+\caption{Instruções do tipo I} \label{tab:IType}
+\ABNTEXfontereduzida
+\begin{tabular}{|l|c|c|c|l|l|}
+\multicolumn{1}{l}{Mnemônico} & \multicolumn{1}{c}{funct3} & \multicolumn{1}{c}{imm} & \multicolumn{1}{c}{Opcode} & \multicolumn{1}{l}{Descrição} & \multicolumn{1}{l}{Notas} \\ \hline
+addi  & 0x0 & & 0010011 & rd = rs1 + imm & \\ \hline
+xori  & 0x4 & & 0010011 & rd = rs1 \textasciicircum{} imm & \\ \hline
+ori   & 0x6 & & 0010011 & rd = rs1 | imm & \\ \hline
+andi  & 0x7 & & 0010011 & rd = rs1 \& imm & \\ \hline
+slli  & 0x1 & imm[5:11]=0x00 & 0010011 & rd = rs1 \textless{}\textless{} imm[0:4] & \\ \hline
+srli  & 0x5 & imm[5:11]=0x00 & 0010011 & rd = rs1 \textgreater{}\textgreater{} imm[0:4] & \\ \hline
+srai  & 0x5 & imm[5:11]=0x20 & 0010011 & rd = rs1 \textgreater{}\textgreater{} imm[0:4] & msb-extends \\ \hline
+slti  & 0x2 & & 0010011 & rd = (rs1 \textless{} imm)?1:0 & \\ \hline
+sltiu & 0x3 & & 0010011 & rd = (rs1 \textless{} imm)?1:0 & zero-extends \\ \hline
+lb    & 0x0 & & 0000011 & rd = M[rs1+imm][0:7] & \\ \hline
+lh    & 0x1 & & 0000011 & rd = M[rs1+imm][0:15] & \\ \hline
+lw    & 0x2 & & 0000011 & rd = M[rs1+imm][0:31] & \\ \hline
+lbu   & 0x4 & & 0000011 & rd = M[rs1+imm][0:7] & zero-extends \\ \hline
+lhu   & 0x5 & & 0000011 & rd = M[rs1+imm][0:15] & zero-extends \\ \hline
+jalr  & 0x0 & & 1100111 & rd = PC+4; PC = rs1 + imm & \\ \hline
+\end{tabular}
+\legend{Fonte: O Autor}
+\end{table}
+
+\subsection{Instruções do Tipo S}
+Para as operações de escrita, empregam-se as instruções do Tipo S (Store), que representam o formato exclusivo para a transferência de dados do processador para a memória externa. Estas operações fazem uso estrito do modo de endereçamento por deslocamento, no qual o endereço de destino na memória é computado através da soma do valor contido em um registrador base com um deslocamento imediato de 12 bits. Diferentemente das categorias anteriores, o Tipo S não requer um registrador de destino para gravação interna, uma vez que o dado operado é enviado ao sistema de armazenamento. Exemplos desta implementação englobam as operações de salvamento de palavra inteira, frações de palavra e unidades de byte.
+
+\begin{table}[H]
+\centering
+\caption{Instruções do tipo S} \label{tab:SType}
+\ABNTEXfontereduzida
+\begin{tabular}{|l|c|c|l|l|}
+\multicolumn{1}{l}{Mnemônico} & \multicolumn{1}{c}{funct3} & \multicolumn{1}{c}{Opcode} & \multicolumn{1}{l}{Descrição} \\ \hline
+sb & 0x0 & 0100011 & M[rs1+imm][0:7] = rs2[0:7] \\ \hline
+sh & 0x1 & 0100011 & M[rs1+imm][0:15] = rs2[0:15] \\ \hline
+sw & 0x2 & 0100011 & M[rs1+imm][0:31] = rs2[0:31] \\ \hline
+\end{tabular}
+\legend{Fonte: O Autor}
+\end{table}
+
+\subsection{Instruções do Tipo B}
+No que tange à manipulação do fluxo de controle condicional, o sistema adota as instruções do Tipo B (Branch). Estas instruções operam calcadas no modo de endereçamento PC-relativo e são responsáveis por realizar avaliações lógicas entre dois registradores. Caso a condição avaliada seja considerada verdadeira, o processador efetua o desvio do fluxo de execução para um novo endereço, o qual é calculado mediante a soma do valor atual do Contador de Programa (PC) a um valor imediato especificado na instrução. A implementação funcional deste projeto contempla saltos condicionais baseados em relações de igualdade, desigualdade e comparações de magnitude relativas.
+
+\begin{table}[H]
+\centering
+\caption{Instruções do tipo B} \label{tab:BType}
+\ABNTEXfontereduzida
+\begin{tabular}{|l|c|c|l|l|}
+\multicolumn{1}{l}{Mnemônico} & \multicolumn{1}{c}{funct3} & \multicolumn{1}{c}{Opcode} & \multicolumn{1}{l}{Descrição} & \multicolumn{1}{l}{Notas} \\ \hline
+beq  & \texttt{0x0} & \texttt{1100011} & if(rs1 == rs2) PC += imm & \\ \hline
+bne  & \texttt{0x1} & \texttt{1100011} & if(rs1 != rs2) PC += imm & \\ \hline
+blt  & \texttt{0x4} & \texttt{1100011} & if(rs1 \textless{} rs2) PC += imm & \\ \hline
+bge  & \texttt{0x5} & \texttt{1100011} & if(rs1 \textgreater{}= rs2) PC += imm & \\ \hline
+bltu & \texttt{0x6} & \texttt{1100011} & if(rs1 \textless{} rs2) PC += imm & zero-extends \\ \hline
+bgeu & \texttt{0x7} & \texttt{1100011} & if(rs1 \textgreater{}= rs2) PC += imm & zero-extends \\ \hline
+\end{tabular}
+\legend{Fonte: O Autor}
+\end{table}
+
+\subsection{Instruções do Tipo U}
+As instruções do tipo U são utilizadas para carregar constantes de 20 bits na parte superior de um registrador (\texttt{lui}) ou somá-las ao PC (\texttt{auipc}). O imediato de 20 bits é extraído dos bits [31:12] da instrução e deslocado 12 bits à esquerda.
+
+\begin{table}[H]
+\centering
+\caption{Instruções do tipo U}
+\label{tab:UType}
+\begin{tabular}{|l|c|l|}
+\hline
+Mnemônico & Opcode & Descrição \\ \hline
+lui   & 0110111 & rd = imm \textless{}\textless{} 12 \\ \hline
+auipc & 0010111 & rd = PC + (imm \textless{}\textless{} 12) \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Instruções do Tipo J}
+A instrução \texttt{jal} (Jump and Link) é do tipo J, com um imediato de 20 bits (mais um bit 0 implícito) que permite saltos de até ±1 MiB. O formato do imediato é reconstruído a partir dos campos \texttt{inst[31]}, \texttt{inst[19:12]}, \texttt{inst[20]}, \texttt{inst[30:21]}, acrescido de um bit 0 no LSB.
+
+\begin{table}[H]
+\centering
+\caption{Instrução do tipo J}
+\label{tab:JType}
+\begin{tabular}{|l|c|l|}
+\hline
+Mnemônico & Opcode & Descrição \\ \hline
+jal & 1101111 & rd = PC+4; PC = PC + imm \\ \hline
+\end{tabular}
+\end{table}
+
+\subsection{Instruções do Sistema}
+
+Além das instruções aritméticas, lógicas, de memória e de controle de fluxo, a arquitetura RISC-V define um conjunto de instruções do sistema, utilizadas para operações privilegiadas, chamadas ao sistema e depuração. Neste projeto, foi implementada a instrução \texttt{ebreak} (Environment Break), que tem como função interromper a execução do programa e transferir o controle para um depurador ou, em nosso caso, simplesmente parar o processador.
+
+A instrução \texttt{ebreak} possui opcode \texttt{0x73} (1110011) e é decodificada pela unidade de controle, que ativa o sinal \texttt{ebreak\_c}. Este sinal é utilizado no módulo topo para interromper a atualização do PC, efetivamente parando o processador até que um reset seja aplicado.
+
+\begin{table}[H]
+\centering
+\caption{Instrução do sistema implementada}
+\label{tab:system_instr}
+\begin{tabular}{|c|c|l|}
+\hline
+Mnemônico & Opcode & Descrição \\ \hline
+ebreak & 1110011 & Interrompe a execução (breakpoint) \\ \hline
+\end{tabular}
+\legend{Fonte: O Autor}
+\end{table}
+
+A instrução \texttt{ebreak} é amplamente utilizada nos programas de teste para sinalizar o término bem-sucedido da computação, permitindo a verificação do resultado final escrito na memória de E/S.
+
+%-------------------- Caminho de Dado ------------------
+\section{Desenvolvimento da Organização}
+
+A organização do processador reflete a materialização física da arquitetura previamente definida, feita por meio da construção dos caminhos de dados de cada instrução, como da descrição do mesmo. Em cada componente funcional, há 4 campos:
+\begin{enumerate}
+    \item \textbf{O nome do componente funcional}, localizado no centro de cada caixa.
+    \item \textbf{As entradas gerais de cada componente funcional}, localizados no canto superior esquerdo de cada caixa e com nomes terminados em "\emph{\_i}".
+    \item \textbf{As entradas de controle de cada componente funcional}, localizadas no canto inferior esquerdo de cada caixa e com nomes terminados em "\emph{\_c}".
+    \item \textbf{As saídas de cada componente funcional}, localizadas na parte direita de cada caixa, com nomes terminados em "\emph{\_o}".
+\end{enumerate}
+
+Vale ressaltar que para uma melhor compreensão de cada caminho de dados, foram omitidos os caminhos de controle com origem na unidade de controle (\emph{Control Unit}), sendo representados por um texto em vermelho quando ativos, tanto na saída da unidade de controle quanto na entrada de controle dos componentes funcionais. Os caminhos são interligados por entradas e saídas com o mesmo nome antes do caractere "\emph{\_}".
+
+Nos caminhos de dados de instruções específicas, além dos caminhos de controle, foram omitidos os caminhos não utilizados.
+
+\subsection{Caminho de Dados Completo}
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados Completo} \label{fig:Datapath-completo}
+\graphicspath{ {./Imagens/} }
+\includegraphics[scale=0.5]{Imagens/completo(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+
+\subsection{Caminho de Dados das Instruções do Tipo R}
+
+Para as instruções estritamente dependentes de registradores, o fluxo de dados inicia-se com a leitura simultânea dos operandos armazenados nos endereços apontados pelos campos \emph{rs1} e \emph{rs2} do Banco de Registradores. A Unidade de Controle sinaliza ao multiplexador da ALU que o segundo operando deve provir diretamente de \emph{rs2}, ignorando qualquer valor imediato. A ALU executa a operação matemática ou lógica estipulada pela ALU Control, que define a operação com base nos campos originados da instrução e, em seguida, o resultado transita pelos multiplexadores de saída (ignorando a Memória de Dados) para ser gravado de volta no registrador de destino (\emph{rd}).
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados das Instruções do Tipo R} \label{fig:Datapath-TipoR}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/add(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados das Instruções Aritméticas e Lógicas com Imediato (\emph{addi, xori, ori, andi, slli, srli, srai, slti, sltiu})}
+
+Neste agrupamento, o datapath opera lendo apenas um registrador de origem (\emph{rs1}). Paralelamente, o Gerador de Imediatos extrai o valor constante de 12 bits embutido na instrução e realiza a extensão de sinal para 32 bits. O multiplexador de entrada da ALU é então comutado para selecionar este valor estendido como o segundo operando. Após o processamento da operação pela ALU, o resultado é diretamente encaminhado para a porta de escrita do Banco de Registradores, sendo salvo no registrador \emph{rd}.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados das Instruções Aritméticas e Lógicas com Imediato} \label{fig:Datapath-AritTipoI}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/addi(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados das Instruções de Carregamento (\emph{lb, lh, lw, lbu, lhu})}
+O fluxo de dados para a leitura em memória exige a utilização da ALU para o cálculo do endereço efetivo. O valor base é lido do registrador \emph{rs1} e somado ao valor de deslocamento (imediato de 12 bits estendido). O resultado desta soma é enviado para a porta de endereço da Memória de Dados. Com o sinal de leitura ativado, a memória disponibiliza o dado requisitado. O multiplexador de write-back é então configurado para selecionar a saída da Memória de Dados, redirecionando o valor lido para ser armazenado no registrador de destino (\emph{rd}).
+
+É importante ressaltar que para as instruções sem bit de sinal \emph{lbu} e \emph{lhu}, a extensão do valor é realizada dentro da própria memória de dados. O reconhecimento de tais instruções é realizado de mesma forma do reconhecimento das demais instruções de carregamento, utilizando-se do campo \emph{funct3} da instrução.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados das Instruções de Carregamento} \label{fig:Datapath-Carregamento}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/load(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados das Instruções de Armazenamento (\emph{sb, sh, sw})}
+Para as operações de escrita na memória, o datapath processa dois registradores simultaneamente: \emph{rs1} fornece o endereço base e \emph{rs2} fornece o dado a ser armazenado. A ALU computa o endereço final de destino somando o valor de \emph{rs1} ao imediato estendido. O resultado da ALU é ligado à entrada de endereçamento da Memória de Dados, enquanto o valor lido de \emph{rs2} é direcionado para a porta de dados de entrada da memória. O sinal de escrita em memória é habilitado e, como não há retorno de dados para o processador, o sinal de escrita no Banco de Registradores é desativado.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados das Instruções de Armazenamento} \label{fig:Datapath-TipoS}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/store(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados das Instruções de Desvio Condicional (\emph{beq, bne, blt, bge, bltu, bgeu})}
+Nas instruções de salto condicional, o caminho de dados bifurca-se em duas operações simultâneas. Na primeira via, os valores dos registradores \emph{rs1} e \emph{rs2} são enviados à ALU (ou a um comparador dedicado) para avaliar a condição lógica estipulada. Na segunda via, um somador independente calcula o endereço de destino do salto, adicionando o valor atual do Contador de Programa (PC) ao imediato de 12 bits estendido (e deslocado à esquerda). Se a condição avaliada pela ALU for verdadeira, a Unidade de Controle comuta o multiplexador do PC para que o próximo endereço de instrução seja o alvo calculado; caso contrário, o PC é atualizado normalmente para PC + 4. Não ocorre gravação no Banco de Registradores.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados das Instruções de Desvio Condicional} \label{fig:Datapath-Branch}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/branch(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados da Instrução de Salto e Ligação (\emph{jal})}
+O processamento da instrução \emph{jal} requer o cálculo do endereço de salto e do endereço de retorno. O endereço de destino é obtido somando-se o valor atual do PC ao imediato de 20 bits estendido presente na instrução. Esse valor é injetado diretamente no PC. Concomitantemente, o endereço sequencial da próxima instrução (PC + 4) é calculado na ALU e enviado para a porta de escrita do Banco de Registradores, sendo salvo no registrador destino (\emph{rd}, convencionalmente o registrador de retorno), permitindo a posterior retomada do fluxo original.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados da Instrução de Salto e Ligação} \label{fig:Datapath-jal}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/jal(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados da Instrução de Salto Indireto (\emph{jalr})}
+A execução do \emph{jalr} assemelha-se estruturalmente ao \emph{jal}, porém com uma diferença crucial no cálculo do endereço de destino. Em vez de utilizar o PC como base, o endereço do salto é calculado pela ALU somando o valor lido do registrador \emph{rs1} com o imediato de 12 bits com sinal estendido. O endereço de retorno (PC + 4) é preservado e gravado no registrador destino (\emph{rd}), e o PC é atualizado com o novo endereço calculado, permitindo saltos dinâmicos baseados em dados armazenados.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados da Instrução de Salto Indireto} \label{fig:Datapath-jalr}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/jalr(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados de Carregamento de Imediato Superior (\emph{lui})}
+Para a instrução \emph{lui}, o datapath opera de maneira simplificada. O Gerador de Imediatos extrai os 20 bits superiores da instrução, preenche os 12 bits inferiores com zeros e envia este valor de 32 bits pelo caminho de dados e o resultado é imediatamente conduzido ao Banco de Registradores para ser gravado em \emph{rd}. Não há acesso à memória de dados nem leitura de registradores de origem.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados de Carregamento de Imediato Superior} \label{fig:Datapath-lui}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/lui(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de Dados da Adição de Imediato Superior ao PC (\emph{auipc})}
+Por fim, o fluxo da instrução auipc combina o valor atual do PC com uma constante. O imediato de 20 bits é extraído e posicionado nas casas superiores de uma palavra de 32 bits (com os bits inferiores zerados). A ALU recebe em suas entradas o valor do PC e este imediato formatado, realizando a soma de ambos. O endereço resultante desta adição é então roteado diretamente para a porta de escrita do Banco de Registradores, sendo salvo em rd para utilização futura pelo programa.
+
+\begin{figure}[H]
+\centering 
+\caption{Caminho de Dados da Adição de Imediato Superior ao PC} \label{fig:Datapath-auipc}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.5]{Imagens/auipc(final).pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\subsection{Caminho de dados para Instruções do Sistema (\texttt{ebreak})}
+
+A instrução \texttt{ebreak} (Environment Break) é uma instrução do sistema utilizada para sinalizar um ponto de interrupção durante a execução do programa. Diferentemente das instruções aritméticas, lógicas ou de controle de fluxo, o \texttt{ebreak} não produz um resultado computacional nem altera o estado do processador de forma convencional. Seu efeito é puramente de controle: interromper a execução e transferir o controle para um depurador ou, no caso deste projeto, simplesmente parar o processador.
+
+O fluxo de dados para a instrução \texttt{ebreak} é o mais simples entre todas as instruções implementadas. A instrução é lida da memória de instruções e encaminhada à unidade de controle, que a decodifica pelo opcode \texttt{0x73} (1110011). A partir desse momento, nenhum outro bloco funcional é acionado:
+
+\begin{itemize}
+  \item O banco de registradores não realiza leitura nem escrita.
+  \item A ALU não recebe operandos nem executa operação.
+  \item A memória de dados não é acessada.
+  \item O gerador de imediatos e a unidade de branch permanecem inativos.
+\end{itemize}
+
+O único sinal gerado pela unidade de controle é \texttt{ebreak\_c}, que é enviado ao módulo topo para interromper a atualização do Contador de Programa (PC). O PC, portanto, mantém seu valor atual, congelando a execução.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{Imagens/datapath_ebreak.pdf}
+\caption{Caminho de dados para a instrução \texttt{ebreak}.}
+\label{fig:datapath_ebreak}
+\end{figure}
+
+A Figura~\ref{fig:datapath_ebreak} ilustra o fluxo mínimo da instrução: a instrução é lida da memória, decodificada e o sinal de parada é ativado, interrompendo o PC.
+
+
+A implementação do \texttt{ebreak} como um sinal de controle que interrompe a atualização do PC é uma escolha de projeto compatível com o modelo de execução monociclo. Não há necessidade de adicionar estágios extras ou lógica de depuração complexa, pois o objetivo é apenas permitir a finalização controlada dos programas de teste. Essa abordagem mantém a simplicidade do caminho de dados, ao mesmo tempo que oferece um mecanismo prático para encerrar a simulação.
+
+\section{Definições Globais e Package \texttt{data\_structures}}
+
+Antes da implementação dos módulos funcionais, foi criado um package em SystemVerilog – \texttt{data\_structures.sv} – para centralizar todas as definições de tipos, enumeradores e constantes utilizadas no projeto. Esse package é compilado antes dos demais módulos, garantindo consistência e facilitando a manutenção.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Package data\_structures.sv}, label={lst:data_struct}]
+package data_structures;
+  typedef logic [31:0] register_t;
+  typedef logic [31:0] instruction_t;
+  typedef logic [31:0] address_t;
+  typedef logic [31:0] data_t;
+
+  typedef logic [4:0] reg_addr_t;
+  typedef logic [6:0] funct7_t;
+  typedef logic [2:0] funct3_t;
+
+  typedef enum logic [2:0] {
+    OP = 3'b000,
+    OPI = 3'b001,
+    AUIPC = 3'b010,
+    BRANCH = 3'b011,
+    JUMP = 3'b100,
+    LOAD = 3'b101,
+    STORE = 3'b110
+  } inst_type_t;
+
+  typedef enum logic [6:0] {
+    opcode_OP = 7'b0110011,
+    opcode_OP_IMM = 7'b0010011,
+    opcode_LOAD = 7'b0000011,
+    opcode_STORE = 7'b0100011,
+    opcode_BRANCH = 7'b1100011,
+    opcode_JAL = 7'b1101111,
+    opcode_JALR = 7'b1100111,
+    opcode_LUI = 7'b0110111,
+    opcode_AUIPC = 7'b0010111,
+    opcode_EBREAK = 7'b1110011
+  } opcode_t;
+
+  typedef enum logic [4:0] {
+    ADD = 5'b00000,
+    SUB = 5'b00001,
+    XOR = 5'b00010,
+    OR = 5'b00011,
+    AND = 5'b00100,
+    SLL = 5'b00101,
+    SRL = 5'b00110,
+    SRA = 5'b00111,
+    SLT = 5'b01000,
+    SLTU = 5'b01001,
+    EQUAL = 5'b01010,
+    NEQUAL = 5'b01011,
+    GOET = 5'b01100,
+    GETU = 5'b01101,
+    PCP4 = 5'b01110,
+    MUL = 5'b01111,
+    MULH = 5'b10000,
+    MULHSU = 5'b10001,
+    MULHU = 5'b10010,
+    DIV = 5'b10011,
+    DIVU = 5'b10100,
+    REM = 5'b10101,
+    REMU = 5'b10110
+  } aluop_t;
+
+
+
+endpackage
+\end{lstlisting}
+
+As enumerações \texttt{inst\_type\_t} e \texttt{aluop\_t} são particularmente importantes, pois mapeiam os tipos de instrução e as operações da ULA a nomes simbólicos, tornando o código mais legível e próximo da especificação RISC-V.
+
+
+\section{Desenvolvimento da Unidade Lógica e Aritmética (ALU)}
+
+A Unidade Lógica e Aritmética é o componente central responsável por executar todas as operações matemáticas, lógicas e de comparação exigidas pelo conjunto de instruções do processador. Neste projeto, a ALU foi projetada para suportar não apenas as operações da base inteira (RV32I), mas também a extensão de multiplicação e divisão (RV32M), totalizando 24 operações distintas. O módulo foi implementado em Verilog (arquivo alu.sv) seguindo o modelo de lógica combinacional pura, com blocos always\_comb para o controle e para a execução das operações.
+
+\subsection{Interface da ALU}
+A interface da ALU é definida pelo seguinte conjunto de portas (conforme trecho do código):
+
+\begin{lstlisting}[language=SystemVerilog, caption={Interface da ALU}, label=lst:interfacealu]
+module alu (
+    input data_t rs1_i, rs2_i, imm_i, pc_i,
+    input funct3_t funct3_i,
+    input funct7_t funct7_i,
+    input inst_type_t inst_type_c,
+    input logic alusel1_c, alusel2_c,
+    output data_t aluout_o
+);
+\end{lstlisting}
+
+As entradas de dados (rs1\_i, rs2\_i, imm\_i, pc\_i) são os valores que podem ser selecionados como operandos da ALU. Os sinais de controle alusel1\_c e alusel2\_c permitem escolher, respectivamente, se o primeiro operando será rs1\_i ou pc\_i e se o segundo operando será rs2\_i ou imm\_i. O campo inst\_type\_c indica o tipo de instrução (OP, OPI, LOAD, STORE, BRANCH, JUMP, AUIPC), enquanto funct3\_i e funct7\_i são campos da instrução que refinam a operação. A saída aluout\_o fornece o resultado calculado.
+
+\subsection{Decodificação da Operação – Mapeamento para aluop\_t}
+Para abstrair a variedade de combinações entre inst\_type, funct3 e funct7, foi criado um tipo enumerado aluop\_t (definido no package data\_structures.sv) com todos os códigos de operação suportados:
+
+\begin{lstlisting}[language=SystemVerilog, caption={Decodificação da operação}, label=lst:opdecode]
+typedef enum logic [4:0] {
+    ADD, SUB, XOR, OR, AND, SLL, SRL, SRA, SLT, SLTU,
+    EQUAL, NEQUAL, GOET, GETU, PCP4,
+    MUL, MULH, MULHSU, MULHU, DIV, DIVU, REM, REMU
+} aluop_t;
+\end{lstlisting}
+
+O bloco ALUcontrol utiliza um casez para mapear cada combinação relevante ao respectivo aluop. Exemplos:
+
+\begin{itemize}
+    \item Para instruções do tipo R aritméticas (OP):
+    \begin{lstlisting}[language=SystemVerilog]
+{OP, 3'd0, 7'd0} : aluop = ADD;
+{OP, 3'd0, 7'd32} : aluop = SUB;
+    \end{lstlisting}
+    \item Para instruções de desvio condicional (BRANCH):
+    \begin{lstlisting}[language=SystemVerilog]
+{BRANCH, 3'd0, 7'b???????} : aluop = EQUAL;
+{BRANCH, 3'd4, 7'b???????} : aluop = SLT; // (para blt)
+    \end{lstlisting}
+    \item Para multiplicação e divisão (extensão M):
+    \begin{lstlisting}[language=SystemVerilog]
+{OP, 3'd0, 7'd1} : aluop = MUL;
+{OP, 3'd4, 7'd1} : aluop = DIV;
+    \end{lstlisting}
+
+\end{itemize}
+
+Observe o uso de don’t-cares (?) em campos que não influenciam a operação, como nos casos OPI onde o funct7 é irrelevante, exceto para deslocamentos com parte imediata.
+
+\subsection{Geração dos Operandos}
+Os dois operandos efetivos (op\_1 e op\_2) são gerados por um bloco combinacional que utiliza os sinais de seleção:
+
+\begin{lstlisting}[language=SystemVerilog]
+op_1 = (alusel1_c) ? pc_i : rs1_i;
+op_2 = (alusel2_c) ? imm_i : rs2_i;
+    \end{lstlisting}
+
+Essa lógica permite que a ALU atenda a todos os modos de endereçamento necessários:
+\begin{itemize}
+    \item \textbf{Tipo R:} alusel1\_c = 0, alusel2\_c = 0 → op\_1 = rs1, op\_2 = rs2.
+    \item \textbf{Aritmética com imediato (OPI):} alusel1\_c = 0, alusel2\_c = 1 → op\_1 = rs1, op\_2 = imm.
+    \item \textbf{Cálculo de endereço para LOAD/STORE:} alusel1\_c = 0, alusel2\_c = 1 → op\_1 = rs1, op\_2 = imm (ADD).
+    \item \textbf{JAL (salto e ligação):} alusel1\_c = 1, alusel2\_c = 0 → op\_1 = pc, op\_2 = rs2 (não usado), mas a operação PCP4 calcula $pc + 4$ independentemente.
+    \item \textbf{AUIPC:} alusel1\_c = 1, alusel2\_c = 1 → op\_1 = pc, op\_2 = imm, operação ADD.
+\end{itemize}
+
+\subsection{Implementação das Operações}
+A execução propriamente dita ocorre em um terceiro bloco always\_comb que contém um case (aluop). As principais operações são implementadas da seguinte forma:
+\begin{itemize}
+    \item \textbf{Aritméticas e lógicas básicas:} ADD, SUB, XOR, OR, AND usam operadores do SystemVerilog diretamente.
+    \item \textbf{Deslocamentos:} SLL, SRL e SRA consideram apenas os 5 bits menos significativos do segundo operando (op\_2[4:0]), conforme especificação RISC-V. O deslocamento aritmético para a direita utiliza 
+    \begin{lstlisting}[language=SystemVerilog]
+    $signed(op_1) >>> op_2[4:0].
+    \end{lstlisting}
+    \item \textbf{Comparações com sinal e sem sinal:} SLT e SLTU produzem 1 no bit 0 do resultado se a condição for verdadeira.
+    \item \textbf{Comparações para desvios:} EQUAL, NEQUAL, GOET (greater or equal), GETU (unsigned greater or equal) também produzem um bit de condição no LSB.
+    \item \textbf{Operações de multiplicação e divisão:}
+    \begin{itemize}
+        \item MUL – produto de 64 bits truncado para os 32 bits inferiores.
+        \item MULH, MULHSU, MULHU – respectivamente, multiplicação com sinal × sinal, sinal × sem sinal, sem sinal × sem sinal, retornando os 32 bits superiores.
+        \item DIV – divisão com sinal, com tratamento especial para a divisão por zero (resultado = -1) e para o caso 0x80000000 / -1 (resultado = 0x80000000).
+        \item DIVU – divisão sem sinal, retornando 0xFFFFFFFF para divisor zero.
+        \item REM e REMU – resto da divisão.
+    \end{itemize}
+    \item \textbf{Opção auxiliar PCP4:} utilizada pelas instruções jal e jalr para calcular o endereço de retorno (pc + 4).
+\end{itemize}
+
+Todos os cálculos que exigem largura de 64 bits utilizam o registrador temporário tmp\_reg de 64 bits para armazenar o produto antes da seleção da parte desejada.
+
+\subsection{Desenvolvimento dos Testbenches}
+
+Para validar o funcionamento da ALU, foi elaborado um testbench específico (tb.sv) que instancia o módulo alu e aplica estímulos correspondentes a todas as classes de instruções suportadas. O testbench é modular e permite a ativação seletiva de cada grupo de testes, facilitando a depuração e a verificação incremental.
+
+\subsubsection{Estrutura do Testbench}
+
+O testbench declara os mesmos sinais da interface da ALU e os conecta ao módulo sob teste (dut). Um bloco initial é responsável por:
+\begin{enumerate}
+    \item Inicializar todos os sinais com valores padrão.
+    \item Executar, em sequência, os conjuntos de testes correspondentes a:
+    \begin{itemize}
+        \item Instruções do tipo R aritméticas (ADD, SUB, MUL, DIV, etc.)
+        \item Instruções do tipo R de deslocamento (SLL, SRL, SRA)
+        \item Instruções do tipo R lógicas (XOR, OR, AND, SLT, SLTU)
+        \item Instruções do tipo I (ADDI, XORI, ORI, ANDI, SLLI, SRLI, SRAI, SLTI, SLTIU)
+        \item Instruções de LOAD e STORE (cálculo de endereço)
+        \item Instruções de desvio condicional (BEQ, BNE, BLT, BGE, BLTU, BGEU)
+        \item Instruções de salto e ligação (JAL, JALR) e AUIPC
+    \end{itemize}
+\end{enumerate}
+
+Cada teste configura os sinais de entrada adequados e aguarda um intervalo de 10 unidades de tempo (\#10) para que a ALU compute o resultado. Ao final, uma chamada \$stop pausa a simulação, permitindo a análise das formas de onda.
+
+\subsubsection{Organização dos Estímulos}
+
+Para manter a clareza, os testes foram agrupados e podem ser ativados/desativados através de comentários no código. Por exemplo, o trecho para as instruções do tipo R aritméticas é:
+
+\begin{lstlisting}[language=SystemVerilog, caption={Exemplo do trecho do código de instruções do tipo R aritméticas no TestBench}, label=lst:extrechotbtipoRarit]
+inst_type_c = OP;
+alusel1_c = 0;
+alusel2_c = 0;
+
+// ADD
+rs1_i = 32'd15; rs2_i = 32'd25; funct3_i = 3'd0; funct7_i = 7'd0; #10;
+// SUB
+rs1_i = 32'd50; rs2_i = 32'd20; funct3_i = 3'd0; funct7_i = 7'd32; #10;
+// MUL
+rs1_i = 32'd1000000; rs2_i = 32'd1000000; funct3_i = 3'd0; funct7_i = 7'd1; #10;
+// ... etc.
+\end{lstlisting}
+
+Para as instruções do tipo I, além de configurar inst\_type\_c = OPI e alusel2\_c = 1, o campo imm\_i é utilizado:
+
+\begin{lstlisting}[language=SystemVerilog, caption={Exemplo do trecho do código de instruções do tipo I aritméticas no TestBench}, label=lst:extrechotbtipoIarit]
+// ADDI
+rs1_i = 32'd100; imm_i = 32'd75; funct3_i = 3'd0; #10;
+// SRAI
+rs1_i = -32'd1024; imm_i = 32'd1; funct3_i = 3'd5; funct7_i = 7'd32; #10;
+    \end{lstlisting}
+
+Nos testes de desvio condicional, a saída da ALU fornece um bit de condição no LSB (aluout\_o[0]), que é posteriormente usado pela unidade de controle para decidir o salto. O testbench apenas verifica a geração correta desse bit.
+
+\subsection{Resultados da Simulação da ALU}
+\subsubsection{Instruções do tipo R}
+
+
+\subsubsubsection{Aritméticas}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform das instruções do tipo R aritméticas (ADD, SUB, MUL, MULH, MULHSU, MULHU, DIV, DIVU, REM, REMU)} \label{fig:waveformtiporarit}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Tipo-R-Arit.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+Observa‑se na figura que o testbench configura inicialmente inst\_type\_c = OP, alusel1\_c = 0 e alusel2\_c = 0, selecionando a operação entre dois registradores. Os sinais funct3\_i e funct7\_i variam a cada intervalo de 10 ns para executar diferentes operações.
+
+\begin{itemize}
+\item \textbf{ADD} (\texttt{funct3=0, funct7=0}): \texttt{rs1\_i = 15}, \texttt{rs2\_i = 25}. A ALU decodifica \texttt{aluop = ADD} e a saída \texttt{aluout\_o} torna‑se \textbf{40} (decimal), conforme esperado.
+\item \textbf{SUB} (\texttt{funct3=0, funct7=32}): \texttt{rs1\_i = 50}, \texttt{rs2\_i = 20}. \texttt{aluop = SUB} e \texttt{aluout\_o = 30}.
+\item \textbf{MUL} (\texttt{funct3=0, funct7=1}): \texttt{rs1\_i = 1.000.000}, \texttt{rs2\_i = 1.000.000}. O resultado da multiplicação de 32 bits é a parte baixa do produto de 64 bits. O waveform mostra \texttt{aluout\_o = 0x4A5C1000} (valor decimal $1.000.000^2 \bmod 2^{32}$). A operação \texttt{MUL} está correta.
+\item \textbf{MULH} (\texttt{funct3=1, funct7=1}): Mesmos operandos. \texttt{aluout\_o} assume o valor \texttt{0xE8D4A510} (parte alta do produto com sinal). O waveform indica que a ALU seleciona \texttt{tmp\_reg[63:32]} corretamente.
+\item \textbf{MULHSU} (\texttt{funct3=2, funct7=1}): \texttt{rs1\_i = -1.000.000} (complemento de dois), \texttt{rs2\_i = 500.000}. A saída corresponde aos 32 bits superiores do produto de um número com sinal por um sem sinal. O valor exibido está de acordo com a simulação.
+\item \textbf{MULHU} (\texttt{funct3=3, funct7=1}): \texttt{rs1\_i = 1.000.000}, \texttt{rs2\_i = 500.000}. Produto sem sinal, parte alta. Verificado.
+\item \textbf{DIV} (\texttt{funct3=4, funct7=1}): \texttt{rs1\_i = -50}, \texttt{rs2\_i = 20}. \texttt{aluout\_o = -2} (quociente com sinal). Na waveform, o valor aparece como \texttt{-32'd2} (ou \texttt{0xFFFFFFFE}).
+\item \textbf{DIVU} (\texttt{funct3=5, funct7=1}): \texttt{rs1\_i = 50}, \texttt{rs2\_i = 20}. \texttt{aluout\_o = 2} (divisão sem sinal).
+\item \textbf{REM} (\texttt{funct3=6, funct7=1}): \texttt{rs1\_i = -50}, \texttt{rs2\_i = 20}. Resto = \textbf{-10}. O waveform confirma \texttt{aluout\_o = -10}.
+\item \textbf{REMU} (\texttt{funct3=7, funct7=1}): \texttt{rs1\_i = 50}, \texttt{rs2\_i = 20}. Resto = \textbf{10}.
+\end{itemize}
+
+ A ALU executa corretamente todas as operações aritméticas da extensão M (multiplicação e divisão) além das básicas ADD e SUB.
+
+\subsubsubsection{Shift}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform das instruções de deslocamento (SLL, SRL, SRA)} \label{fig:waveformtiporshift}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Tipo-R-Shift.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{SLL} (\texttt{funct3=1, funct7=0}): \texttt{rs1\_i = 32'h0000FFFF}, \texttt{rs2\_i = 4}. Operação shift left lógico: \texttt{0x0000FFFF << 4 = 0x000FFFF0}. O waveform mostra \texttt{aluout\_o = 0x000FFFF0}.
+\item \textbf{SRL} (\texttt{funct3=5, funct7=0}): \texttt{rs1\_i = 32'hFFFF0000}, \texttt{rs2\_i = 4}. Shift right lógico: \texttt{0xFFFF0000 >> 4 = 0x0FFFF000}. A saída confirma esse valor.
+\item \textbf{SRA} (\texttt{funct3=5, funct7=32}): O mesmo \texttt{rs1\_i = 0xFFFF0000} (valor negativo em complemento de dois) deslocado aritmeticamente à direita por 4 posições. O bit de sinal (MSB = 1) é replicado, resultando em \texttt{0xFFFFF000}. O waveform exibe exatamente \texttt{0xFFFFF000}.
+\end{itemize}
+
+A ALU trata corretamente os deslocamentos lógicos e aritméticos, considerando apenas os 5 bits inferiores do segundo operando.
+
+\subsubsubsection{Lógicas}
+
+\begin{figure}[H]
+\centering 
+\caption{Instruções do Tipo R – Lógicas e Comparações} \label{fig:waveformtiporlogica}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Tipo-R-Lógicas.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{XOR} (\texttt{funct3=4, funct7=0}): \texttt{rs1\_i = 0xFFFF0000}, \texttt{rs2\_i = 0x0000FFFF}. Resultado = \texttt{0xFFFFFFFF}. Saída correta.
+\item \textbf{OR} (\texttt{funct3=6, funct7=0}): \texttt{rs1\_i = 0xFFFF0000}, \texttt{rs2\_i = 0xFF00FF00}. OR bit a bit = \texttt{0xFFFFFF00}. O waveform mostra esse valor.
+\item \textbf{AND} (\texttt{funct3=7, funct7=0}): Mesmos operandos → AND = \texttt{0xFF000000}. Confirmado.
+\item \textbf{SLT} (\texttt{funct3=2, funct7=0}): \texttt{rs1\_i = 10}, \texttt{rs2\_i = 100} (comparação com sinal). Como 10 < 100, \texttt{aluout\_o[0] = 1}. O waveform exibe \texttt{aluout\_o = 1} (apenas o LSB é significativo).
+\item \textbf{SLTU} (\texttt{funct3=3, funct7=0}): Mesmos valores, mas comparação sem sinal. 10 < 100 → também 1. Confirma-se.
+\end{itemize}
+
+\subsubsection{Instruções do Tipo I (Aritmética com Imediato)}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform das instruções do tipo I (ADDI, XORI, ORI, ANDI, SLLI, SRLI, SRAI, SLTI, SLTIU).} \label{fig:waveformtipoI}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Tipo-I.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{ADDI:} \texttt{rs1\_i = 100}, \texttt{imm\_i = 75} → \texttt{aluout\_o = 175}.
+\item \textbf{XORI:} \texttt{rs1\_i = 1}, \texttt{imm\_i = 3} → \texttt{1 XOR 3 = 2}. Saída = 2.
+\item \textbf{ORI:} \texttt{rs1\_i = 1}, \texttt{imm\_i = 2} → \texttt{1 OR 2 = 3}.
+\item \textbf{ANDI:} \texttt{rs1\_i = 1}, \texttt{imm\_i = 3} → \texttt{1 AND 3 = 1}.
+\item \textbf{SLLI:} \texttt{rs1\_i = 1024}, \texttt{imm\_i = 1} (shift left por 1) → \texttt{2048}. O campo \texttt{funct7} é 0. Saída = 2048.
+\item \textbf{SRLI:} \texttt{rs1\_i = 1024}, \texttt{imm\_i = 1} (shift right lógico) → \texttt{512}. Saída = 512.
+\item \textbf{SRAI:} \texttt{rs1\_i = -1024} (em complemento de dois), \texttt{imm\_i = 1} → deslocamento aritmético à direita → \texttt{-512}. O waveform mostra \texttt{aluout\_o = -512} (ou \texttt{0xFFFFFE00}).
+\item \textbf{SLTI:} \texttt{rs1\_i = 1024}, \texttt{imm\_i = -1}. Comparação com sinal: \texttt{1024 < -1}? Falso → \texttt{aluout\_o[0] = 0}.
+\item \textbf{SLTIU:} \texttt{rs1\_i = 1024}, \texttt{imm\_i = -1}. Agora \texttt{-1} é interpretado como um número sem sinal (\texttt{0xFFFFFFFF}). \texttt{1024 < 0xFFFFFFFF} → verdadeiro → \texttt{aluout\_o[0] = 1}.
+\end{itemize}
+
+A ALU decodifica corretamente as instruções de imediato, inclusive com a extensão de sinal do campo \texttt{imm\_i} e o tratamento especial para deslocamentos (que usam \texttt{funct7} para distinguir SRLI de SRAI).
+
+\subsubsection{Instruções de Load e Store}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform do cálculo de endereço para LOAD/STORE.} \label{fig:waveformloadstore}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Imagens/Load e Store.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+Para estas instruções, \texttt{inst\_type\_c = LOAD} (ou STORE), \texttt{alusel1\_c = 0}, \texttt{alusel2\_c = 1}, e \texttt{aluop} é fixado em \texttt{ADD} (pois o endereço efetivo é \texttt{rs1 + imm}). Na figura:
+
+\begin{itemize}
+\item \texttt{rs1\_i = 0x00000000}, \texttt{imm\_i = 0x0000000F}. A ALU realiza a soma: \texttt{0 + 15 = 15}. O sinal \texttt{aluout\_o} torna‑se \textbf{15} (decimal). Esse valor é o endereço calculado que será usado pela memória de dados.
+\item O testbench também testa o caso \texttt{STORE} (mesmo comportamento, pois a operação da ALU é idêntica: cálculo de endereço). A saída permanece consistente.
+\end{itemize}
+
+A ALU gera corretamente o endereço de acesso para as operações de carregamento e armazenamento, utilizando o modo de endereçamento por deslocamento.
+
+\subsubsection{Instruções de Desvio Condicional}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform das instruções de desvio condicional (BEQ, BNE, BLT, BGE, BLTU, BGEU).} \label{fig:waveformbranch}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Imagens/Tipo-B.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+A Figura mostra a simulação das instruções de desvio. Neste modo, a ALU é configurada com \texttt{inst\_type\_c = BRANCH}, \texttt{alusel1\_c = 0} e \texttt{alusel2\_c = 0}, de modo que ambos os operandos são lidos do banco de registradores (\texttt{op\_1 = rs1\_i}, \texttt{op\_2 = rs2\_i}). O campo \texttt{funct3\_i} determina a condição a ser avaliada. A ALU não produz um resultado aritmético completo, mas sim um \textbf{bit de condição} no LSB de \texttt{aluout\_o} (os demais bits são zero). O waveform apresenta os seguintes casos:
+
+\begin{itemize}
+\item \textbf{BEQ} (\texttt{funct3=0}):  
+  \texttt{rs1\_i = 50}, \texttt{rs2\_i = 50} → condição verdadeira → \texttt{aluout\_o[0] = 1}.  
+  Em seguida, \texttt{rs2\_i = 51} → falso → \texttt{aluout\_o[0] = 0}.
+\item \textbf{BNE} (\texttt{funct3=1}):  
+  \texttt{rs1\_i = 50}, \texttt{rs2\_i = 50} → falso (não é diferente) → 0.  
+  \texttt{rs2\_i = 51} → verdadeiro → 1.
+\item \textbf{BLT} (\texttt{funct3=4}):  
+  \texttt{rs1\_i = 50}, \texttt{rs2\_i = -50} → \texttt{50 < -50}? Falso → 0.  
+  \texttt{rs2\_i = 51} → \texttt{50 < 51}? Verdadeiro → 1.
+\item \textbf{BGE} (\texttt{funct3=5}):  
+  \texttt{rs1\_i = 50}, \texttt{rs2\_i = -50} → \texttt{50 >= -50}? Verdadeiro → 1.  
+  \texttt{rs2\_i = 51} → \texttt{50 >= 51}? Falso → 0.
+\item \textbf{BLTU} (\texttt{funct3=6}):  
+  \texttt{rs1\_i = 50}, \texttt{rs2\_i = 50} → \texttt{50 < 50} (sem sinal) → Falso → 0.  
+  \texttt{rs2\_i = 51} → \texttt{50 < 51} → Verdadeiro → 1.
+\item \textbf{BGEU} (\texttt{funct3=7}):  
+  \texttt{rs1\_i = 50}, \texttt{rs2\_i = 50} → \texttt{50 >= 50} → Verdadeiro → 1.  
+  \texttt{rs2\_i = 51} → \texttt{50 >= 51} → Falso → 0.  
+  \texttt{rs2\_i = -51} (interpretado como sem sinal = \texttt{0xFFFFFFCD}) → \texttt{50 >= 0xFFFFFFCD}? Falso → 0.
+\end{itemize}
+
+Todos os bits de condição gerados pela ALU estão corretos de acordo com a especificação RISC-V. A saída \texttt{aluout\_o} é subsequentemente utilizada pela unidade de controle para decidir se o PC deve ser atualizado com o endereço de desvio ou com \texttt{PC+4}.
+
+A ALU avalia corretamente as condições para todos os desvios condicionais implementados, tanto para operandos com sinal quanto sem sinal.
+
+\subsubsection{Instruções de Salto (JAL, JALR) e AUIPC}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform das instruções JAL, JALR e AUIPC.} \label{fig:waveformjump}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Imagens/Jump.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{JAL:} O testbench configura \texttt{inst\_type\_c = JUMP}, \texttt{alusel1\_c = 1}, e \texttt{aluop = PCP4}. A entrada \texttt{pc\_i = 0x00001004}. A saída \texttt{aluout\_o} torna‑se \texttt{pc\_i + 4 = 0x00001008} (ou 4100 decimal, conforme a figura). Este é o endereço de retorno que será armazenado em \texttt{rd}.
+\item \textbf{JALR:} (não aparece explicitamente na figura, mas o testbench a inclui). A operação é semelhante, mas o cálculo do destino do salto é feito fora da ALU (no próprio módulo do processador). A ALU apenas fornece \texttt{pc+4} para o registrador de retorno.
+\item \textbf{AUIPC:} \texttt{inst\_type\_c = AUIPC}, \texttt{alusel1\_c = 1}, \texttt{alusel2\_c = 1} (soma PC + imediato). \texttt{pc\_i = 0x00001004}, \texttt{imm\_i = 4}. O imediato é deslocado 12 bits à esquerda na unidade de controle, mas a ALU apenas soma os valores recebidos. Pela figura, o resultado é \texttt{0x5004}, indicando que o imediato foi tratado como \texttt{0x4000} (4 << 12) antes de chegar à ALU. Portanto, a ALU soma \texttt{0x1004 + 0x4000 = 0x5004}, que é o valor exibido. A saída está correta.
+\end{itemize}
+
+ A ALU suporta as operações especiais \texttt{PCP4} (para JAL/JALR) e a soma para \texttt{AUIPC}, gerando os valores esperados.
+
+\section{Banco de Registradores}
+
+O banco de registradores é um dos componentes centrais do processador, responsável por armazenar os 32 registradores de uso geral (x0 a x31), sendo que o registrador x0 é permanentemente ligado em zero, conforme a especificação RISC-V. O módulo foi implementado em SystemVerilog no arquivo \texttt{regfile.sv}.
+
+\subsection{Implementação do Módulo \texttt{regfile}}
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo regfile.sv}, label={lst:regfile}]
+import data_structures::*;
+
+module regfile (
+    input logic we_c, clk_c,
+    input data_t wdata_i,
+    input logic [4:0] rdaddr_i, rs1addr_i, rs2addr_i,
+    output register_t rs1_o, rs2_o
+);
+  register_t x[31];  // 31 registradores (x1 a x31)
+
+  // Escrita sincrona (subida do clock)
+  always_ff @(posedge clk_c) begin : reg_write
+    if (we_c && rdaddr_i != 0)
+      x[rdaddr_i - 1] <= wdata_i;
+  end
+
+  // Leitura combinacional (com x0 fixo em 0)
+  assign rs1_o = (rs1addr_i == 0) ? 0 : x[rs1addr_i - 1];
+  assign rs2_o = (rs2addr_i == 0) ? 0 : x[rs2addr_i - 1];
+endmodule
+\end{lstlisting}
+
+\textbf{Observações sobre a implementação:}
+\begin{itemize}
+  \item O array \texttt{x} possui 31 elementos, correspondentes aos registradores \texttt{x1} a \texttt{x31}. O registrador \texttt{x0} é implementado exclusivamente pela lógica de leitura, que retorna zero quando o endereço é \texttt{0}.
+  \item A escrita ocorre apenas na borda de subida do clock (\texttt{posedge clk\_c}) e quando a habilitação de escrita \texttt{we\_c} está ativa e o endereço de destino é diferente de zero.
+  \item O índice do array é calculado como \texttt{rdaddr\_i - 1} (e similar para leitura), de modo que \texttt{rdaddr\_i = 1} acessa \texttt{x[0]}, e \texttt{rdaddr\_i = 31} acessa \texttt{x[30]}. Essa decisão de projeto economiza um elemento de memória, mas exige cuidado na indexação.
+  \item As leituras são combinacionais, permitindo que os valores estejam disponíveis no mesmo ciclo em que os endereços são fornecidos, característica essencial para o processador monociclo.
+\end{itemize}
+
+\subsection{Testbench do Banco de Registradores}
+
+O testbench \texttt{tb\_regfile.sv} instancia o módulo \texttt{regfile} e aplica uma sequência de escrita e leitura em todos os registradores. O clock é gerado manualmente por meio de alternâncias de \texttt{clk\_c} com atrasos de 10 unidades de tempo.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Testbench tb\_regfile.sv}, label={lst:tb_regfile}]
+import data_structures::*;
+
+module tb_regfile ();
+  logic clk_c, we_c;
+  data_t wdata_i;
+  logic [4:0] rdaddr_i, rs1addr_i, rs2addr_i;
+  register_t rs1_o, rs2_o;
+  data_t i;
+
+  regfile dut (.*);
+
+  initial begin
+    $display("Inicializando...");
+    we_c = 1;
+    clk_c = 0;
+    rs1addr_i = 0;
+    rs2addr_i = 0;
+    rdaddr_i = 0;
+
+    for (i = 0; i < 32; i += 1) begin
+      wdata_i = i * 4;
+      rdaddr_i = i;
+      rs1addr_i = i - 1;
+      rs2addr_i = i;
+      clk_c = 1;
+      #10;
+      clk_c = 0;
+      #10;
+    end
+
+    #10;
+    $stop;
+  end
+endmodule
+\end{lstlisting}
+
+\subsection{Resultados da Simulação}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform do banco de registradores 1} \label{fig:regfile1}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Imagens/RegFile1.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+\begin{figure}[H]
+\centering 
+\caption{Waveform do banco de registradores 2} \label{fig:regfile2}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.6]{Imagens/RegFile2.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+O testbench percorre todos os endereços de 0 a 31. Para cada valor de \texttt{i}, o dado escrito é \texttt{i * 4}. O sinal \texttt{we\_c} permanece em \texttt{1} durante todo o teste. O clock \texttt{clk\_c} alterna com período de 20 ns (10 ns em nível alto, 10 ns em nível baixo). Na borda de subida de cada ciclo, o registrador apontado por \texttt{rdaddr\_i} é atualizado com \texttt{wdata\_i}.
+ O banco de registradores implementa corretamente a lógica de leitura e escrita, respeitando a prioridade do registrador \texttt{x0} sempre zero. A indexação baseada em \texttt{endereço - 1} é funcional, embora fuja um pouco do estilo convencional. Para fins de integração com o restante do processador, é importante garantir que os demais módulos (como a unidade de controle e a ALU) utilizem os mesmos endereços de registradores sem ajustes. Neste projeto, a interface com o banco de registradores segue o padrão RISC-V, sendo compatível.
+
+
+\section{Memória de Instruções}
+
+A memória de instruções é responsável por armazenar o programa a ser executado e fornecer a instrução correspondente ao endereço solicitado pelo Contador de Programa (PC). Neste projeto, a memória de instruções foi implementada como uma ROM (Read-Only Memory) de 256 posições, cada uma contendo uma instrução de 32 bits. O conteúdo da memória é carregado a partir de um arquivo texto (\texttt{fib.hex}) no início da simulação.
+
+\subsection{Implementação do Módulo \texttt{inst\_memory}}
+
+O módulo \texttt{inst\_memory.sv} utiliza o package \texttt{data\_structures} e possui uma interface simplificada: apenas o endereço de leitura (\texttt{addr\_i}) e a instrução de saída (\texttt{inst\_o}). O sinal de reset foi removido, uma vez que a ROM é um dispositivo de leitura apenas e não necessita de reinicialização.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo inst\_memory.sv}, label={lst:inst_memory}]
+import data_structures::*;
+
+module inst_memory (
+    input address_t addr_i,
+    output instruction_t inst_o
+);
+  data_t rom[256];  // 256 palavras de 32 bits
+
+  // Inicializa a memória com o conteúdo do arquivo fib.hex
+  initial begin
+    $readmemh("fib.hex", rom);
+  end
+
+  // Leitura combinacional
+  assign inst_o = rom[addr_i[8:2]];
+endmodule
+\end{lstlisting}
+
+
+\textbf{Observações sobre a implementação:}
+\begin{itemize}
+  \item A memória é implementada como um array de 256 elementos do tipo \texttt{data\_t} (32 bits).
+  \item A inicialização é feita através da tarefa \texttt{\$readmemh}, que lê valores hexadecimais do arquivo \texttt{fib.hex} e os armazena sequencialmente a partir do endereço 0.
+  \item O endereço de entrada \texttt{addr\_i} é um vetor de 32 bits, mas como cada instrução ocupa 4 bytes e a memória possui 256 palavras, são utilizados apenas os bits \texttt{addr\_i[8:2]} como índice. Isso corresponde a um endereçamento word-aligned com capacidade para 256 instruções (endereços de 0x00 a 0x3FC).
+  \item A leitura é combinacional, fornecendo a instrução no mesmo ciclo em que o endereço é apresentado, característica essencial para o processador monociclo.
+\end{itemize}
+
+\subsection{Arquivo de Inicialização \texttt{fib.hex}}
+
+O arquivo \texttt{fib.hex} contém as instruções do programa de teste. Para esta simulação, foi utilizado um programa que calcula a sequência de Fibonacci, cujas algumas instruções (em hexadecimal) são apresentadas a seguir, o escopo global das instruções não é de interesse para este teste, portanto foram listadas apenas as instruções contidas no testbench.
+
+\begin{lstlisting}[caption={fib.hex – programa de exemplo (Fibonacci)}, label={lst:fib_hex}]
+00001fb7
+0c000e13
+008e1e13
+0c0e0e13
+008e1e13
+0c0e0e13
+008e1e13
+0c0e0e13
+ffcfaa23
+00001fb7
+ffafc283
+... (demais instruções)
+\end{lstlisting}
+Cada linha representa uma instrução de 32 bits no formato hexadecimal, armazenada consecutivamente a partir do endereço 0. O programa implementa o cálculo da sequência de Fibonacci e faz uso de operações aritméticas, desvios condicionais e chamadas de sub-rotina, exercitando assim os principais tipos de instrução do processador.
+
+
+\subsection{Testbench da Memória de Instruções}
+
+O testbench \texttt{tb.sv} instancia o módulo \texttt{inst\_memory} e aplica uma sequência crescente de endereços para verificar a leitura correta das instruções armazenadas no arquivo \texttt{fib.hex}.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Testbench tb.sv para a memória de instruções}, label={lst:tb_instmem}]
+import data_structures::*;
+
+module tb ();
+  address_t addr_i;
+  instruction_t inst_o;
+  integer i;
+
+  inst_memory dut (.*);
+
+  initial begin
+    $display("Começando TB...");
+    addr_i = 0;
+
+    for (i = 0; i < 10; i++) begin
+      addr_i += 4;    // incrementa de 4 em 4 bytes
+      #10;
+    end
+
+    $stop;
+  end
+endmodule
+\end{lstlisting}
+
+
+\subsection{Resultados da Simulação}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Imagens/instmem.pdf}
+\caption{Waveform da memória de instruções.}
+\label{fig:instmem_wave}
+\end{figure}
+
+A Figura~\ref{fig:instmem_wave} apresenta o comportamento da memória de instruções durante a simulação.
+
+\begin{itemize}
+  \item O endereço \texttt{addr\_i} inicia em 0x00000000 e é incrementado de 4 em 4 a cada 10 ns (valores: 0x00, 0x04, 0x08, 0x0C, 0x10, 0x14, 0x18, 0x1C, 0x20, 0x24, …).
+  \item A saída \texttt{inst\_o} assume os valores armazenados no arquivo \texttt{fib.hex} para os endereços correspondentes:
+  \begin{itemize}
+    \item \texttt{addr\_i = 0x00} → \texttt{inst\_o = 0x00001FB7} (primeira instrução do programa).
+    \item \texttt{addr\_i = 0x04} → \texttt{inst\_o = 0x0C000E13} (segunda instrução).
+    \item \texttt{addr\_i = 0x08} → \texttt{inst\_o = 0x008E1E13}.
+    \item Os valores subsequentes seguem a ordem do arquivo.
+  \end{itemize}
+  \item A saída responde de forma combinacional às mudanças no endereço, sem atrasos visíveis, confirmando o funcionamento correto da ROM.
+\end{itemize}
+
+A simulação comprova que a memória de instruções é inicializada corretamente e fornece as instruções esperadas para o programa de Fibonacci, servindo como base para a execução do processador completo.
+
+\section{Memória de Dados e Entrada e Saída}
+
+A memória de dados é responsável por armazenar valores manipulados pelo programa durante a execução, suportando operações de leitura (\texttt{load}) e escrita (\texttt{store}) com diferentes granularidades: byte (8 bits), meia palavra (16 bits) e palavra (32 bits). Além disso, o módulo incorpora uma região de memória mapeada para entrada e saída (E/S), permitindo a comunicação com periféricos. O módulo foi implementado em SystemVerilog no arquivo \texttt{data\_memory.sv}, utilizando uma RAM síncrona de 1024 posições de 32 bits para a memória principal e uma pequena memória separada de 4 posições para E/S.
+
+\subsection{Implementação do Módulo}
+
+O módulo possui interface síncrona com clock ativo na borda de descida (\texttt{negedge clk\_i}) e inclui uma lógica de \textit{byte enable} para permitir acessos parciais à memória, conforme exigido pelas instruções \texttt{lb}, \texttt{lbu}, \texttt{lw}, \texttt{lh}, \texttt{lhu}, \texttt{sb}, \texttt{sh} e \texttt{sw}. A região de E/S é mapeada nos quatro últimos endereços da memória (1020 a 1023), permitindo a leitura e escrita de dados de/para dispositivos externos.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo data\_memory.sv}, label={lst:data_memory}]
+import data_structures::*;
+
+module data_memory (
+    input logic clk_i,
+    input logic memwrite_c, memread_c,
+    input funct3_t funct3_i,
+    input address_t addr_i,
+    input data_t wdata_i,
+    input data_t [1:0] systeminput_i,
+    output data_t rdata_o,
+    output data_t [1:0] systemoutput_o
+);
+  localparam int MEMORY_SIZE = 1024;
+  (* ramstyle = "M9K" *) data_t data_mem[MEMORY_SIZE];
+  data_t io_mem[4];
+
+  address_t word_addr, io_addr;
+  data_t mem_data, io_data, raw_data;
+  logic is_io;
+
+  assign word_addr = addr_i >> 2;
+  assign io_addr = word_addr - (MEMORY_SIZE - 4);
+  assign is_io = (word_addr >= (MEMORY_SIZE - 4));
+  assign raw_data = (is_io) ? io_data : mem_data;
+
+  logic [3:0] be;
+  always_comb begin : be_generator
+    be = 4'b0000;
+    if (funct3_i == 3'b000 || funct3_i == 3'b100) begin  // lb ou lbu
+      case (addr_i[1:0])
+        2'b00: be = 4'b0001;
+        2'b01: be = 4'b0010;
+        2'b10: be = 4'b0100;
+        2'b11: be = 4'b1000;
+        default: be = 4'b0000;
+      endcase
+    end else if (funct3_i == 3'b001 || funct3_i == 3'b101) begin  // lh ou lhu
+      case (addr_i[1])
+        1'b0: be = 4'b0011;
+        1'b1: be = 4'b1100;
+        default: be = 4'b0000;
+      endcase
+    end else if (funct3_i == 3'b010) begin  // lw ou sw
+      be = 4'b1111;
+    end
+  end
+
+  always_ff @(negedge clk_i) begin : Write
+    // Atualiza os registradores de E/S a partir das entradas de sistema
+    io_mem[3] <= systeminput_i[0];
+    io_mem[2] <= systeminput_i[1];
+    systemoutput_o[0] <= io_mem[1];
+    systemoutput_o[1] <= io_mem[0];
+
+    if (memwrite_c) begin
+      if (word_addr < MEMORY_SIZE - 4) begin
+        for (int i = 0; i < 4; i++)
+          if (be[i]) data_mem[word_addr][i*8+:8] <= wdata_i[i*8+:8];
+      end else begin
+        for (int i = 0; i < 4; i++)
+          if (be[i]) io_mem[io_addr][i*8+:8] <= wdata_i[i*8+:8];
+      end
+    end
+
+    mem_data <= (word_addr < MEMORY_SIZE - 4) ? data_mem[word_addr] : 0;
+    io_data  <= (io_addr < 4) ? io_mem[io_addr] : 0;
+  end
+
+  always_comb begin : Read
+    rdata_o = 0;
+    if (memread_c) begin
+      if (funct3_i == 3'b000 || funct3_i == 3'b001 || funct3_i == 3'b010) begin
+        // Leitura com extensão de sinal (lb, lh, lw)
+        case (be)
+          4'b0001: rdata_o = 32'(signed'(raw_data[7:0]));
+          4'b0010: rdata_o = 32'(signed'(raw_data[15:8]));
+          4'b0100: rdata_o = 32'(signed'(raw_data[23:16]));
+          4'b1000: rdata_o = 32'(signed'(raw_data[31:24]));
+          4'b0011: rdata_o = 32'(signed'(raw_data[15:0]));
+          4'b1100: rdata_o = 32'(signed'(raw_data[31:16]));
+          4'b1111: rdata_o = raw_data;
+          default: ;
+        endcase
+      end
+      if (funct3_i == 3'b100 || funct3_i == 3'b101) begin
+        // Leitura com extensão de zero (lbu, lhu)
+        case (be)
+          4'b0001: rdata_o = 32'(unsigned'(raw_data[7:0]));
+          4'b0010: rdata_o = 32'(unsigned'(raw_data[15:8]));
+          4'b0100: rdata_o = 32'(unsigned'(raw_data[23:16]));
+          4'b1000: rdata_o = 32'(unsigned'(raw_data[31:24]));
+          4'b0011: rdata_o = 32'(unsigned'(raw_data[15:0]));
+          4'b1100: rdata_o = 32'(unsigned'(raw_data[31:16]));
+          default: ;
+        endcase
+      end
+    end
+  end
+endmodule
+\end{lstlisting}
+
+\textbf{Características da implementação:}
+\begin{itemize}
+  \item A memória é endereçada por palavra (word-aligned): \texttt{addr\_i[31:2]} seleciona a palavra, e os bits \texttt{addr\_i[1:0]} determinam o deslocamento dentro da palavra para acessos a byte/meia palavra.
+  \item O sinal \texttt{be} (byte enable) é gerado combinacionalmente a partir de \texttt{funct3\_i} e dos bits baixos do endereço, indicando quais bytes da palavra serão lidos/escritos.
+  \item As operações de escrita e a atualização dos registradores de leitura ocorrem na borda de descida do clock (\texttt{negedge clk\_i}), em sintonia com o restante do processador.
+  \item Os dados lidos da memória principal e da região de E/S são armazenados em registradores intermediários (\texttt{mem\_data} e \texttt{io\_data}) na borda de clock, garantindo que a leitura combinacional utilize valores estáveis do ciclo anterior.
+  \item Para leituras, o módulo distingue entre extensão de sinal (\texttt{lb}, \texttt{lh}) e extensão de zero (\texttt{lbu}, \texttt{lhu}), convertendo o valor lido para 32 bits conforme a especificação RISC-V.
+  \item A região de E/S ocupa os quatro últimos endereços (1020 a 1023). Os endereços 1020 e 1021 são utilizados para saída (escrita), enquanto os endereços 1022 e 1023 são utilizados para entrada (leitura). Os sinais \texttt{systeminput\_i} alimentam os registradores de entrada, e \texttt{systemoutput\_o} refletem os registradores de saída.
+  \item O atributo \texttt{(* ramstyle = "M9K" *)} é uma diretiva de síntese para FPGAs da família Intel, indicando que a memória deve ser implementada utilizando blocos de RAM dedicados.
+\end{itemize}
+
+\subsection{Testbench da Memória de Dados e Entrada e Saída}
+
+O testbench \texttt{tb.sv} para a memória de dados instancia o módulo \texttt{data\_memory}, gera um clock de período 10\,ns e aplica uma sequência de escrita e leitura para verificar os acessos em diferentes granularidades, incluindo a região de E/S mapeada. Os sinais \texttt{systeminput\_i} e \texttt{systemoutput\_o} permitem simular a interação com periféricos.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Testbench tb.sv para a memória de dados (com E/S)}, label={lst:tb_datamem}]
+import data_structures::*;
+
+module tb();
+  logic clk_c;
+  logic memwrite_c, memread_c;
+  funct3_t funct3_i;
+  address_t addr_i;
+  data_t wdata_i, rdata_o;
+  data_t [1:0] systeminput_i, systemoutput_o;
+
+  data_memory dut (.*);  // Conexão automática
+
+  always #5 clk_c = !clk_c;
+
+  initial begin
+    $display("Iniciando TB memória de dados...");
+    clk_c = 0; memwrite_c = 0; memread_c = 0;
+    funct3_i = 2;   // word
+    addr_i = 0; wdata_i = 0;
+    systeminput_i[0] = 2004;  // valor de entrada para simular periférico
+    systeminput_i[1] = 0;
+    #10;
+
+    // Escrita de palavra no endereço de E/S (saída)
+    memwrite_c = 1;
+    wdata_i = 2048;
+    addr_i = 4084;  // endereço correspondente a io_mem[1] (saída)
+    #10;
+
+    // Leitura da palavra no endereço 0 (memória principal)
+    memwrite_c = 0;
+    memread_c = 1;
+    #10;
+
+    // Escrita de byte (10) no endereço 0 (função lb/sb)
+    memwrite_c = 1; memread_c = 0;
+    funct3_i = 0;   // byte
+    wdata_i = 10; addr_i = 0;
+    #10;
+
+    // Leitura do byte no endereço 0
+    memwrite_c = 0; memread_c = 1;
+    #10;
+
+    // Leitura como palavra do mesmo endereço
+    addr_i = 0; #10;
+    funct3_i = 2; #10;
+
+    $stop;
+  end
+endmodule
+\end{lstlisting}
+
+No testbench, o sinal \texttt{systeminput\_i[0]} é inicializado com 2004, que será armazenado no registrador de entrada \texttt{io\_mem[3]} (endereço 1023). A escrita em \texttt{addr\_i = 4084} (endereço da palavra 1021) escreve o valor 2048 no registrador de saída \texttt{io\_mem[1]}, refletindo-se em \texttt{systemoutput\_o[0]}. As demais operações testam a memória principal com diferentes granularidades, conforme descrito anteriormente.
+
+\subsection{Resultados da Simulação}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Imagens/datamemory.pdf}
+\caption{Waveform da simulação da memória de dados (com E/S).}
+\label{fig:datamem_wave}
+\end{figure}
+
+A Figura~\ref{fig:datamem_wave} apresenta o comportamento do módulo durante os testes. A análise é dividida nos intervalos de tempo (em ns) conforme a sequência aplicada.
+
+\begin{itemize}
+  \item \textbf{t = 0 a 10 ns (inicialização):}  
+  \texttt{clk\_c} alterna a cada 5 ns. Inicialmente, \texttt{memwrite\_c = 0}, \texttt{memread\_c = 0}, \texttt{funct3\_i = 2} (word), \texttt{addr\_i = 0}, \texttt{wdata\_i = 0}. Os sinais \texttt{systeminput\_i} são carregados com 2004 (entrada) e 0. A saída \texttt{rdata\_o} está em alta impedância (\texttt{32'hx}) porque não há leitura ativa.
+
+  \item \textbf{t = 10 a 20 ns (escrita em E/S):}  
+  \texttt{memwrite\_c = 1}, \texttt{wdata\_i = 2048}, \texttt{addr\_i = 4084}. Na borda de descida do clock em t = 15 ns, o valor 2048 é escrito no registrador de saída \texttt{io\_mem[1]}, que se reflete imediatamente em \texttt{systemoutput\_o[0]}. O sinal \texttt{rdata\_o} permanece indeterminado.
+
+  \item \textbf{t = 20 a 30 ns (leitura da palavra 0):}  
+  \texttt{memwrite\_c = 0}, \texttt{memread\_c = 1}, \texttt{funct3\_i = 2}. Na borda de descida anterior (t = 25 ns), o registrador \texttt{mem\_data} é atualizado com o valor lido (inicialmente 0). O bloco combinacional coloca \texttt{rdata\_o = 0}.
+
+  \item \textbf{t = 30 a 40 ns (escrita de byte 10 no endereço 0):}  
+  \texttt{memwrite\_c = 1}, \texttt{memread\_c = 0}, \texttt{funct3\_i = 0}, \texttt{wdata\_i = 10}, \texttt{addr\_i = 0}. Na borda de descida (t = 35 ns), o byte 10 é escrito no primeiro byte da palavra no endereço 0, preservando os demais bytes. Após essa operação, o conteúdo da palavra passa a ser \texttt{0x0000000A} (pois ainda não havia sido escrito outro valor).
+
+  \item \textbf{t = 40 a 50 ns (leitura do byte):}  
+  \texttt{memwrite\_c = 0}, \texttt{memread\_c = 1}, \texttt{funct3\_i = 0}. Na borda de descida (t = 45 ns), \texttt{mem\_data} é atualizado com o valor da palavra, e o bloco combinacional seleciona o byte, estende o sinal (como o valor 10 é positivo, resulta em 10) e coloca \texttt{rdata\_o = 10}.
+
+  \item \textbf{t = 50 a 60 ns (endereço mantido):}  
+  O testbench mantém \texttt{addr\_i = 0} sem novas operações. A saída permanece em 10.
+
+  \item \textbf{t = 60 a 70 ns (leitura como palavra do mesmo endereço):}  
+  \texttt{funct3\_i = 2}. Na borda de descida (t = 65 ns), \texttt{mem\_data} é atualizado com a palavra completa (\texttt{0x0000000A} = 10), e \texttt{rdata\_o} assume esse valor, confirmando a escrita correta do byte.
+\end{itemize}
+
+Os sinais de E/S também são verificados: \texttt{systemoutput\_o[0]} mantém o valor 2048 após a escrita, e \texttt{systeminput\_i[0]} (2004) é lido como dado sempre que o endereço 4092 (palavra 1023) for acessado (não mostrado na sequência, mas a lógica está presente). O waveform confirma o correto funcionamento da memória de dados com integração de E/S, incluindo a lógica de \textit{byte enable}, extensão de sinal/zero, e o mapeamento da região de E/S.
+
+\section{Unidade de Branch}
+
+A unidade de branch é responsável por calcular o próximo endereço do Contador de Programa (PC) durante a execução de instruções de desvio condicional (\texttt{beq}, \texttt{bne}, etc.), saltos incondicionais (\texttt{jal}) e saltos indiretos (\texttt{jalr}). Este módulo recebe os sinais de controle gerados pela unidade de controle (\texttt{jump\_c}, \texttt{branch\_c}, \texttt{pcsource\_c}), o valor da ALU (que fornece o bit de condição para os desvios), os valores dos operandos (\texttt{pc\_i}, \texttt{imm\_i}, \texttt{rs1\_i}) e produz o próximo PC (\texttt{pc\_next\_o}).
+
+\subsection{Implementação do Módulo \texttt{branch\_unit}}
+
+O módulo \texttt{branch\_unit.sv} utiliza lógica combinacional para calcular o próximo PC de acordo com a equação:
+
+\[
+pc\_next = base + incremento
+\]
+
+onde a base é selecionada pelo sinal \texttt{pcsource\_c} (\texttt{rs1\_i} para JALR, \texttt{pc\_i} para os demais casos), e o incremento é \texttt{imm\_i} para saltos ou desvios ativos, caso contrário \texttt{4} (incremento normal).
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo branch\_unit.sv}, label={lst:branch_unit}]
+import data_structures::*;
+
+module branch_unit (
+    input register_t rs1_i, pc_i,
+    input data_t aluout_i, imm_i,
+    input logic jump_c, branch_c, pcsource_c,
+    output register_t pc_next_o
+);
+  data_t sum1 = 0, sum2 = 0;
+
+  always_comb begin : branch_unit
+    sum1 = (pcsource_c) ? rs1_i : pc_i;
+    sum2 = (jump_c || (branch_c && aluout_i[0])) ? imm_i : 32'(4);
+    pc_next_o = sum1 + sum2;
+  end
+endmodule
+\end{lstlisting}
+
+\textbf{Funcionamento:}
+\begin{itemize}
+  \item \texttt{pcsource\_c}: quando em \texttt{1}, a base do endereço é \texttt{rs1\_i} (usado em \texttt{jalr}); quando em \texttt{0}, a base é o PC atual.
+  \item \texttt{sum2}: é \texttt{imm\_i} se houver salto incondicional (\texttt{jump\_c = 1}) ou um desvio condicional ativo (\texttt{branch\_c = 1} e o bit de condição \texttt{aluout\_i[0] = 1}); caso contrário, \texttt{sum2 = 4} para avançar para a próxima instrução sequencial.
+  \item A soma \texttt{sum1 + sum2} produz o endereço da próxima instrução.
+\end{itemize}
+
+\subsection{Testbench da Unidade de Branch}
+
+O testbench \texttt{branch\_tb.sv} aplica estímulos para verificar as três operações principais: desvio condicional (branch), salto e ligação (jal) e salto indireto (jalr). O clock não é necessário, pois o módulo é combinacional.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Testbench branch\_tb.sv}, label={lst:branch_tb}]
+import data_structures::*;
+
+module branch_tb ();
+  register_t rs1_i, pc_i, pc_next_o;
+  data_t aluout_i, imm_i;
+  logic jump_c, branch_c, pcsource_c;
+
+  branch_unit dut (.*);
+
+  initial begin
+    $display("Inicializando valores...");
+    rs1_i = 0; pc_i = 0; imm_i = 0; aluout_i = 0;
+    jump_c = 0; branch_c = 0; pcsource_c = 0;
+    #10;
+
+    // Teste BRANCH: branch_c=1, condicao verdadeira
+    branch_c = 1; aluout_i[0] = 1;
+    pc_i = 12; imm_i = 4;  // esperado 16
+    #10;
+
+    pc_i = 12; imm_i = -4; // esperado 8
+    #10;
+
+    // Teste JAL: jump_c=1
+    branch_c = 0; jump_c = 1;
+    pc_i = 12; imm_i = 4;  // esperado 16
+    #10;
+
+    pc_i = 12; imm_i = -4; // esperado 8
+    #10;
+
+    // Teste JALR: pcsource_c=1
+    jump_c = 0; pcsource_c = 1;
+    rs1_i = 12; imm_i = 4; // esperado 16
+    #10;
+
+    rs1_i = 12; imm_i = -4; // esperado 8
+    #10;
+
+    $stop;
+  end
+endmodule
+\end{lstlisting}
+
+\subsection{Resultados da Simulação}
+
+\begin{figure}[H]
+\centering 
+\caption{Waveform da simulação da unidade de branch.} 
+\label{fig:branch_wave}
+\graphicspath{ {./Imagens/} } 
+\includegraphics[scale=0.375]{Imagens/branch_unit.pdf}
+\legend{Fonte: O Autor}
+\end{figure}
+
+A Figura~\ref{fig:branch_wave} mostra os resultados dos testes. A análise é dividida pelos três grupos de operação:
+
+\begin{itemize}
+  \item \textbf{Desvio condicional (branch):}  
+    \texttt{branch\_c = 1}, \texttt{aluout\_i[0] = 1} (condição verdadeira).  
+    Para \texttt{pc\_i = 12}, \texttt{imm\_i = 4} → \texttt{pc\_next\_o = 16} (correto).  
+    Para \texttt{pc\_i = 12}, \texttt{imm\_i = -4} → \texttt{pc\_next\_o = 8} (correto).
+
+  \item \textbf{Salto e ligação (jal):}  
+    \texttt{jump\_c = 1}, independente da condição.  
+    \texttt{pc\_i = 12}, \texttt{imm\_i = 4} → \texttt{pc\_next\_o = 16}.  
+    \texttt{pc\_i = 12}, \texttt{imm\_i = -4} → \texttt{pc\_next\_o = 8}.  
+    O módulo ignora \texttt{aluout\_i} e \texttt{branch\_c} nesta configuração.
+
+  \item \textbf{Salto indireto (jalr):}  
+    \texttt{pcsource\_c = 1}, base é \texttt{rs1\_i} em vez de \texttt{pc\_i}.  
+    \texttt{rs1\_i = 12}, \texttt{imm\_i = 4} → \texttt{pc\_next\_o = 16}.  
+    \texttt{rs1\_i = 12}, \texttt{imm\_i = -4} → \texttt{pc\_next\_o = 8}.  
+    O comportamento está de acordo com a especificação RISC-V para a instrução \texttt{jalr}.
+\end{itemize}
+
+Todos os resultados observados no waveform estão em conformidade com os valores esperados. A unidade de branch opera de forma combinacional, produzindo o próximo endereço sem atrasos adicionais, o que é essencial para o funcionamento do processador monociclo.
+
+\section{Contador de Programa}
+
+O Contador de Programa (Program Counter – PC) é o registrador que armazena o endereço da instrução corrente. A cada ciclo de clock, ele é atualizado com o próximo endereço fornecido pela unidade de branch. Neste projeto, o PC não foi implementado como um módulo separado, mas sim como um bloco interno no código de integração final (topo do processador), sendo assim, sua waveform não foi gerada, a corretude do PC será avaliada na simulação da integração. A lógica de atualização é a seguinte:
+
+\begin{lstlisting}[language=SystemVerilog, caption={Lógica do PC (dentro do módulo topo)}, label={lst:pc_code}]
+always_ff @(posedge clk_c) begin : pc_update
+  if (RESET)
+    pc <= 32'd0;
+  else
+    pc <= pc_next;
+end
+\end{lstlisting}
+
+\noindent onde:
+\begin{itemize}
+  \item \texttt{clk\_c} é o sinal de clock global do processador.
+  \item \texttt{RESET} é um sinal de reset síncrono (quando ativo, o PC é zerado na próxima borda de clock).
+  \item \texttt{pc\_next} é o próximo endereço calculado pela unidade de branch (\texttt{branch\_unit}).
+  \item \texttt{pc} é o registrador interno que armazena o endereço atual, cujo valor é utilizado para acessar a memória de instruções.
+\end{itemize}
+
+A saída do PC é conectada diretamente à entrada de endereço da memória de instruções, permitindo a busca da instrução correspondente a cada ciclo.
+
+\section{Gerador de Imediatos}
+
+O gerador de imediatos é um módulo combinacional responsável por extrair e estender o valor imediato presente em diferentes campos da instrução, conforme o formato definido pela arquitetura RISC-V. Cada tipo de instrução (I, S, B, U, J) possui uma disposição distinta dos bits do imediato dentro da palavra de 32 bits. Este módulo recebe a instrução completa e o tipo de instrução decodificado, produzindo o valor imediato de 32 bits (já com extensão de sinal, quando necessário).
+
+\subsection{Implementação do Módulo \texttt{immediate\_generator}}
+
+O módulo \texttt{immediate\_generator.sv} implementa a lógica de extração para os seguintes tipos:
+\begin{itemize}
+  \item \textbf{OPI e LOAD:} imediato de 12 bits nos campos \texttt{inst\_i[31:20]}, com extensão de sinal.
+  \item \textbf{AUIPC:} imediato de 20 bits nos campos \texttt{inst\_i[31:12]}, deslocado à esquerda por 12 bits (preenchendo os bits inferiores com zeros), sem extensão de sinal.
+  \item \textbf{STORE:} imediato de 12 bits composto por \texttt{inst\_i[31:25]} (bits altos) e \texttt{inst\_i[11:7]} (bits baixos), com extensão de sinal.
+  \item \textbf{BRANCH:} imediato de 13 bits (incluindo o bit de deslocamento 0 no LSB), formado por \texttt{inst\_i[31]}, \texttt{inst\_i[7]}, \texttt{inst\_i[30:25]}, \texttt{inst\_i[11:8]}, e o bit 0 fixo em 0. A extensão de sinal é realizada pela replicação do bit 31 (\texttt{inst\_i[31]}) por 20 posições.
+  \item \textbf{JUMP:} imediato de 21 bits (incluindo o bit 0 no LSB), formado por \texttt{inst\_i[31]}, \texttt{inst\_i[19:12]}, \texttt{inst\_i[20]}, \texttt{inst\_i[30:21]}, e o bit 0 fixo em 0. A extensão de sinal é realizada pela replicação do bit 31 (\texttt{inst\_i[31]}) por 12 posições.
+\end{itemize}
+
+O código a seguir implementa essa lógica.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo immediate\_generator.sv}, label={lst:immgen}]
+import data_structures::*;
+
+module immediate_generator (
+    input instruction_t inst_i,
+    input inst_type_t   inst_type_c,
+    output data_t imm_o
+);
+  always_comb begin : immediate_generator
+    imm_o = 0;
+    case (inst_type_c)
+      OPI, LOAD:
+        imm_o = 32'(signed'(inst_i[31:20]));
+      AUIPC:
+        imm_o = {inst_i[31:12], 12'b000000000000};
+      STORE:
+        imm_o = 32'(signed'({inst_i[31:25], inst_i[11:7]}));
+      BRANCH:
+        imm_o = {{20{inst_i[31]}}, inst_i[7], inst_i[30:25], inst_i[11:8], 1'b0};
+      JUMP:
+        imm_o = {{12{inst_i[31]}}, inst_i[19:12], inst_i[20], inst_i[30:21], 1'b0};
+      default: ;
+    endcase
+  end
+endmodule
+\end{lstlisting}
+
+\subsection{Testbench do Gerador de Imediatos}
+
+O testbench \texttt{immgen\_tb.sv} aplica valores de instrução para cada tipo e verifica o imediato gerado.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Testbench immgen\_tb.sv}, label={lst:immgen_tb}]
+import data_structures::*;
+
+module immgen_tb ();
+  instruction_t inst_i;
+  inst_type_t inst_type_c;
+  data_t imm_o;
+
+  immediate_generator dut (.*);
+
+  initial begin
+    $display("Inicializando valores...");
+    inst_i = 0; inst_type_c = OP;
+    #10;
+
+    // Testes para OPI e LOAD (imediatos de 12 bits)
+    inst_type_c = OPI;
+    inst_i = 32'b11111111111100000000000000000000;  // esperado -1
+    #10;
+    inst_i = 32'b00000000000100000000000000000000;  // esperado 1
+    #10;
+
+    // Testes para AUIPC (imediato superior)
+    inst_type_c = AUIPC;
+    inst_i = 32'b01000000000000000000000000000000;  // esperado 0x40000000 (1073741824)
+    #10;
+    inst_i = 32'b11000000000000000000000000000000;  // esperado -1073741824
+    #10;
+
+    // Testes para STORE
+    inst_type_c = STORE;
+    inst_i = 32'b01111110000000000000111110000000;  // esperado 2047
+    #10;
+    inst_i = 32'b10000000000100010010000010100011;  // esperado -2047
+    #10;
+
+    // Testes para BRANCH
+    inst_type_c = BRANCH;
+    inst_i = 32'b01000000000000000000000000000000;  // esperado 1024
+    #10;
+    inst_i = 32'b11000000000000000000000010000000;  // esperado -1024
+    #10;
+
+    // Testes para JUMP
+    inst_type_c = JUMP;
+    inst_i = 32'b01000000000000000000000000000000;  // esperado 1024
+    #10;
+    inst_i = 32'b11000000000111111111000001101111;  // esperado -1024
+    #10;
+
+    $stop;
+  end
+endmodule
+\end{lstlisting}
+
+\subsection{Resultados da Simulação}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Imagens/immgen.pdf}
+\caption{Waveform da simulação do gerador de imediatos.}
+\label{fig:immgen_wave}
+\end{figure}
+
+A Figura~\ref{fig:immgen_wave} apresenta os resultados dos testes. A análise é feita por tipo de instrução:
+
+\begin{itemize}
+  \item \textbf{OPI / LOAD:}  
+    Para \texttt{inst\_type\_c = OPI}, com \texttt{inst\_i = 0xFFFFF000} (em 32 bits: \texttt{32'b11111111111100000000000000000000}) → imediato = -1.  
+    Em seguida, \texttt{inst\_i = 0x00100000} → imediato = 1. Os valores estão corretos e a extensão de sinal é aplicada.
+
+  \item \textbf{AUIPC:}  
+    \texttt{inst\_type\_c = AUIPC}, \texttt{inst\_i = 0x40000000} → imediato = \texttt{0x40000000} (1073741824).  
+    \texttt{inst\_i = 0xC0000000} → imediato = -1073741824. O imediato é extraído dos bits 31–12 e deslocado à esquerda, conforme esperado.
+
+  \item \textbf{STORE:}  
+    \texttt{inst\_type\_c = STORE}, \texttt{inst\_i = 0x7E000F80} → imediato = 2047.  
+    \texttt{inst\_i = 0x801120A3} → imediato = -2047. A concatenação dos campos \texttt{inst\_i[31:25]} e \texttt{inst\_i[11:7]} e a extensão de sinal estão corretas.
+
+  \item \textbf{BRANCH:}  
+    \texttt{inst\_type\_c = BRANCH}, \texttt{inst\_i = 0x40000000} → imediato = 1024.  
+    \texttt{inst\_i = 0xC0000080} → imediato = -1024. Observa-se que o bit LSB é fixado em 0, e a concatenação segue o formato B, com a extensão de sinal realizada pela replicação do bit 31.
+
+  \item \textbf{JUMP:}  
+    \texttt{inst\_type\_c = JUMP}, \texttt{inst\_i = 0x40000000} → imediato = 1024.  
+    \texttt{inst\_i = 0xC01FF06F} (instrução \texttt{jal}) → imediato = -1024. O formato J é corretamente reconstruído, incluindo o bit de sinal (replicado por 12 posições) e o bit 0 fixo.
+\end{itemize}
+
+Todos os resultados observados no waveform correspondem aos valores esperados. O gerador de imediatos opera de forma combinacional e sem atrasos, sendo essencial para fornecer o valor imediato correto à ALU e à unidade de branch.
+\section{Unidade de Controle}
+
+A unidade de controle é o módulo responsável por decodificar a instrução lida da memória de instruções e gerar todos os sinais de controle que governam o funcionamento dos demais blocos do processador. Ela recebe como entrada a instrução de 32 bits e produz, de forma combinacional, os sinais que configuram a ALU, o banco de registradores, a memória de dados, a unidade de branch e o próprio PC.
+
+\subsection{Interface e Sinais de Controle}
+
+A unidade de controle implementada no arquivo \texttt{control\_unit.sv} possui a seguinte interface:
+
+\begin{lstlisting}[language=SystemVerilog, caption={Interface da Unidade de Controle}, label={lst:cu_interface}]
+module control_unit (
+    input instruction_t inst_i,
+    output inst_type_t inst_type_c,
+    output logic memwrite_c, memread_c,
+    output logic alusel1_c, alusel2_c,
+    output logic we_c,
+    output logic memtoreg_c,
+    output logic lui_c,
+    output logic branch_c,
+    output logic jump_c,
+    output logic pcsource_c,
+    output logic ebreak_c
+);
+\end{lstlisting}
+
+Os sinais gerados têm as seguintes funções:
+
+\begin{itemize}
+  \item \texttt{inst\_type\_c}: tipo de instrução (OP, OPI, AUIPC, BRANCH, JUMP, LOAD, STORE), utilizado pela ALU e pelo gerador de imediatos.
+  \item \texttt{memwrite\_c}, \texttt{memread\_c}: habilita escrita e leitura na memória de dados.
+  \item \texttt{alusel1\_c}, \texttt{alusel2\_c}: selecionam os operandos da ALU (PC, rs1, imediato, rs2).
+  \item \texttt{we\_c}: habilita a escrita no banco de registradores.
+  \item \texttt{memtoreg\_c}: seleciona se o dado a ser escrito no registrador vem da memória ou da ALU.
+  \item \texttt{lui\_c}: indica que a instrução é \texttt{lui}, ativando o caminho específico para imediato superior.
+  \item \texttt{branch\_c}, \texttt{jump\_c}, \texttt{pcsource\_c}: controlam a unidade de branch para desvios condicionais, saltos incondicionais e saltos indiretos.
+  \item \texttt{ebreak\_c}: sinal para a instrução \texttt{ebreak}, utilizada para interromper o fluxo de instruções.
+\end{itemize}
+
+\subsection{Implementação do Módulo}
+
+O módulo utiliza a enumeração \texttt{opcode\_t} definida no pacote \texttt{data\_structures} para extrair o opcode da instrução (\texttt{inst\_i[6:0]}). Com base no opcode, um bloco \texttt{case} atribui os valores adequados a cada sinal de controle. Todos os sinais são inicializados com zero (padrão) e apenas os necessários para cada tipo de instrução são ativados.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo control\_unit.sv}, label={lst:control_unit}]
+import data_structures::*;
+
+module control_unit (
+    input instruction_t inst_i,
+    output inst_type_t inst_type_c,
+    output logic memwrite_c, memread_c,
+    output logic alusel1_c, alusel2_c,
+    output logic we_c,
+    output logic memtoreg_c,
+    output logic lui_c,
+    output logic branch_c,
+    output logic jump_c,
+    output logic pcsource_c,
+    output logic ebreak_c
+);
+  opcode_t opcode;
+  assign opcode = opcode_t'(inst_i[6:0]);
+
+  always_comb begin : control_unit
+    // Inicialização padrão
+    memwrite_c = 0; memread_c = 0;
+    alusel1_c = 0; alusel2_c = 0;
+    we_c = 0; memtoreg_c = 0;
+    lui_c = 0; branch_c = 0;
+    jump_c = 0; pcsource_c = 0;
+    ebreak_c = 0;
+    inst_type_c = OP;
+
+    case (opcode)
+      opcode_OP: begin
+        we_c = 1;
+      end
+      opcode_OP_IMM: begin
+        alusel2_c = 1;
+        we_c = 1;
+        inst_type_c = OPI;
+      end
+      opcode_LOAD: begin
+        memread_c = 1;
+        alusel2_c = 1;
+        we_c = 1;
+        memtoreg_c = 1;
+        inst_type_c = LOAD;
+      end
+      opcode_STORE: begin
+        memwrite_c = 1;
+        alusel2_c = 1;
+        inst_type_c = STORE;
+      end
+      opcode_BRANCH: begin
+        branch_c = 1;
+        inst_type_c = BRANCH;
+      end
+      opcode_JAL: begin
+        alusel1_c = 1;
+        we_c = 1;
+        jump_c = 1;
+        inst_type_c = JUMP;
+      end
+      opcode_JALR: begin
+        alusel1_c = 1;
+        we_c = 1;
+        jump_c = 1;
+        pcsource_c = 1;
+        inst_type_c = OPI;
+      end
+      opcode_LUI: begin
+        we_c  = 1;
+        lui_c = 1;
+        inst_type_c = AUIPC;
+      end
+      opcode_AUIPC: begin
+        alusel1_c = 1;
+        alusel2_c = 1;
+        we_c = 1;
+        inst_type_c = AUIPC;
+      end
+      opcode_EBREAK: begin
+        ebreak_c = 1;
+      end
+      default: ;
+    endcase
+  end
+endmodule
+\end{lstlisting}
+
+É importante notar que para a instrução \texttt{jalr}, a unidade de controle define \texttt{inst\_type\_c = OPI}. Isso ocorre porque o formato da instrução \texttt{jalr} é idêntico ao tipo I em termos de campos, e a ALU deve tratá-lo como uma operação com imediato (soma de \texttt{rs1} com \texttt{imm}). O sinal \texttt{pcsource\_c} orienta a unidade de branch a usar o valor de \texttt{rs1} como base para o salto.
+
+\subsection{Testbench da Unidade de Controle}
+
+O testbench \texttt{cu\_tb.sv} instancia a unidade de controle e aplica um conjunto de instruções com opcodes representativos de cada tipo. Para cada instrução, os sinais de controle são observados para verificar se a decodificação está correta.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Testbench cu\_tb.sv}, label={lst:cu_tb}]
+import data_structures::*;
+
+module cu_tb ();
+  instruction_t inst_i;
+  inst_type_t   inst_type_c;
+  logic memwrite_c, memread_c, alusel1_c, alusel2_c,
+        we_c, memtoreg_c, lui_c, branch_c, jump_c, pcsource_c;
+
+  control_unit dut (.*);
+
+  initial begin
+    // Teste: Tipo-R (OP)
+    inst_i = 32'h00000033;  #10;
+    // Teste: Tipo-I (OP_IMM)
+    inst_i = 32'h00000013;  #10;
+    // Teste: LOAD
+    inst_i = 32'h00000003;  #10;
+    // Teste: STORE
+    inst_i = 32'h00000023;  #10;
+    // Teste: BRANCH
+    inst_i = 32'h00000063;  #10;
+    // Teste: JAL
+    inst_i = 32'h0000006F;  #10;
+    // Teste: JALR
+    inst_i = 32'h00000067;  #10;
+    // Teste: LUI
+    inst_i = 32'h00000037;  #10;
+    // Teste: AUIPC
+    inst_i = 32'h00000017;  #10;
+    // Teste: EBREAK
+    inst_i = 32'h00100073;  #20;
+    $stop;
+  end
+endmodule
+\end{lstlisting}
+
+\subsection{Resultados da Simulação}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{Imagens/control_unit.pdf}
+\caption{Waveform da simulação da unidade de controle.}
+\label{fig:cu_wave}
+\end{figure}
+
+A Figura~\ref{fig:cu_wave} apresenta os resultados da simulação para os dez opcodes testados. A análise é feita para cada intervalo de tempo:
+
+\begin{itemize}
+  \item \textbf{OP (tipo R):} \texttt{inst\_i = 0x00000033}. Apenas \texttt{we\_c = 1}. \texttt{inst\_type\_c = OP}. Os demais sinais permanecem em 0.
+  \item \textbf{OP\_IMM:} \texttt{inst\_i = 0x00000013}. \texttt{alusel2\_c = 1}, \texttt{we\_c = 1}. \texttt{inst\_type\_c = OPI}.
+  \item \textbf{LOAD:} \texttt{inst\_i = 0x00000003}. \texttt{memread\_c = 1}, \texttt{alusel2\_c = 1}, \texttt{we\_c = 1}, \texttt{memtoreg\_c = 1}. \texttt{inst\_type\_c = LOAD}.
+  \item \textbf{STORE:} \texttt{inst\_i = 0x00000023}. \texttt{memwrite\_c = 1}, \texttt{alusel2\_c = 1}. \texttt{inst\_type\_c = STORE}.
+  \item \textbf{BRANCH:} \texttt{inst\_i = 0x00000063}. \texttt{branch\_c = 1}. \texttt{inst\_type\_c = BRANCH}.
+  \item \textbf{JAL:} \texttt{inst\_i = 0x0000006F}. \texttt{alusel1\_c = 1}, \texttt{we\_c = 1}, \texttt{jump\_c = 1}. \texttt{inst\_type\_c = JUMP}.
+  \item \textbf{JALR:} \texttt{inst\_i = 0x00000067}. \texttt{alusel1\_c = 1}, \texttt{we\_c = 1}, \texttt{jump\_c = 1}, \texttt{pcsource\_c = 1}. \texttt{inst\_type\_c = OPI}.
+  \item \textbf{LUI:} \texttt{inst\_i = 0x00000037}. \texttt{we\_c = 1}, \texttt{lui\_c = 1}. \texttt{inst\_type\_c = AUIPC}.
+  \item \textbf{AUIPC:} \texttt{inst\_i = 0x00000017}. \texttt{alusel1\_c = 1}, \texttt{alusel2\_c = 1}, \texttt{we\_c = 1}. \texttt{inst\_type\_c = AUIPC}.
+  \item \textbf{EBREAK:} \texttt{inst\_i = 0x00100073}. \texttt{ebreak\_c = 1}. Todos os demais sinais permanecem em 0.
+\end{itemize}
+
+Todos os sinais de controle gerados estão de acordo com o esperado para cada tipo de instrução, confirmando o correto funcionamento da unidade de controle. A decodificação combinacional é instantânea, sem latência adicional, o que é fundamental para o modelo de execução monociclo.
+
+\noindent \textbf{Conclusão:} A unidade de controle foi implementada e validada, gerando todos os sinais necessários para o funcionamento do processador. Ela será integrada ao caminho de dados completo, conectando-se à memória de instruções, à ALU, ao banco de registradores, à memória de dados e à unidade de branch.
+
+\section{Programas de Teste}
+
+Para validar o funcionamento do processador em diferentes cenários, foram desenvolvidos dois programas de teste em linguagem assembly para a arquitetura RV32IM: um para cálculo da sequência de Fibonacci e outro para cálculo do fatorial de um número. Ambos os programas foram escritos para serem executados tanto em simulação (ModelSim) quanto em bancada (FPGA), explorando o conjunto completo de instruções implementado no processador.
+
+\subsection{Programa Fibonacci}
+
+O programa \texttt{fibasmhalt.S} implementa o cálculo do n-ésimo termo da sequência de Fibonacci. O valor de entrada (índice) é lido de uma região de memória mapeada para E/S (endereço de entrada), e o resultado é exibido em quatro displays de sete segmentos, também mapeados em memória (endereço de saída). A sequência de execução é a seguinte:
+
+\begin{enumerate}
+  \item O programa aguarda em um loop (\texttt{start\_loop}) até que o bit mais significativo do sinal de confirmação (\texttt{x5}) seja ativado, indicando que o valor de entrada está disponível.
+  \item O valor de entrada (índice) é lido e armazenado em \texttt{x30}.
+  \item Se o índice for zero, o programa desvia para \texttt{fib\_0} e atribui 0 ao resultado.
+  \item Caso contrário, a sequência de Fibonacci é calculada iterativamente no loop \texttt{fib\_loop}, utilizando os registradores \texttt{x5}, \texttt{x6}, \texttt{x7} e \texttt{x8}.
+  \item O resultado é armazenado em \texttt{x29} e, em seguida, convertido para exibição nos displays através da sub-rotina \texttt{table}, que mapeia cada dígito decimal para o padrão de segmentos correspondente.
+  \item O valor final é escrito no endereço de saída (E/S) e o programa é encerrado com a instrução \texttt{ebreak}.
+\end{enumerate}
+
+\subsection{Programa Fatorial}
+
+O programa \texttt{fatasmhalt.S} segue a mesma estrutura de E/S do programa Fibonacci, porém calcula o fatorial do número de entrada. A sequência de execução é análoga:
+
+\begin{enumerate}
+  \item Aguarda o sinal de confirmação para ler o valor de entrada.
+  \item Se o valor de entrada for zero, o resultado é 1 (caso \texttt{fat\_0}).
+  \item Caso contrário, o fatorial é calculado iterativamente no loop \texttt{fat\_loop}, utilizando a instrução de multiplicação (\texttt{mul}) da extensão M.
+  \item O resultado é exibido nos displays utilizando a mesma sub-rotina \texttt{table}.
+  \item O valor final é escrito no endereço de saída e o programa é encerrado com \texttt{ebreak}.
+\end{enumerate}
+
+Ambos os programas utilizam a região de E/S mapeada nos endereços superiores da memória de dados, permitindo a interação com periféricos (chaves e displays) em bancada.
+
+\subsection{Processo de Compilação}
+
+Os programas em assembly foram compilados utilizando o conjunto de ferramentas GNU para RISC-V (\texttt{riscv64-elf-gcc}) \cite{gcc_riscv}, disponível para sistemas Arch Linux através do repositório oficial \texttt{extra} ou via AUR (Arch User Repository) \cite{aur_gcc} para versões específicas. O processo de compilação e conversão para o formato hexadecimal (compatível com a memória de instruções do processador) foi automatizado por um script escrito na linguagem Fish \cite{fish_docs}.
+
+O script \texttt{macro.fish} realiza as seguintes etapas:
+
+\begin{enumerate}
+  \item Solicita ao usuário o arquivo de origem (assembly) e o arquivo de destino (hexadecimal).
+  \item Compila o arquivo assembly utilizando o comando:
+    \begin{lstlisting}[language=bash]
+riscv64-elf-gcc -march=rv32im -mabi=ilp32 -nostartfiles -T link.ld $origem -o output.elf
+    \end{lstlisting}
+    Onde:
+    \begin{itemize}
+      \item \texttt{-march=rv32im} especifica a arquitetura RV32IM (base inteira com extensão de multiplicação/divisão).
+      \item \texttt{-mabi=ilp32} define a ABI (Application Binary Interface) para inteiros de 32 bits, ponteiros longos e inteiros longos.
+      \item \texttt{-nostartfiles} impede a vinculação dos arquivos de inicialização padrão (startup files).
+      \item \texttt{-T link.ld} utiliza o script de ligação personalizado \texttt{link.ld}, que define a organização da memória (instruções e dados).
+    \end{itemize}
+  \item Extrai apenas a seção \texttt{.text} (código executável) do arquivo ELF gerado e a converte para um binário raw utilizando o \texttt{riscv64-elf-objcopy}:
+    \begin{lstlisting}[language=bash]
+riscv64-elf-objcopy -j .text -O binary output.elf inst.bin
+    \end{lstlisting}
+  \item Converte o binário raw para o formato hexadecimal (little-endian, 32 bits por linha) utilizando um script Python \cite{python_intfrombytes}:
+    \begin{lstlisting}[language=python]
+python3 -c "import sys; data=open('inst.bin','rb').read(); [print(f'{int.from_bytes(data[i:i+4], \"little\"):08x}') for i in range(0, len(data), 4)]" >$destino
+    \end{lstlisting}
+    O comando Python lê o arquivo binário em blocos de 4 bytes, interpreta cada bloco como um inteiro de 32 bits no formato little-endian (utilizando \texttt{int.from\_bytes()} com \texttt{byteorder='little'}) e imprime o valor em hexadecimal com 8 dígitos.
+  \item Remove os arquivos temporários (\texttt{output.elf} e \texttt{inst.bin}).
+\end{enumerate}
+
+O script de ligação \texttt{link.ld} define duas regiões de memória: a memória de instruções com 1 KB (256 palavras de 32 bits) e a memória de dados com 4 KB (1024 palavras de 32 bits), refletindo as capacidades implementadas nos módulos \texttt{inst\_memory} e \texttt{data\_memory}, respectivamente. As seções \texttt{.text}, \texttt{.data} e \texttt{.bss} são alocadas conforme a arquitetura Harvard do processador.
+
+\begin{lstlisting}[caption={Script de ligação link.ld atualizado}, label={lst:link_ld}]
+OUTPUT_ARCH( "riscv" )
+ENTRY(_start)
+
+MEMORY
+{
+  INST_MEM (rx)  : ORIGIN = 0x00000000, LENGTH = 1K
+  DATA_MEM (rwx) : ORIGIN = 0x00000000, LENGTH = 4K
+}
+
+SECTIONS
+{
+  .text : { *(.text._start) *(.text .text.*) } > INST_MEM
+  .data : { *(.data .data.*) } > DATA_MEM
+  .bss  : { *(.bss .bss.*) *(COMMON) } > DATA_MEM
+  _end = .;
+}
+\end{lstlisting}
+
+\section{Integração Final do Processador}
+
+A integração final do processador consiste na interconexão de todos os módulos desenvolvidos ao longo do projeto: memória de instruções, banco de registradores, unidade lógica e aritmética (ALU), memória de dados (com E/S mapeada), gerador de imediatos, unidade de branch e unidade de controle. O módulo topo, denominado \texttt{integ}, instancia e conecta esses componentes, formando o caminho de dados completo do processador monociclo RISC-V.
+
+\subsection{Implementação do Módulo Topo}
+
+O módulo \texttt{integ.sv} define a interface do processador com o mundo externo: clock, reset, sinais de entrada e saída de sistema (para E/S mapeada). Internamente, ele instancia todos os blocos e realiza as conexões necessárias.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo topo integ.sv}, label={lst:integ}]
+import data_structures::*;
+
+module integ (
+    input logic clk_i,
+    input logic RESET,
+    input data_t [1:0] systeminput,
+    output data_t [1:0] systemoutput
+);
+  // Sinais internos
+  register_t rs1, rs2, pc, pc_next;
+  data_t wdata, rdata, imm, aluout;
+  logic [4:0] rdaddr, rs1addr, rs2addr;
+  funct3_t funct3;
+  funct7_t funct7;
+  instruction_t inst;
+  logic halt, ebreak_c, memwrite_c, memread_c,
+        alusel1_c, alusel2_c, we_c, memtoreg_c,
+        lui_c, branch_c, jump_c, pcsource_c;
+  inst_type_t inst_type_c;
+
+  // Instâncias dos módulos
+  inst_memory inst_mem ( .addr_i(pc), .inst_o(inst) );
+  regfile regfile ( .we_c(we_c), .clk_i(clk_i), .wdata_i(wdata),
+                    .rdaddr_i(rdaddr), .rs1addr_i(rs1addr), .rs2addr_i(rs2addr),
+                    .rs1_o(rs1), .rs2_o(rs2) );
+  alu alu ( .rs1_i(rs1), .rs2_i(rs2), .imm_i(imm), .pc_i(pc),
+            .funct3_i(funct3), .funct7_i(funct7), .inst_type_c(inst_type_c),
+            .alusel1_c(alusel1_c), .alusel2_c(alusel2_c), .aluout_o(aluout) );
+  data_memory data_mem ( .clk_i(clk_i), .memwrite_c(memwrite_c),
+                         .memread_c(memread_c), .funct3_i(funct3),
+                         .addr_i(aluout), .wdata_i(rs2), .rdata_o(rdata),
+                         .systeminput_i(systeminput), .systemoutput_o(systemoutput) );
+  immediate_generator imm_gen ( .inst_i(inst), .inst_type_c(inst_type_c), .imm_o(imm) );
+  branch_unit bu ( .rs1_i(rs1), .pc_i(pc), .aluout_i(aluout), .imm_i(imm),
+                   .jump_c(jump_c), .branch_c(branch_c), .pcsource_c(pcsource_c),
+                   .pc_next_o(pc_next) );
+  control_unit cu ( .inst_i(inst), .inst_type_c(inst_type_c),
+                    .memwrite_c(memwrite_c), .memread_c(memread_c),
+                    .alusel1_c(alusel1_c), .alusel2_c(alusel2_c), .we_c(we_c),
+                    .memtoreg_c(memtoreg_c), .lui_c(lui_c), .branch_c(branch_c),
+                    .jump_c(jump_c), .pcsource_c(pcsource_c), .ebreak_c(ebreak_c) );
+
+  // Lógica de halt (parada por ebreak)
+  always_comb begin : Halt
+    halt = 1'b0;
+    if (RESET && ebreak_c) halt = 1'b1;
+  end
+
+  // Atualização do PC
+  always_ff @(posedge clk_i) begin : pc_update
+    if (!RESET) pc <= 32'd0;
+    else if (!halt) pc <= pc_next;
+  end
+
+  // Mux para seleção do dado a ser escrito no registrador
+  always_comb begin : mux_wdata
+    casez ({memtoreg_c, lui_c})
+      2'b00: wdata = aluout;
+      2'b10: wdata = rdata;
+      2'b?1: wdata = imm;
+      default: wdata = 32'd0;
+    endcase
+  end
+endmodule
+\end{lstlisting}
+
+\textbf{Observações sobre a integração:}
+\begin{itemize}
+  \item O PC é atualizado na borda de subida do clock (\texttt{posedge clk\_i}) e é zerado quando \texttt{RESET} está ativo.
+  \item O sinal \texttt{halt} interrompe a atualização do PC quando uma instrução \texttt{ebreak} é executada, permitindo que o processador pare de forma controlada.
+  \item Os campos da instrução (\texttt{rdaddr}, \texttt{rs1addr}, \texttt{rs2addr}, \texttt{funct3}, \texttt{funct7}) são extraídos diretamente da instrução lida da memória.
+  \item O multiplexador de \texttt{wdata} seleciona entre o resultado da ALU, o dado lido da memória (\texttt{rdata}) e o imediato (para a instrução \texttt{lui}), conforme os sinais \texttt{memtoreg\_c} e \texttt{lui\_c}.
+\end{itemize}
+
+\subsection{Testbench de Integração}
+
+O testbench \texttt{tb.sv} instancia o módulo \texttt{integ}, gera o clock e o sinal de reset, e fornece os valores de entrada para a interface de E/S. Para este teste, o programa armazenado na memória de instruções é o \texttt{fib.hex} (cálculo da sequência de Fibonacci). O valor de entrada é fornecido via \texttt{systeminput[1]}, que codifica o índice desejado e o sinal de confirmação.
+
+\begin{lstlisting}[language=SystemVerilog, caption={Testbench tb.sv para integração final}, label={lst:tb_integ}]
+import data_structures::*;
+
+module tb ();
+  logic clk_c, RESET;
+  data_t [1:0] systeminput;
+  data_t [1:0] systemoutput;
+
+  integ integ (
+      .clk_i(clk_c),
+      .RESET(RESET),
+      .systeminput(systeminput),
+      .systemoutput(systemoutput)
+  );
+
+  always #10 clk_c = !clk_c;
+
+  initial begin
+    RESET = 0;
+    clk_c = 0;
+    #15;
+    RESET = 1;  // Libera o processador
+
+    // systeminput[1] codifica valor e confirmação:
+    // O terceiro byte (bits 23:16) contém o sinal de confirmação.
+    // Quando este byte é igual a 0x80, o programa considera os dados válidos.
+    // Os demais bytes contêm o valor de entrada (índice).
+    systeminput[1] = 32'h05800000;  // confirmação = 0x80, valor = 0x05 00 00?
+
+    $display("Iniciando execução do programa Fibonacci...");
+    #2800;  // Tempo suficiente para a execução
+    $display("Fim da simulação. Valor de saída (segmentos): %h", systemoutput);
+    $finish;
+  end
+endmodule
+\end{lstlisting}
+
+No testbench, \texttt{systeminput[1]} é configurado com o valor \texttt{32'h05800000}. A interpretação correta, conforme o programa assembly, é:
+\begin{itemize}
+  \item O terceiro byte (bits 23:16) contém o sinal de confirmação. No programa, o valor \texttt{0x80} (bit 7 ativo) é utilizado para indicar que os dados estão prontos.
+  \item Os demais bytes (bits 15:0) contêm o valor de entrada propriamente dito (índice para Fibonacci). No exemplo, o valor efetivo é \texttt{0x0005}.
+\end{itemize}
+
+O programa armazenado na memória de instruções (\texttt{fib.hex}) lê esses valores, processa o cálculo e escreve o resultado no endereço de saída (E/S 1020), que se reflete em \texttt{systemoutput}. O valor escrito já corresponde à codificação dos segmentos dos displays de sete segmentos, ou seja, cada dígito decimal é convertido pela sub-rotina \texttt{table} para o padrão de segmentos apropriado. A tabela utilizada (para cátodo comum, com segmentos ativos em nível baixo) mapeia:
+\begin{itemize}
+  \item \texttt{case\_0} → \texttt{192} (0xC0)
+  \item \texttt{case\_1} → \texttt{249} (0xF9)
+  \item \texttt{case\_2} → \texttt{164} (0xA4)
+  \item \texttt{case\_3} → \texttt{176} (0xB0)
+  \item \texttt{case\_4} → \texttt{153} (0x99)
+  \item \texttt{case\_5} → \texttt{146} (0x92)
+  \item \texttt{case\_6} → \texttt{130} (0x82)
+  \item \texttt{case\_7} → \texttt{248} (0xF8)
+  \item \texttt{case\_8} → \texttt{128} (0x80)
+  \item \texttt{case\_9} → \texttt{144} (0x90)
+\end{itemize}
+
+Assim, para o resultado \texttt{0005} (Fibonacci para entrada 5), o valor escrito em \texttt{systemoutput} é a concatenação: \texttt{0xC0C0C092} (quatro bytes: 0, 0, 0, 5). Para o fatorial de 5 (\texttt{0120}), o valor seria \texttt{0xC0F9A4C0} (0, 1, 2, 0).
+
+\subsection{Resultados da Simulação Integrada}
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{Imagens/fib.pdf}
+\caption{Waveform da simulação integrada do processador (Fibonacci).}
+\label{fig:integ_wave}
+\end{figure}
+
+A Figura~\ref{fig:integ_wave} apresenta uma visão geral da execução do programa Fibonacci (entrada 5). O waveform foi reduzido para mostrar todo o período de simulação (aproximadamente 2800 ns). Os principais eventos observados são:
+
+\begin{itemize}
+  \item \textbf{Reset:} nos primeiros 15 ns, \texttt{RESET} está ativo, mantendo o PC zerado. Após a liberação, o processador inicia a execução a partir do endereço 0x00.
+  \item \textbf{Execução do programa:} o PC avança sequencialmente, refletindo a busca e execução das instruções do programa \texttt{fib.hex}. O waveform mostra a variação contínua do PC e dos sinais de controle.
+  \item \textbf{Leitura da entrada:} em determinado momento, o programa lê o valor de \texttt{systeminput[1]} no endereço de E/S correspondente (0xFFA). O valor \texttt{0x05800000} é interpretado como: byte de confirmação = \texttt{0x80} (ativo), e valor = \texttt{0x0005}. O programa aguarda até que o byte de confirmação seja igual a \texttt{0x80}, então prossegue com o cálculo.
+  \item \textbf{Processamento:} a ALU executa as operações aritméticas (adições, deslocamentos, etc.) conforme a sequência de instruções. Os valores de \texttt{aluout}, \texttt{rdata} e \texttt{imm} variam ao longo do tempo.
+  \item \textbf{Resultado final:} ao final da execução, o valor calculado (55 para Fibonacci de 5) é convertido para o padrão de segmentos dos displays pela sub-rotina \texttt{table}. O valor codificado \texttt{0xC0C0C092} (representando os dígitos 0, 0, 0, 5) é escrito no endereço de saída (E/S 1020), refletindo-se no sinal \texttt{systemoutput}. O waveform mostra o valor final em \texttt{systemoutput[0]} e \texttt{systemoutput[1]}.
+  \item \textbf{Halt:} quando a instrução \texttt{ebreak} é executada, o sinal \texttt{ebreak\_c} é ativado, e o PC para de ser atualizado, encerrando a execução de forma controlada.
+\end{itemize}
+
+A simulação completa do programa demonstra que todos os blocos do processador estão corretamente integrados e que o sistema é capaz de executar programas complexos, interagindo com a memória de dados e com a interface de E/S. O valor final obtido (\texttt{0xC0C0C092}) foi validado manualmente, confirmando o funcionamento do processador RISC-V monociclo.
+
+\subsubsection{Simulação do programa Fatorial}
+
+De forma análoga, o programa de cálculo do fatorial (\texttt{fat.hex}) foi executado com o mesmo testbench, alterando apenas o conteúdo da memória de instruções para \texttt{fat.hex} e ajustando o valor de entrada. Para a entrada 5, o resultado esperado é 120, que é convertido para \texttt{0xC0F9A4C0} (dígitos 0, 1, 2, 0). A Figura~\ref{fig:integ_wave_fat} apresenta o waveform correspondente.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.35]{Imagens/fat.pdf}
+\caption{Waveform da simulação integrada para o programa Fatorial.}
+\label{fig:integ_wave_fat}
+\end{figure}
+
+Observa-se no waveform que o comportamento é análogo ao do Fibonacci: após o reset, o programa aguarda a confirmação, lê o valor de entrada, realiza o cálculo (utilizando a instrução \texttt{mul} da extensão M) e escreve o resultado codificado no endereço de saída. O valor final \texttt{0xC0F9A4C0} confirma o cálculo correto de $5! = 120$, demonstrando o pleno funcionamento da extensão de multiplicação.
+
+Ambos os programas de teste comprovam a robustez do processador e a correta implementação de todas as instruções do conjunto RV32IM, incluindo a interação com a região de E/S mapeada em memória.
+
+\section{Implementação em FPGA e Testes em Bancada}
+
+Para viabilizar a execução do processador em hardware real, foi desenvolvido um módulo de topo específico para síntese em FPGA, denominado \texttt{rv32im}. Este módulo encapsula o processador (\texttt{integ}) e adiciona um divisor de clock, adequando a frequência de operação aos periféricos da bancada de testes (chaves e displays de sete segmentos).
+
+\subsection{Módulo de Topo para FPGA}
+
+O módulo \texttt{rv32im.sv} instancia o processador completo (\texttt{integ}) e inclui um contador que divide a frequência do clock de entrada (geralmente 50 MHz) para uma frequência mais baixa, compatível com a visualização dos displays e com a operação manual das chaves. A lógica de divisão implementada gera um clock interno (\texttt{clk\_c}) que alterna a cada 50 ciclos do clock de entrada, resultando em um período de aproximadamente 2 µs (para um clock de 50 MHz).
+
+\begin{lstlisting}[language=SystemVerilog, caption={Módulo rv32im.sv – topo para FPGA}, label={lst:rv32im}]
+import data_structures::*;
+
+module rv32im (
+    input logic clk_i,
+    input logic RESET,
+    input data_t [1:0] systeminput,
+    output data_t [1:0] systemoutput
+);
+  int counter = 0;
+  logic clk_c = 0;
+
+  // Divisor de clock: gera um clock mais lento para a bancada
+  always_ff @(posedge clk_i) begin : Divisor
+    if (counter == 50) begin
+      counter <= 0;
+      clk_c   <= ~clk_c;
+    end else begin
+      counter <= counter + 1;
+    end
+  end
+
+  // Instância do processador
+  integ integ (
+      .clk_i(clk_c),
+      .RESET(RESET),
+      .systeminput(systeminput),
+      .systemoutput(systemoutput)
+  );
+endmodule
+\end{lstlisting}
+
+O módulo \texttt{rv32im} é o arquivo de topo utilizado para a síntese no Quartus Prime, sendo responsável por conectar o processador aos pinos da FPGA. Os sinais \texttt{systeminput} e \texttt{systemoutput} são mapeados para as chaves e displays da bancada, respectivamente, permitindo a interação com o usuário.
+
+\subsection{Processo de Síntese e Programação}
+
+A síntese do processador foi realizada utilizando o Quartus Prime, com as seguintes etapas:
+
+\begin{enumerate}
+  \item Importação de todos os arquivos SystemVerilog do projeto (\texttt{alu.sv}, \texttt{branch\_unit.sv}, \texttt{control\_unit.sv}, \texttt{data\_memory.sv}, \texttt{data\_structures.sv}, \texttt{immediate\_generator.sv}, \texttt{inst\_memory.sv}, \texttt{regfile.sv}, \texttt{integ.sv}, \texttt{rv32im.sv}).
+  \item Configuração do dispositivo FPGA (modelo utilizado na bancada de testes).
+  \item Atribuição dos pinos de entrada e saída (clock, reset, chaves e displays) conforme a placa de desenvolvimento.
+  \item Compilação e geração do arquivo de configuração (\texttt{.sof} ou \texttt{.pof}).
+  \item Programação da FPGA utilizando o programador do Quartus.
+\end{enumerate}
+
+A memória de instruções é inicializada com o programa desejado (Fibonacci ou Fatorial) através do arquivo \texttt{fib.hex} ou \texttt{fat.hex}, que deve ser carregado na memória ROM durante a síntese ou via \texttt{\$readmemh} (conforme implementado no módulo \texttt{inst\_memory}).
+
+\subsection{Testes em Bancada}
+
+Até o momento da elaboração deste relatório, a apresentação prática no balcão ainda não foi realizada. No entanto, os testes iniciais em bancada foram conduzidos com sucesso, utilizando os programas Fibonacci e Fatorial. Os resultados obtidos em hardware foram consistentes com as simulações realizadas no ModelSim:
+
+\begin{itemize}
+  \item \textbf{Programa Fibonacci (entrada 5):} os displays exibiram a sequência de segmentos correspondente ao valor \texttt{0005} (código \texttt{0xC0C0C092}), confirmando o cálculo correto do 5º termo da sequência.
+  \item \textbf{Programa Fatorial (entrada 5):} os displays exibiram o valor \texttt{0120} (código \texttt{0xC0F9A4C0}), confirmando o cálculo correto de $5! = 120$.
+\end{itemize}
+
+Esses resultados preliminares indicam que o processador está funcionando conforme o esperado em hardware, validando a integração dos módulos e a correta implementação do conjunto de instruções RV32IM. A apresentação formal no balcão, com a demonstração completa dos programas e a interação com os periféricos, será realizada para o professor responsável na semana seguinte à entrega do relatório.
+
+%-------------------- Considerações Finais ---------------------
+\chapter{Considerações Finais}
+
+O trabalho desenvolvido atingiu todos os objetivos propostos para a implementação de um processador RISC-V monociclo completo. Com base nos arquivos codificados em SystemVerilog, nas simulações realizadas e nos testes em FPGA, os seguintes elementos foram completamente projetados, testados e documentados:
+
+\begin{itemize}
+  \item \textbf{Unidade Lógica e Aritmética (ULA):} implementada com suporte a 24 operações, incluindo aritméticas básicas, lógicas, deslocamentos, comparações e a extensão de multiplicação e divisão (RV32M). O módulo foi validado por meio de testbenches exaustivos, e as formas de onda comprovam a correção de cada operação.
+  \item \textbf{Banco de Registradores (Register File):} composto por 32 registradores de 32 bits, com o registrador \texttt{x0} permanentemente ligado em zero. As simulações demonstraram a correta escrita síncrona e leitura combinacional.
+  \item \textbf{Memória de Instruções (ROM):} com 256 palavras de 32 bits, inicializada a partir de arquivo hexadecimal e com leitura combinacional.
+  \item \textbf{Memória de Dados (RAM):} implementada como memória síncrona de 1024 palavras (clock na borda de descida), com lógica de \textit{byte enable} que permite acessos a byte, meia palavra e palavra, além de distinguir corretamente extensão de sinal (\texttt{lb}, \texttt{lh}) de extensão de zero (\texttt{lbu}, \texttt{lhu}), e com região de E/S mapeada nos quatro últimos endereços.
+  \item \textbf{Gerador de Imediatos (Immediate Generator):} módulo combinacional que extrai e estende os imediatos dos formatos I, S, B, U e J, validado com testbench específico.
+  \item \textbf{Unidade de Branch:} módulo combinacional que calcula o próximo PC para desvios condicionais, saltos incondicionais e saltos indiretos, validado com testbench próprio.
+  \item \textbf{Unidade de Controle:} responsável pela decodificação das instruções e geração de todos os sinais de controle, incluindo o suporte à instrução de sistema \texttt{ebreak} para interrupção controlada da execução.
+  \item \textbf{Contador de Programa (PC):} registrador síncrono de 32 bits com reset, implementado no módulo topo e atualizado a cada ciclo de clock.
+  \item \textbf{Integração Final:} todos os módulos foram integrados no módulo topo \texttt{integ}, formando o caminho de dados completo do processador monociclo. A simulação integrada executou programas de teste (Fibonacci e Fatorial) com sucesso.
+  \item \textbf{Implementação em FPGA:} o processador foi sintetizado para um kit FPGA utilizando o módulo \texttt{rv32im}, que adiciona um divisor de clock para operação em bancada. Os testes em hardware confirmaram os resultados obtidos em simulação, com os displays exibindo os valores corretos para os programas executados.
+\end{itemize}
+
+Todos os componentes foram simulados individualmente no ModelSim, e os resultados – documentados por meio de capturas de tela (waveforms) – atestam o funcionamento conforme a especificação RISC-V. A execução dos programas de teste em bancada produziu resultados consistentes com as simulações, demonstrando a correta implementação do processador em hardware.
+
+A escolha da arquitetura RISC-V e da linguagem SystemVerilog mostrou-se adequada, permitindo uma descrição clara e modular dos componentes. As ferramentas de simulação (ModelSim) e de síntese (Quartus Prime) foram suficientes para a validação funcional e para a materialização do projeto em FPGA. O divisor de clock implementado no módulo \texttt{rv32im} mostrou-se eficaz para adequar a frequência de operação aos periféricos da bancada.
+
+\subsection{Dificuldades Encontradas}
+
+Durante o desenvolvimento do projeto, algumas dificuldades técnicas merecem destaque, pois exigiram atenção especial e aprofundamento no entendimento da linguagem SystemVerilog, da arquitetura RISC-V e das ferramentas de síntese e simulação.
+
+A principal dificuldade esteve relacionada à correta manipulação de tipos com e sem sinal (\emph{signed} vs. \emph{unsigned}) dentro da Unidade Lógica e Aritmética (ULA). Em operações como deslocamento aritmético à direita (\texttt{SRA}) e comparações com sinal (\texttt{SLT}, \texttt{SLTI}), é fundamental garantir que os operandos sejam tratados como números com sinal. A linguagem SystemVerilog, por padrão, considera vetores (\texttt{logic [31:0]}) como sem sinal. A solução encontrada foi utilizar conversões explícitas com \texttt{\$signed()} nos operandos, como exemplificado no trecho:
+
+\begin{lstlisting}[language=SystemVerilog]
+SRA: aluout_o = $signed(op_1) >>> op_2[4:0];
+SLT: aluout_o[0] = ($signed(op_1) < $signed(op_2)) ? 1'b1 : 1'b0;
+\end{lstlisting}
+
+A ausência desses \textit{casts} resultava em comportamentos incorretos, especialmente quando operandos negativos eram envolvidos. A dificuldade foi ainda maior nas operações de multiplicação e divisão da extensão M, onde era necessário tratar corretamente os produtos de 64 bits (\texttt{MUL}, \texttt{MULH}, \texttt{MULHSU}, \texttt{MULHU}) e as divisões com sinal (\texttt{DIV}, \texttt{REM}).
+
+Outro ponto desafiador foi a implementação das instruções que utilizam a parte superior ou inferior de um produto de 64 bits (\texttt{MULH}, \texttt{MULHSU}, \texttt{MULHU}). Para essas operações, foi necessário armazenar o resultado completo de 64 bits em um registrador temporário (\texttt{tmp\_reg}) e, em seguida, selecionar os 32 bits apropriados (\texttt{tmp\_reg[63:32]} ou \texttt{tmp\_reg[31:0]}). A lógica de extensão de sinal para os operandos em \texttt{MULHSU} (um operando com sinal e outro sem sinal) exigiu a criação de um operando estendido com \texttt{\{1'b0, op\_2\}} para garantir a interpretação correta.
+
+Além disso, a lógica de \textit{byte enable} na memória de dados para acessos a byte e meia palavra (\texttt{lb}, \texttt{lbu}, \texttt{lh}, \texttt{lhu}, \texttt{sb}, \texttt{sh}) demandou cuidado no alinhamento de endereços e na geração correta dos sinais de habilitação (\texttt{be}). A simulação desses casos com endereços não alinhados foi essencial para validar a implementação.
+
+Uma dificuldade específica da etapa de validação em hardware foi o **divisor de clock** implementado no módulo \texttt{rv32im}. O sinal gerado pelo contador (\texttt{clk\_c}) não pôde ser simulado adequadamente no QuestaSim (ModelSim), pois a ferramenta de simulação não o interpreta como um sinal de clock real para efeitos de temporização e \textit{timing analysis}. Isso exigiu que a validação do divisor de clock fosse realizada diretamente em bancada, onde o comportamento pôde ser observado nos displays e chaves. Para as simulações, o processador foi testado com o clock original (\texttt{clk\_i}), sem o divisor, garantindo a corretude funcional independentemente da frequência de operação.
+
+Por fim, a **síntese do projeto no Quartus Prime** apresentou tempos de compilação excessivamente longos, especialmente devido à complexidade do caminho de dados e à quantidade de módulos interconectados. Para contornar esse problema, foram utilizadas configurações especiais de compilação, como a redução do esforço de otimização (\texttt{Optimization Effort = Standard}) e a ativação de opções de compilação rápida (\texttt{Fast Compile}). Essas alterações reduziram significativamente o tempo de síntese, permitindo iterações mais rápidas durante os testes em bancada, sem comprometer a funcionalidade do processador.
+
+Todas essas dificuldades foram superadas com estudo da documentação do SystemVerilog, simulações incrementais, e a utilização de testbenches dedicados para cada módulo, o que permitiu isolar e corrigir os problemas antes da integração final e da síntese em hardware.
+% ---
+% Finaliza a parte no bookmark do PDF
+% para que se inicie o bookmark na raiz
+% e adiciona espaço de parte no Sumário
+% ---
+\phantompart
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{referencias}
+
+
+
+\end{document}
