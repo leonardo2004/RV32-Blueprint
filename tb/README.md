@@ -1,8 +1,5 @@
 # tb
 
-## Descrição
-> ⚠️ **Revisar:** as descrições deste README foram **inferidas do código** (nomes de módulos, `.do` e mensagens dos testbenches), não de documentação do autor. Confira antes de tomar como definitivas.
-
 Testbenches em SystemVerilog para simulação em **ModelSim / Questa**. Cada pasta é autocontida: traz cópias dos fontes necessários, o script `.do` de simulação e capturas das formas de onda.
 
 ## Estrutura
