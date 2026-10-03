@@ -1,8 +1,5 @@
 # sw
 
-## Descrição
-> ⚠️ **Revisar:** a descrição dos programas e do fluxo de geração foi **inferida do código** (`.S`, `macro.fish`, `inst_memory.sv`). Confira antes de tomar como definitiva.
-
 Programas em assembly RISC-V (RV32IM) usados para validar o processador e os arquivos `.hex` correspondentes, carregados na memória de instruções.
 
 ## Estrutura
