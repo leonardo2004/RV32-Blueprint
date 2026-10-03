@@ -25,7 +25,3 @@ docs/
 | PC4 | [Lab_AOCv1.pdf](relatorios/PC4/Lab_AOCv1.pdf) · [Datapath completo](relatorios/PC4/Datapaths/completo%28final%29.pdf) · [Datapath com EBREAK](relatorios/PC4/Datapaths/datapath_ebreak.pdf) |
 | Final | [Lab_AOC.pdf](relatorios/Relatorio_Final/Lab_AOC.pdf) · [Fonte LaTeX](relatorios/Relatorio_Final/Assets/Relatorio_AOC.tex) · [FPGA.pdf](relatorios/Relatorio_Final/Assets/FPGA.pdf) |
 | Entrega | [Envio.zip](relatorios/Envio.zip) |
-
-## Observações
-- A pasta `Relatório Final` foi renomeada para `Relatorio_Final` (sem espaço/acento) para facilitar links e uso em linha de comando.
-- `especificacoes/` está vazia por ora; use-a para especificações e diagramas novos.
